@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tanklab.iml" filepath="$PROJECT_DIR$/.idea/modules/tanklab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tanklab_main.iml" filepath="$PROJECT_DIR$/.idea/modules/tanklab_main.iml" group="tanklab" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tanklab_test.iml" filepath="$PROJECT_DIR$/.idea/modules/tanklab_test.iml" group="tanklab" />
+    </modules>
+  </component>
+</project>

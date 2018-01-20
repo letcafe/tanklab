@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: io.springfox:springfox-petstore:2.5.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-petstore/2.5.0/15c5ed53c4aabd4c3483549077d9516efecaa10/springfox-petstore-2.5.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.springfox/springfox-petstore/2.5.0/ea29af2cfb9d7c276c55dddf86145320c7ddf887/springfox-petstore-2.5.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
