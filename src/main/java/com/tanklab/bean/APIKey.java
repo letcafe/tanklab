@@ -1,17 +1,9 @@
 package com.tanklab.bean;
 
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "api")
 public class APIKey {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-    @Column(name = "api_key")
     String api_key;
-    @Column(name = "permission_level")
     int permission_level;
 
     public APIKey() {
