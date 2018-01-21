@@ -3,6 +3,12 @@ package com.tanklab.bean;
 import java.sql.Date;
 
 public class Files {
+
+    private int id;
+    private String fileName;
+    private String path;
+    private Date uploadTime;
+
     public Files() {
     }
 
@@ -18,15 +24,6 @@ public class Files {
         this.uploadTime = uploadTime;
     }
 
-
-
-
-
-
-    private int id;
-    private String fileName;
-    private String path;
-    private Date uploadTime;
 
     public int getId() {
         return id;
