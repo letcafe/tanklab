@@ -20,7 +20,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB-INF/");
         resolver.setSuffix(".jsp");
-        System.out.println("SpringMVC run");
         resolver.setExposeContextBeansAsAttributes(true);
         return resolver;
     }

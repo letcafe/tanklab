@@ -5,7 +5,7 @@ import java.util.List;
 public class RestMessage<T> {
     int code;
     String msg;
-    List<T> data;
+    T data;
 
     public int getCode() {
         return code;
@@ -23,11 +23,12 @@ public class RestMessage<T> {
         this.msg = msg;
     }
 
-    public List<T> getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(List<T> data) {
+    public void setData(T data)
+    {
         this.data = data;
     }
 
