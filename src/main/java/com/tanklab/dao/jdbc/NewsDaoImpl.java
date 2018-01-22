@@ -54,12 +54,31 @@ public class NewsDaoImpl implements com.tanklab.dao.NewsDao {
 
     @Override
     public JDBC_STATUS deleteOneNews(int newsId) {
-        return null;
+        JDBC_STATUS status = null;
+        try {
+            jdbcTemplate.update(deleteOneNewsById, newsId);
+            status = JDBC_STATUS.SUCCESS;
+        } catch (Exception ex) {
+            status = JDBC_STATUS.FAIL;
+        }
+        return status;
     }
 
     @Override
     public JDBC_STATUS addOneNews(News news) {
-        return null;
+        JDBC_STATUS status = null;
+        try {
+            jdbcTemplate.update(
+                    addOneNews,
+                    news.getTitle(),
+                    news.getContent(),
+                    news.getDate(),
+                    news.getImgUrl());
+            status = JDBC_STATUS.SUCCESS;
+        } catch (Exception ex) {
+            status = JDBC_STATUS.FAIL;
+        }
+        return status;
     }
 
     //定义内部类实现RowMapper
