@@ -1,5 +1,6 @@
 package com.tanklab.api;
 
+import com.tanklab.bean.JDBC_STATUS;
 import com.tanklab.bean.News;
 import com.tanklab.bean.RestMessage;
 import com.tanklab.dao.NewsDao;
@@ -8,8 +9,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import java.io.File;
+import java.io.IOException;
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -32,65 +37,69 @@ public class NewsAPI {
     public RestMessage getNewsCount() {
         RestMessage<Integer> restMessage = new RestMessage();
         restMessage.setCode(200);
-        restMessage.setMsg("success");
+        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
         restMessage.setData(newsDao.getTableCount());
         return restMessage;
     }
 
     //select all news
-    @RequestMapping(value = "/allList", method = GET, produces = "application/json")
+    @RequestMapping(value = "", method = GET, produces = "application/json")
     @ResponseBody
     public RestMessage<List<News>> getAllNews() {
         RestMessage<List<News>> restMessage = new RestMessage();
         restMessage.setCode(200);
-        restMessage.setMsg("success");
+        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
         restMessage.setData(newsDao.selectNewsList());
         return restMessage;
     }
 
     //add one news
-    @RequestMapping(value = "/", method = POST, produces = "application/json")
+    @RequestMapping(value = "", method = POST, produces = "application/json")
     @ResponseBody
     public RestMessage<News> addOneNews(
             @RequestParam(value = "title") String title,
             @RequestParam(value = "content") String content,
             @RequestParam(value = "date") Date date,
-            @RequestParam(value = "imgUrl") CommonsMultipartFile imgUrl) {
-        News news = new News();
+            @RequestParam(value = "file") MultipartFile file) throws IOException {
+        String destFileLocation = "E:\\\\tmp\\" + file.getOriginalFilename();//上传的文件路径
+        File destFile = new File(destFileLocation);
+        file.transferTo(destFile);
+        News news = new News(title, content, date, "news_" + System.currentTimeMillis());
         newsDao.addOneNews(news);
         RestMessage<News> restMessage = new RestMessage();
         restMessage.setCode(200);
-        restMessage.setMsg("success");
-        restMessage.setData(news);
+        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
+        restMessage.setData(null);
         return restMessage;
     }
 
     //delete all news
-    @RequestMapping(value = "/", method = DELETE, produces = "application/json")
+    @RequestMapping(value = "", method = DELETE, produces = "application/json")
     @ResponseBody
     public RestMessage<String> deleteOneNews(@RequestParam(value = "id") String id) {
         newsDao.deleteOneNews(Integer.valueOf(id));
         RestMessage<String> restMessage = new RestMessage();
         restMessage.setCode(200);
-        restMessage.setMsg("success");
-        restMessage.setData("delete one news successfully");
+        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
+        restMessage.setData(null);
         return restMessage;
     }
 
     //update all news
-    @RequestMapping(value = "/", method = PUT, produces = "application/json")
+    @RequestMapping(value = "", method = PUT, produces = "application/json")
     @ResponseBody
     public RestMessage<String> updateOneNews(
+        @RequestParam(value = "id") int id,
         @RequestParam(value = "title") String title,
         @RequestParam(value = "content") String content,
         @RequestParam(value = "date") Date date,
-        @RequestParam(value = "imgUrl") CommonsMultipartFile imgUrl) {
-            News news = new News();
+        @RequestParam(value = "imgUrl") MultipartFile imgUrl) {
+            News news = new News(id, title, content, date, "news_" + System.currentTimeMillis());
             newsDao.updateOneNews(news);
             RestMessage<String> restMessage = new RestMessage();
             restMessage.setCode(200);
-            restMessage.setMsg("success");
-            restMessage.setData("update one news successfully");
+            restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
+            restMessage.setData(null);
             return restMessage;
     }
 
