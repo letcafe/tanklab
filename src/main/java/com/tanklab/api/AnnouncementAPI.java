@@ -3,7 +3,7 @@ package com.tanklab.api;
 import com.tanklab.bean.Announcement;
 import com.tanklab.bean.JDBC_STATUS;
 import com.tanklab.bean.RestMessage;
-import com.tanklab.service.AnnounceService;
+import com.tanklab.service.AnnouncementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,8 +20,8 @@ public class AnnouncementAPI {
 
     private AnnouncementService announcementService;
     @Autowired
-    public AnnouncementAPI(AnnouncementService announceService) {
-        this.announceService = announceService;
+    public AnnouncementAPI(AnnouncementService announcementService) {
+        this.announcementService = announcementService;
     }
 
     /**
@@ -53,7 +53,7 @@ public class AnnouncementAPI {
     @ResponseBody
     public RestMessage<List<Announcement>> getAnnounceTopList(Model model,
             @RequestParam(value="size",required=true) int size) {
-        List<Announcement> announceTopList=announceService.getAnnounceTopList(size);
+        List<Announcement> announceTopList=announcementService.getAnnounceTopList(size);
         RestMessage<List<Announcement>> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
@@ -72,12 +72,12 @@ public class AnnouncementAPI {
     @ResponseBody
     public RestMessage<List<Announcement>> getAnnounceList(Model model,
             @RequestParam(value="page",required=true) int page) {
-        int totalCount=announceService.getAnnounceCount();  //查询总条数
+        int totalCount=announcementService.getAnnounceCount();  //查询总条数
         int size=10; //每页显示大小
         int maxPage=(totalCount%size==0)?totalCount/size:totalCount/size+1;//最大页数
         page=(page==0)?1:page; //当前第几页
         int start=(page-1)*size;
-        List<Announcement> announceList=announceService.getAnnounceList(start,size);
+        List<Announcement> announceList=announcementService.getAnnounceList(start,size);
         RestMessage<List<Announcement>> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
@@ -143,9 +143,7 @@ public class AnnouncementAPI {
     @ResponseBody
     public RestMessage<Announcement> deleteAnnouncement(
             @RequestParam(value="id",required=true) int id) {
-        JDBC_STATUS status=announceService.deleteAnnouncement(id);
-            @RequestParam(value="id",required=true) Integer id) {
-        JDBC_STATUS status= announcementService.deleteAnnouncement(id);
+        JDBC_STATUS status=announcementService.deleteAnnouncement(id);
         RestMessage restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(status.toString());
