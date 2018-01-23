@@ -2,8 +2,8 @@ package com.tanklab.service.implService;
 
 import com.tanklab.bean.Announcement;
 import com.tanklab.bean.JDBC_STATUS;
-import com.tanklab.dao.AnnounceDao;
-import com.tanklab.service.AnnounceService;
+import com.tanklab.dao.AnnouncementDao;
+import com.tanklab.service.AnnouncementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,11 +16,11 @@ import java.util.List;
  */
 @Repository
 @Transactional
-public class AnnounceServiceImpl implements AnnounceService {
+public class AnnouncementServiceImpl implements AnnouncementService {
 
-    private AnnounceDao announceDao;
+    private AnnouncementDao announceDao;
     @Autowired
-    public AnnounceServiceImpl(AnnounceDao announceDao) {
+    public AnnouncementServiceImpl(AnnouncementDao announceDao) {
         this.announceDao = announceDao;
     }
 

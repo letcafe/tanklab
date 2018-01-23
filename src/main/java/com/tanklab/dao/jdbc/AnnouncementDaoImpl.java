@@ -2,7 +2,7 @@ package com.tanklab.dao.jdbc;
 
 import com.tanklab.bean.Announcement;
 import com.tanklab.bean.JDBC_STATUS;
-import com.tanklab.dao.AnnounceDao;
+import com.tanklab.dao.AnnouncementDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -20,7 +20,7 @@ import java.util.List;
  * @Date 2018/1/20 22:12
  */
 @Repository
-public class AnnounceDaoImpl implements AnnounceDao {
+public class AnnouncementDaoImpl implements AnnouncementDao {
     private final static String getAnnouncement="SELECT id,title,content,date FROM announcement WHERE id=?";
     private final static String getAnnounceTopList="SELECT id,title,content,date FROM announcement ORDER BY id DESC LIMIT 0,?";
     private final static String getAnnounceList="SELECT id,title,content,date FROM announcement ORDER BY id DESC LIMIT ?,?";
@@ -32,7 +32,7 @@ public class AnnounceDaoImpl implements AnnounceDao {
     private JDBC_STATUS status = null;
     private JdbcTemplate jdbcTemplate;
     @Autowired
-    public AnnounceDaoImpl(JdbcTemplate jdbcTemplate) {
+    public AnnouncementDaoImpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
