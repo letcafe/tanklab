@@ -4,14 +4,14 @@ import java.sql.Date;
 
 /**
  * @Author yanan
- * @Desc
+ * @Desc 长期公告实体类
  * @Date 2018/1/20 21:43
  */
 public class Announcement {
-    private int id;
-    private String title;
-    private String content;
-    private Date date;
+    private int id;  //自增id
+    private String title; //公告标题
+    private String content; //公告内容
+    private Date date; //变更日期
 
     public Announcement(int id, String title, String content, Date date) {
         this.id = id;
@@ -19,7 +19,11 @@ public class Announcement {
         this.content = content;
         this.date = date;
     }
-
+    public Announcement(String title, String content, Date date) {
+        this.title = title;
+        this.content = content;
+        this.date = date;
+    }
     public Announcement() {}
 
     public int getId() {
@@ -52,5 +56,9 @@ public class Announcement {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public String toString(){
+        return this.id+" "+this.title+" "+this.content+" "+this.date;
     }
 }
