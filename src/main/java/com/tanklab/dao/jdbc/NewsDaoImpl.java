@@ -2,6 +2,7 @@ package com.tanklab.dao.jdbc;
 
 import com.tanklab.bean.JDBC_STATUS;
 import com.tanklab.bean.News;
+import com.tanklab.dao.NewsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -12,12 +13,16 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class NewsDaoImpl implements com.tanklab.dao.NewsDao {
+public class NewsDaoImpl implements NewsDao {
 
     //定义SQL语句
     public static final String getTableCount = "SELECT COUNT(*) FROM news";
 
+    public static final String selectDetailedNews = "SELECT id, title, content, date, imgUrl FROM news WHERE id = ?";
+
     public static final String selectNewsList = "SELECT id, title, content, date, imgUrl FROM news ORDER BY date DESC";
+
+    public static final String selectBetween = "SELECT id, title, content, date, imgUrl FROM news ORDER BY id DESC LIMIT ?, ?";
 
     public static final String updateOneNews = "UPDATE news SET id = ?, title = ?, content = ?, date = ?, imgUrl = ?";
 
@@ -40,11 +45,18 @@ public class NewsDaoImpl implements com.tanklab.dao.NewsDao {
     }
 
     @Override
+    public News selectDetailedNews(int id) {
+        return jdbcTemplate.queryForObject(selectDetailedNews, new NewsRowMapper(), id);
+    }
+
+    @Override
     public List<News> selectNewsList() {
-        List<News> newsList = jdbcTemplate.query(
-                selectNewsList,
-                new NewsRowMapper());
-        return newsList;
+        return jdbcTemplate.query(selectNewsList, new NewsRowMapper());
+    }
+
+    @Override
+    public List<News> selectMany(int startIndex, int size) {
+        return jdbcTemplate.query(selectBetween, new NewsRowMapper(), startIndex, size);
     }
 
     @Override

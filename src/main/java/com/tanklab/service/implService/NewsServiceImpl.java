@@ -3,13 +3,14 @@ package com.tanklab.service.implService;
 import com.tanklab.bean.JDBC_STATUS;
 import com.tanklab.bean.News;
 import com.tanklab.dao.NewsDao;
+import com.tanklab.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class NewsServiceImpl implements com.tanklab.service.NewsService {
+public class NewsServiceImpl implements NewsService {
 
     private NewsDao newsDao;
 
@@ -26,6 +27,16 @@ public class NewsServiceImpl implements com.tanklab.service.NewsService {
     @Override
     public List<News> selectNewsList() {
         return newsDao.selectNewsList();
+    }
+
+    @Override
+    public News selectDetailedNews(int id) {
+        return newsDao.selectDetailedNews(id);
+    }
+
+    @Override
+    public List<News> selectMany(int startIndex, int size) {
+        return newsDao.selectMany(startIndex, size);
     }
 
     @Override

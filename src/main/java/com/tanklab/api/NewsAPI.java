@@ -3,18 +3,16 @@ package com.tanklab.api;
 import com.tanklab.bean.JDBC_STATUS;
 import com.tanklab.bean.News;
 import com.tanklab.bean.RestMessage;
-import com.tanklab.dao.NewsDao;
+import com.tanklab.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
@@ -24,11 +22,11 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RequestMapping("/api/v1/news")
 public class NewsAPI {
 
-    private NewsDao newsDao;
+    private NewsService newsService;
 
     @Autowired
-    public NewsAPI(NewsDao newsDao) {
-        this.newsDao = newsDao;
+    public NewsAPI(NewsService newsService) {
+        this.newsService = newsService;
     }
 
     //return news count
@@ -38,7 +36,7 @@ public class NewsAPI {
         RestMessage<Integer> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
-        restMessage.setData(newsDao.getTableCount());
+        restMessage.setData(newsService.getTableCount());
         return restMessage;
     }
 
@@ -49,7 +47,7 @@ public class NewsAPI {
         RestMessage<List<News>> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
-        restMessage.setData(newsDao.selectNewsList());
+        restMessage.setData(newsService.selectNewsList());
         return restMessage;
     }
 
@@ -65,7 +63,7 @@ public class NewsAPI {
         File destFile = new File(destFileLocation);
         file.transferTo(destFile);
         News news = new News(title, content, date, "news_" + System.currentTimeMillis());
-        newsDao.addOneNews(news);
+        newsService.addOneNews(news);
         RestMessage<News> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
@@ -77,7 +75,7 @@ public class NewsAPI {
     @RequestMapping(value = "", method = DELETE, produces = "application/json")
     @ResponseBody
     public RestMessage<String> deleteOneNews(@RequestParam(value = "id") String id) {
-        newsDao.deleteOneNews(Integer.valueOf(id));
+        newsService.deleteOneNews(Integer.valueOf(id));
         RestMessage<String> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
@@ -95,7 +93,7 @@ public class NewsAPI {
         @RequestParam(value = "date") Date date,
         @RequestParam(value = "imgUrl") MultipartFile imgUrl) {
             News news = new News(id, title, content, date, "news_" + System.currentTimeMillis());
-            newsDao.updateOneNews(news);
+            newsService.updateOneNews(news);
             RestMessage<String> restMessage = new RestMessage();
             restMessage.setCode(200);
             restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
