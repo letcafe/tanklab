@@ -3,7 +3,7 @@ package com.tanklab.api;
 import com.tanklab.bean.Announcement;
 import com.tanklab.bean.JDBC_STATUS;
 import com.tanklab.bean.RestMessage;
-import com.tanklab.service.AnnouncementService;
+import com.tanklab.service.AnnounceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +18,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RequestMapping("/api/v1/announce")
 public class AnnouncementAPI {
 
-    private AnnouncementService announceService;
+    private AnnouncementService announcementService;
     @Autowired
     public AnnouncementAPI(AnnouncementService announceService) {
         this.announceService = announceService;
@@ -34,7 +34,7 @@ public class AnnouncementAPI {
     @ResponseBody
     public RestMessage<Announcement> getAnnouncement(Model model,
             @RequestParam(value="id",required=true) int id) {
-        Announcement announceBean=announceService.getAnnouncement(id);
+        Announcement announceBean= announcementService.getAnnouncement(id);
         RestMessage<Announcement> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
@@ -100,7 +100,7 @@ public class AnnouncementAPI {
             @RequestParam(value = "content") String content,
             @RequestParam(value = "date") Date date) {
         Announcement announceBean=new Announcement(title,content,date);
-        JDBC_STATUS status=announceService.addAnnouncement(announceBean);
+        JDBC_STATUS status= announcementService.addAnnouncement(announceBean);
         RestMessage restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(status.toString());
@@ -125,7 +125,7 @@ public class AnnouncementAPI {
             @RequestParam(value = "content") String content,
             @RequestParam(value = "date") Date date) {
         Announcement announceBean=new Announcement(id,title,content,date);
-        JDBC_STATUS status=announceService.modifyAnnouncement(announceBean);
+        JDBC_STATUS status= announcementService.modifyAnnouncement(announceBean);
         RestMessage restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(status.toString());
@@ -144,6 +144,8 @@ public class AnnouncementAPI {
     public RestMessage<Announcement> deleteAnnouncement(
             @RequestParam(value="id",required=true) int id) {
         JDBC_STATUS status=announceService.deleteAnnouncement(id);
+            @RequestParam(value="id",required=true) Integer id) {
+        JDBC_STATUS status= announcementService.deleteAnnouncement(id);
         RestMessage restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(status.toString());

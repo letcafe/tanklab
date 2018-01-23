@@ -20,10 +20,10 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RequestMapping("/")
 public class AnnouncementController {
 
-    private AnnouncementService announceService;
+    private AnnouncementService announcementService;
     @Autowired
-    public AnnouncementController(AnnouncementService announceService) {
-        this.announceService = announceService;
+    public AnnouncementController(AnnouncementService announcementService) {
+        this.announcementService = announcementService;
     }
 
     /**
@@ -34,8 +34,8 @@ public class AnnouncementController {
      */
     @RequestMapping(value = "/getAnnouncement", method = GET)
     public String getAnnouncement(Model model,
-            @RequestParam(value="id",required=true) int id) {
-        Announcement announceBean=announceService.getAnnouncement(id);
+            @RequestParam(value="id",required=true) Integer id) {
+        Announcement announceBean= announcementService.getAnnouncement(id);
         model.addAttribute("announceBean",announceBean);
 
         return "getAnnouncement";
@@ -49,8 +49,8 @@ public class AnnouncementController {
      */
     @RequestMapping(value = "/getAnnounceTopList", method = GET)
     public String getAnnounceTopList(Model model,
-            @RequestParam(value="size",required=true) int size) {
-        List<Announcement> announceTopList=announceService.getAnnounceTopList(size);
+            @RequestParam(value="size",required=true) Integer size) {
+        List<Announcement> announceTopList= announcementService.getAnnounceTopList(size);
         model.addAttribute("announceTopList",announceTopList);
 
         return "announceTopList";
@@ -64,14 +64,14 @@ public class AnnouncementController {
      */
     @RequestMapping(value = "/getAnnounceList", method = GET)
     public String getAnnounceList(Model model,
-            @RequestParam(value="page",required=true) int page) {
-        int totalCount=announceService.getAnnounceCount();  //查询总条数
+            @RequestParam(value="page",required=true) Integer page) {
+        int totalCount= announcementService.getAnnounceCount();  //查询总条数
         int size=10; //每页显示大小
         int maxPage=(totalCount%size==0)?totalCount/size:totalCount/size+1;//最大页数
         page=(page==0)?1:page; //当前第几页
         int start=(page-1)*size;
 
-        List<Announcement> announceList=announceService.getAnnounceList(start,size);
+        List<Announcement> announceList= announcementService.getAnnounceList(start,size);
         model.addAttribute("announceList",announceList);
         /**
          * 封装翻页信息

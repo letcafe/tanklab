@@ -10,6 +10,10 @@ public interface NewsService {
 
     List<News> selectNewsList();
 
+    News selectDetailedNews(int id);
+
+    List<News> selectMany(int startIndex, int size);
+
     JDBC_STATUS updateOneNews(News news);
 
     JDBC_STATUS deleteOneNews(int newsId);
