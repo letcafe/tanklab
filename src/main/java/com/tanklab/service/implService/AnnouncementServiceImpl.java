@@ -18,44 +18,44 @@ import java.util.List;
 @Transactional
 public class AnnouncementServiceImpl implements AnnouncementService {
 
-    private AnnouncementDao announcementDao;
+    private AnnouncementDao announceDao;
     @Autowired
-    public AnnouncementServiceImpl(AnnouncementDao announcementDao) {
-        this.announcementDao = announcementDao;
+    public AnnouncementServiceImpl(AnnouncementDao announceDao) {
+        this.announceDao = announceDao;
     }
 
     @Override
     public Announcement getAnnouncement(int id) {
-        return announcementDao.getAnnouncement(id);
+        return announceDao.getAnnouncement(id);
     }
 
     @Override
     public List<Announcement> getAnnounceTopList(int size) {
-        return announcementDao.getAnnounceTopList(size);
+        return announceDao.getAnnounceTopList(size);
     }
 
     @Override
     public List<Announcement> getAnnounceList(int start,int size) {
-        return announcementDao.getAnnounceList(start,size);
+        return announceDao.getAnnounceList(start,size);
     }
 
     @Override
     public int getAnnounceCount() {
-        return announcementDao.getAnnounceCount();
+        return announceDao.getAnnounceCount();
     }
 
     @Override
     public JDBC_STATUS addAnnouncement(Announcement announceBean) {
-        return announcementDao.addAnnouncement(announceBean);
+        return announceDao.addAnnouncement(announceBean);
     }
 
     @Override
     public JDBC_STATUS modifyAnnouncement(Announcement announceBean) {
-        return announcementDao.modifyAnnouncement(announceBean);
+        return announceDao.modifyAnnouncement(announceBean);
     }
 
     @Override
     public JDBC_STATUS deleteAnnouncement(int id) {
-        return announcementDao.deleteAnnouncement(id);
+        return announceDao.deleteAnnouncement(id);
     }
 }

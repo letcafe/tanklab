@@ -3,7 +3,7 @@ package com.tanklab.api;
 import com.tanklab.bean.Announcement;
 import com.tanklab.bean.JDBC_STATUS;
 import com.tanklab.bean.RestMessage;
-import com.tanklab.service.AnnouncementService;
+import com.tanklab.service.AnnounceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,12 +16,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @Controller
 @RequestMapping("/api/v1/announce")
-public class AnnounceAPI {
+public class AnnouncementAPI {
 
     private AnnouncementService announcementService;
     @Autowired
-    public AnnounceAPI(AnnouncementService announcementService) {
-        this.announcementService = announcementService;
+    public AnnouncementAPI(AnnouncementService announceService) {
+        this.announceService = announceService;
     }
 
     /**
@@ -33,7 +33,7 @@ public class AnnounceAPI {
     @RequestMapping(value = "/annuouncement", method = GET, produces = "application/json")
     @ResponseBody
     public RestMessage<Announcement> getAnnouncement(Model model,
-            @RequestParam(value="id",required=true) Integer id) {
+            @RequestParam(value="id",required=true) int id) {
         Announcement announceBean= announcementService.getAnnouncement(id);
         RestMessage<Announcement> restMessage = new RestMessage();
         restMessage.setCode(200);
@@ -52,8 +52,8 @@ public class AnnounceAPI {
     @RequestMapping(value = "/topList", method = GET, produces = "application/json")
     @ResponseBody
     public RestMessage<List<Announcement>> getAnnounceTopList(Model model,
-            @RequestParam(value="size",required=true) Integer size) {
-        List<Announcement> announceTopList= announcementService.getAnnounceTopList(size);
+            @RequestParam(value="size",required=true) int size) {
+        List<Announcement> announceTopList=announceService.getAnnounceTopList(size);
         RestMessage<List<Announcement>> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
@@ -71,13 +71,13 @@ public class AnnounceAPI {
     @RequestMapping(value = "/List", method = GET, produces = "application/json")
     @ResponseBody
     public RestMessage<List<Announcement>> getAnnounceList(Model model,
-            @RequestParam(value="page",required=true) Integer page) {
-        int totalCount= announcementService.getAnnounceCount();  //查询总条数
+            @RequestParam(value="page",required=true) int page) {
+        int totalCount=announceService.getAnnounceCount();  //查询总条数
         int size=10; //每页显示大小
         int maxPage=(totalCount%size==0)?totalCount/size:totalCount/size+1;//最大页数
         page=(page==0)?1:page; //当前第几页
         int start=(page-1)*size;
-        List<Announcement> announceList= announcementService.getAnnounceList(start,size);
+        List<Announcement> announceList=announceService.getAnnounceList(start,size);
         RestMessage<List<Announcement>> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
@@ -142,6 +142,8 @@ public class AnnounceAPI {
     @RequestMapping(value = "", method = DELETE, produces = "application/json")
     @ResponseBody
     public RestMessage<Announcement> deleteAnnouncement(
+            @RequestParam(value="id",required=true) int id) {
+        JDBC_STATUS status=announceService.deleteAnnouncement(id);
             @RequestParam(value="id",required=true) Integer id) {
         JDBC_STATUS status= announcementService.deleteAnnouncement(id);
         RestMessage restMessage = new RestMessage();
