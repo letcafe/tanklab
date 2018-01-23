@@ -1,7 +1,7 @@
 package com.tanklab.controller;
 
 import com.tanklab.bean.Announcement;
-import com.tanklab.service.AnnounceService;
+import com.tanklab.service.AnnouncementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,11 +18,11 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
  */
 @Controller
 @RequestMapping("/")
-public class AnnounceController {
+public class AnnouncementController {
 
-    private AnnounceService announceService;
+    private AnnouncementService announceService;
     @Autowired
-    public AnnounceController(AnnounceService announceService) {
+    public AnnouncementController(AnnouncementService announceService) {
         this.announceService = announceService;
     }
 
@@ -34,7 +34,7 @@ public class AnnounceController {
      */
     @RequestMapping(value = "/getAnnouncement", method = GET)
     public String getAnnouncement(Model model,
-            @RequestParam(value="id",required=true) Integer id) {
+            @RequestParam(value="id",required=true) int id) {
         Announcement announceBean=announceService.getAnnouncement(id);
         model.addAttribute("announceBean",announceBean);
 
@@ -49,7 +49,7 @@ public class AnnounceController {
      */
     @RequestMapping(value = "/getAnnounceTopList", method = GET)
     public String getAnnounceTopList(Model model,
-            @RequestParam(value="size",required=true) Integer size) {
+            @RequestParam(value="size",required=true) int size) {
         List<Announcement> announceTopList=announceService.getAnnounceTopList(size);
         model.addAttribute("announceTopList",announceTopList);
 
@@ -64,7 +64,7 @@ public class AnnounceController {
      */
     @RequestMapping(value = "/getAnnounceList", method = GET)
     public String getAnnounceList(Model model,
-            @RequestParam(value="page",required=true) Integer page) {
+            @RequestParam(value="page",required=true) int page) {
         int totalCount=announceService.getAnnounceCount();  //查询总条数
         int size=10; //每页显示大小
         int maxPage=(totalCount%size==0)?totalCount/size:totalCount/size+1;//最大页数
