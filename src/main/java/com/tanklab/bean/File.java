@@ -1,17 +1,17 @@
 package com.tanklab.bean;
 
-import java.sql.Date;
+import java.util.Date;
 
-public class Files {
-    public Files() {
+public class File {
+    public File() {
     }
 
-    public Files(String fileName, String path, Date uploadTime) {
+    public File(String fileName, String path, Date uploadTime) {
         this.fileName = fileName;
         this.path = path;
         this.uploadTime = uploadTime;
     }
-    public Files(int id, String fileName, String path, Date uploadTime) {
+    public File(int id, String fileName, String path, Date uploadTime) {
         this.id = id;
         this.fileName = fileName;
         this.path = path;
@@ -62,7 +62,7 @@ public class Files {
 
     @Override
     public String toString() {
-        return "Files{" +
+        return "File{" +
                 "id=" + id +
                 ", fileName='" + fileName + '\'' +
                 ", path='" + path + '\'' +
