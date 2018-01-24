@@ -55,18 +55,17 @@ public class FileAPI {
     @ResponseBody
     public RestMessage<File> addOneFile(
             @RequestParam(value = "fileName") String fileName,
-            @RequestParam(value = "path") MultipartFile path,
-            @RequestParam(value = "uploadTime") Date uploadTime) throws IOException {
+            @RequestParam(value = "path") MultipartFile path) throws IOException {
         String destFileLocation = "E:\\\\tmp\\" + path.getOriginalFilename();//上传的文件路径
         java.io.File destFile = new java.io.File(destFileLocation);
         path.transferTo(destFile);
-        File file = new File(fileName, "file_" + System.currentTimeMillis(), uploadTime);
-        fileDao.addOneFile(file);
-        RestMessage<File> restMessage = new RestMessage();
-        restMessage.setCode(200);
-        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
-        restMessage.setData(null);
-        return restMessage;
+//        File file = new File(fileName, "file_" + System.currentTimeMillis()+"_"+path, new Date());
+//        fileDao.addOneFile(file);
+//        RestMessage<File> restMessage = new RestMessage();
+//        restMessage.setCode(200);
+//        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
+//        restMessage.setData(null);
+        return null;
     }
 
     //delete all files
@@ -89,7 +88,7 @@ public class FileAPI {
             @RequestParam(value = "fileName") String fileName,
             @RequestParam(value = "path") MultipartFile path,
             @RequestParam(value = "uploadTime") Date uploadTime) {
-        File file = new File(id, fileName, "file_" + System.currentTimeMillis(), uploadTime);
+        File file = new File(id, fileName, "file_" + System.currentTimeMillis()+"_"+path, uploadTime);
         fileDao.updateOneFile(file);
         RestMessage<String> restMessage = new RestMessage();
         restMessage.setCode(200);
