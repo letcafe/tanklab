@@ -30,6 +30,11 @@ public class NewsController {
         return "admin/news";
     }
 
+    @RequestMapping(value = "/uploadForm")
+    public String uploadForm(Model model) {
+        return "uploadForm";
+    }
+
     @RequestMapping(value = "/news")
     public String getDetailedNews(
             Model model,
