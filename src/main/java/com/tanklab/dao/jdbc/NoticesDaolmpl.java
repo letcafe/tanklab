@@ -7,12 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
+@Repository
 public class NoticesDaolmpl implements NoticesDao {
     private final static String getNotices="SELECT id,title,content,date FROM notices WHERE id=?";
     private final static String getNoticesTopList="SELECT id,title,content,date FROM notices ORDER BY id DESC LIMIT 0,?";
@@ -25,7 +26,7 @@ public class NoticesDaolmpl implements NoticesDao {
     private JDBC_STATUS status = null;
     private JdbcTemplate jdbcTemplate;
     @Autowired
-    public NoticesDaoImpl(JdbcTemplate jdbcTemplate) {
+    public NoticesDaolmpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
@@ -46,7 +47,6 @@ public class NoticesDaolmpl implements NoticesDao {
             return null;
         }
     }
-e
     @Override
     public List<Notices> getNoticesList(int start,int size) {
         try {
@@ -78,9 +78,9 @@ e
     }
 
     @Override
-    public JDBC_STATUS modifyAnnouncement(Announcement announceBean) {
+    public JDBC_STATUS modifyNotices(Notices noticesBean) {
         try {
-            jdbcTemplate.update(modifyAnnouncement,announceBean.getTitle(),announceBean.getContent(),announceBean.getDate(),announceBean.getId());
+            jdbcTemplate.update(modifyNotices,noticesBean.getTitle(),noticesBean.getContent(),noticesBean.getDate(),noticesBean.getId());
             status=JDBC_STATUS.SUCCESS;
         } catch(EmptyResultDataAccessException e) {
             status=JDBC_STATUS.ERROR;
@@ -89,9 +89,9 @@ e
     }
 
     @Override
-    public JDBC_STATUS deleteAnnouncement(int id) {
+    public JDBC_STATUS deleteNotices(int id) {
         try {
-            jdbcTemplate.update(deleteAnnouncement,id);
+            jdbcTemplate.update(deleteNotices,id);
             status=JDBC_STATUS.SUCCESS;
         } catch(EmptyResultDataAccessException e) {
             status=JDBC_STATUS.ERROR;
@@ -99,16 +99,16 @@ e
         return status;
     }
 
-    private static final class AnnounceRowMapper implements RowMapper<Announcement> {
+    private static final class NoticesRowMapper implements RowMapper<Notices> {
 
         @Override
-        public Announcement mapRow(ResultSet rs, int rowNum) throws SQLException {
+        public Notices mapRow(ResultSet rs, int rowNum) throws SQLException {
             int id = rs.getInt("id");
             String title = rs.getString("title");
             String content = rs.getString("content");
             Date date = rs.getDate("date");
-            Announcement announce = new Announcement(id,title,content,date);
-            return announce;
+            Notices notices = new Notices(id,title,content,date);
+            return notices;
         }
     }
 
