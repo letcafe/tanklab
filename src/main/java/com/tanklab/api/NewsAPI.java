@@ -55,20 +55,20 @@ public class NewsAPI {
     @RequestMapping(value = "", method = POST, produces = "application/json")
     @ResponseBody
     public RestMessage<News> addOneNews(
-            @RequestParam(value = "title") String title,
-            @RequestParam(value = "content") String content,
-            @RequestParam(value = "date") Date date,
+//            @RequestParam(value = "title") String title,
+//            @RequestParam(value = "content") String content,
+//            @RequestParam(value = "date") Date date,
             @RequestParam(value = "file") MultipartFile file) throws IOException {
         String destFileLocation = "E:\\\\tmp\\" + file.getOriginalFilename();//上传的文件路径
         File destFile = new File(destFileLocation);
         file.transferTo(destFile);
-        News news = new News(title, content, date, "news_" + System.currentTimeMillis());
-        newsService.addOneNews(news);
-        RestMessage<News> restMessage = new RestMessage();
-        restMessage.setCode(200);
-        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
-        restMessage.setData(null);
-        return restMessage;
+//        News news = new News(title, content, date, "news_" + System.currentTimeMillis());
+//        newsService.addOneNews(news);
+//        RestMessage<News> restMessage = new RestMessage();
+//        restMessage.setCode(200);
+//        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
+//        restMessage.setData(null);
+        return null;
     }
 
     //delete all news

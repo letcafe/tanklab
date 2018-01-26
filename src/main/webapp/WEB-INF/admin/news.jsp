@@ -160,7 +160,6 @@
               	<button id="add_news" class="btn btn-sm btn-success" data-toggle="modal" data-target="#add_news_modal">添加新闻</button>
               </div>
               <table id="example2" class="table table-bordered table-hover">
-
                 <thead>
                 <tr>
                   <th>No</th>
@@ -172,18 +171,20 @@
                   <th>操作</th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="news_form_body">
                 <c:forEach items="${newsList}" var="list" varStatus="idx">
                   <tr>
-                  <td class="col-xs-1"><c:out value="${idx.index+1}"></c:out></td>
-                  <td class="col-xs-1"><c:out value="${list.id}"></c:out></td>
-                  <td class="col-xs-2"><c:out value="${list.date}"></c:out></td>
-                  <td class="col-xs-2"><c:out value="${list.title}"></c:out></td>
-                  <td class="col-xs-3">${fn:substring(list.content,0,400)}......</td>
-                  <td class="col-xs-2"><img src="${list.imgUrl}"/></td>
+                  <td class="col-xs-1" id="index_${idx.index+1}"><c:out value="${idx.index+1}"></c:out></td>
+                  <td class="col-xs-1" id="news_id_${list.id}"><c:out value="${list.id}"></c:out></td>
+                  <td class="col-xs-2" id="news_date_${list.id}"><c:out value="${list.date}"></c:out></td>
+                  <td class="col-xs-2" id="news_title_${list.id}"><c:out value="${list.title}"></c:out></td>
+                  <td class="col-xs-3" id="news_content_${list.id}">${fn:substring(list.content,0,400)}......</td>
+                  <td class="col-xs-2" id="news_imgUrl_${list.id}"><img src="${list.imgUrl}"/></td>
                   <td class="col-xs-1">
-                    <button class="btn btn-info col-xs-4 col-xs-offset-1">修改</button>
-                    <button class="btn btn-danger col-xs-4 col-xs-offset-2">删除</button>
+                    <button class="btn btn-info" id="chg_news_${list.id}" data-id="${list.id}" btnType="chgButton">修改</button>
+                    <br/>
+                    <br/>
+                    <button class="btn btn-danger" id="del_news_${list.id}" data-id="${list.id}" btnType="delButton">删除</button>
                   </td>
                   </tr>
                 </c:forEach>
@@ -195,7 +196,6 @@
           </div>
           <!-- /.box -->
 
-          
       <!-- /.row -->
     </section>
     <!-- /.content -->
@@ -324,20 +324,6 @@
 <script src="./dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="./dist/js/demo.js"></script>
-<!-- page script -->
-<script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
-</script>
 <!-- CK Editor -->
 <script src="./bower_components/ckeditor/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
