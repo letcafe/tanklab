@@ -8,8 +8,6 @@ $(function(){
     $('#change_date').datepicker({
         autoclose: true,
     });
-    //模拟点击事件，将左侧的列表导航
-    $(".sidebar-toggle").click();
     //设置“添加新闻”的“添加”按钮的点击提交事件
     $('#add_submit').on('click', function() {
     	add_content_string = CKEDITOR.instances.add_content.getData();
@@ -31,19 +29,6 @@ $(function(){
     
 	hostip='tanktju.com'; //server true ip:123.207.162.21
 	
-	//读取新闻列表AJAX
-	$.ajax({
-		url:'/tanktju/News',
-		type:"GET",
-		contentType: "charset=utf-8",
-		success:function(jsonResult) {
-			var jsonArray = eval(jsonResult);
-			for(i = 0; i < jsonArray.length; i++) {
-				change_del_binding(JSON.parse(jsonArray[i]));
-			}
-		}
-	});
-	
 	//修改新闻并提交数据库
 	$('#change_submit').on('click', function() {
 		change_content_string = CKEDITOR.instances.change_content.getData();
@@ -61,20 +46,28 @@ $(function(){
 			}
 		});
 	});
-	
+
+	//绑定删除按钮事件
+    $('button[btnType="delButton"]').each(function(index, element) {
+		param_del_id = $(this).attr('id');
+    	$(this).on('click', {del_id:param_del_id}, function(event) {
+			console.log('value：' + event.data.del_id);
+		})
+	});
+
+    //绑定修改按钮事件
+    $('button[btnType="delButton"]').each(function(index, element) {
+        param_chg_id = $(this).attr('id');
+        $(this).on('click', {del_id:param_chg_id}, function(event) {
+            console.log('value：' + event.data.del_id);
+        })
+    });
+
+
 	//定义了复用函数，用于绑定删除和修改的点击事件
-	var change_del_binding = function(json) {
-		$('#tableNews').append('<tr><td>' 
-				+ eval(i+1) + '</td><td style="width:80px;">' 
-				+ json.id 
-				+ '</td><td style="width:110px;" id="news_date_' + json.id + '">' 
-				+ json.date + '</td><td><div id="news_title_' + json.id + '" style="height:100%;">' 
-				+ json.title + '</div></td><td><div id="news_content_' + json.id + '" style="height:100%;">' 
-				+ json.content + '</div><td><img id="news_img_uri_' + json.id + '" src="/tanktju/images/news/' 
-				+ json.img_uri + '" style="height:150px;width:250px;"/><td style="vertical-align:middle;width:150px;"><a id="del_news_' 
-				+ json.id +'" class="btn btn-sm btn-danger" style="margin-right:10px;">删除</a><a id="chg_news_' 
-				+ json.id + '" class="btn btn-sm btn-info">修改</a></td></td></tr>');
-    	$('#del_news_' + json.id).on('click', { del_id:json.id,imageFullName:json.img_uri }, function(event) {
+	var update_binding = function(del_id) {
+		console.log("del_method_do");
+    	$('#del_news_' + del_id.id).on('click', { del_id:del_id}, function(event) {
 			json_id = event.data.del_id;
 			json_image = event.data.imageFullName;
 			var confirm_message = confirm('确认要删除吗？');
@@ -86,7 +79,7 @@ $(function(){
 						if(jsonResult=='success') {
 							$('#del_news_' + json_id).parent().parent().hide(1500);
 							alert('删除成功');
-						}else { 
+						}else {
 							alert('操作失拜，请稍后再试');
 						}
 					}
