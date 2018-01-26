@@ -102,8 +102,6 @@ $(function(){
     var bindingEveryUpdateButton = function() {
         $('button[btnType="chgButton"]').each(function() {
             var chg_id = $(this).data('id');
-            console.log('chg_id:' + chg_id);
-            console.log($("#news_content_" + chg_id).text);
             //获取遍历中的当前按钮，绑定修改单击事件，传递其data-id属性对应的参数，并获取每个id选择器对应的值传递参数
             $(this).on('click', {
                 id:$("#news_id_" + chg_id).text(),
