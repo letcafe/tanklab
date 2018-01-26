@@ -24,7 +24,9 @@ public class NewsDaoImpl implements NewsDao {
 
     public static final String selectBetween = "SELECT id, title, content, date, imgUrl FROM news ORDER BY id DESC LIMIT ?, ?";
 
-    public static final String updateOneNews = "UPDATE news SET id = ?, title = ?, content = ?, date = ?, imgUrl = ?";
+    public static final String updateOneNewsWithImg = "UPDATE news SET id = ?, title = ?, content = ?, date = ?, imgUrl = ? WHERE id = ?";
+
+    public static final String updateOneNewsWithoutImg = "UPDATE news SET id = ?, title = ?, content = ?, date = ? WHERE id = ?";
 
     public static final String deleteOneNewsById = "DELETE FROM news WHERE id = ?";
 
@@ -61,7 +63,27 @@ public class NewsDaoImpl implements NewsDao {
 
     @Override
     public JDBC_STATUS updateOneNews(News news) {
-        return null;
+        JDBC_STATUS status = null;
+        try {
+            if(news.getImgUrl() != null) {
+                jdbcTemplate.update(updateOneNewsWithImg,
+                        news.getId(),
+                        news.getTitle(),
+                        news.getContent(),
+                        news.getDate(),
+                        news.getImgUrl());
+            } else {
+                jdbcTemplate.update(updateOneNewsWithoutImg,
+                        news.getId(),
+                        news.getTitle(),
+                        news.getContent(),
+                        news.getDate());
+            }
+            status = JDBC_STATUS.SUCCESS;
+        } catch (Exception ex) {
+            status = JDBC_STATUS.FAIL;
+        }
+        return status;
     }
 
     @Override
