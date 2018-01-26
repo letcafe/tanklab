@@ -6,13 +6,13 @@ import com.tanklab.bean.RestMessage;
 import com.tanklab.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -23,6 +23,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 public class NewsAPI {
 
     private NewsService newsService;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     @Autowired
     public NewsAPI(NewsService newsService) {
@@ -55,27 +56,32 @@ public class NewsAPI {
     @RequestMapping(value = "", method = POST, produces = "application/json")
     @ResponseBody
     public RestMessage<News> addOneNews(
-//            @RequestParam(value = "title") String title,
-//            @RequestParam(value = "content") String content,
-//            @RequestParam(value = "date") Date date,
-            @RequestParam(value = "file") MultipartFile file) throws IOException {
-        String destFileLocation = "E:\\\\tmp\\" + file.getOriginalFilename();//上传的文件路径
+            @RequestParam(value = "title") String title,
+            @RequestParam(value = "content") String content,
+            @RequestParam(value = "date") String date,
+            @RequestParam(value = "imgUrl") MultipartFile imgUrl) throws IOException, ParseException {
+        //上传文件
+        String destFileLocation = "E:\\\\tmp\\" + "news_" + System.currentTimeMillis();//上传的文件路径
         File destFile = new File(destFileLocation);
-        file.transferTo(destFile);
-//        News news = new News(title, content, date, "news_" + System.currentTimeMillis());
-//        newsService.addOneNews(news);
-//        RestMessage<News> restMessage = new RestMessage();
-//        restMessage.setCode(200);
-//        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
-//        restMessage.setData(null);
-        return null;
+        imgUrl.transferTo(destFile);
+
+        //插入数据库
+        System.out.println("run post news");
+        News news = new News(title, content, sdf.parse(date), destFileLocation);
+        System.out.println(news.toString());
+        newsService.addOneNews(news);
+        RestMessage<News> restMessage = new RestMessage();
+        restMessage.setCode(200);
+        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
+        restMessage.setData(null);
+        return restMessage;
     }
 
     //delete all news
     @RequestMapping(value = "", method = DELETE, produces = "application/json")
     @ResponseBody
-    public RestMessage<String> deleteOneNews(@RequestParam(value = "id") String id) {
-        newsService.deleteOneNews(Integer.valueOf(id));
+    public RestMessage<String> deleteOneNews(@RequestParam(value = "id") int id) {
+        newsService.deleteOneNews(id);
         RestMessage<String> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
@@ -83,22 +89,33 @@ public class NewsAPI {
         return restMessage;
     }
 
-    //update all news
-    @RequestMapping(value = "", method = PUT, produces = "application/json")
+    //update one news
+    @RequestMapping(value = "/change", method = POST, produces = "application/json")
     @ResponseBody
-    public RestMessage<String> updateOneNews(
-        @RequestParam(value = "id") int id,
-        @RequestParam(value = "title") String title,
-        @RequestParam(value = "content") String content,
-        @RequestParam(value = "date") Date date,
-        @RequestParam(value = "imgUrl") MultipartFile imgUrl) {
-            News news = new News(id, title, content, date, "news_" + System.currentTimeMillis());
+    public RestMessage<News> updateOneNews(
+            @RequestParam(value = "id") String id,
+            @RequestParam(value = "title") String title,
+            @RequestParam(value = "content") String content,
+            @RequestParam(value = "date") String date,
+            @RequestParam(value = "imgUrl", required = false) MultipartFile imgUrl) throws IOException, ParseException {
+        if(imgUrl != null) {
+            //上传文件
+            String destFileLocation = "E:\\\\tmp\\" + "news_" + System.currentTimeMillis();//上传的文件路径
+            File destFile = new File(destFileLocation);
+            imgUrl.transferTo(destFile);
+            //更新数据库
+            System.out.println("run post news");
+            News news = new News(Integer.valueOf(id), title, content, sdf.parse(date), destFileLocation);//如果用户没有更新图片，执行带imgUrl的SQL
             newsService.updateOneNews(news);
-            RestMessage<String> restMessage = new RestMessage();
-            restMessage.setCode(200);
-            restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
-            restMessage.setData(null);
-            return restMessage;
+        } else {
+            News news = new News(Integer.valueOf(id), title, content, sdf.parse(date), null);//如果用户没有更新图片，执行不带imgUrl的SQL
+            newsService.updateOneNews(news);
+        }
+        RestMessage<News> restMessage = new RestMessage();
+        restMessage.setCode(200);
+        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
+        restMessage.setData(null);
+        return restMessage;
     }
 
 }
