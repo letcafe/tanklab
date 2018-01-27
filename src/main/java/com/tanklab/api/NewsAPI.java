@@ -4,6 +4,7 @@ import com.tanklab.bean.JDBC_STATUS;
 import com.tanklab.bean.News;
 import com.tanklab.bean.RestMessage;
 import com.tanklab.service.NewsService;
+import com.tanklab.util.FileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -60,17 +61,21 @@ public class NewsAPI {
             @RequestParam(value = "content") String content,
             @RequestParam(value = "date") String date,
             @RequestParam(value = "imgUrl") MultipartFile imgUrl) throws IOException, ParseException {
+        RestMessage<News> restMessage = new RestMessage();
         //上传文件
-        String destFileLocation = "E:\\\\tmp\\" + "news_" + System.currentTimeMillis();//上传的文件路径
-        File destFile = new File(destFileLocation);
-        imgUrl.transferTo(destFile);
+        if(imgUrl.getSize() > 5 * 1024 *1024) {//如果文件大于5M，返回失败提示
+            restMessage.setCode(213);
+            restMessage.setMsg("error:add pic out of 5MB");
+            restMessage.setData(null);
+            return  restMessage;
+        }
+        String destWebUrl = FileUpload.returnWebUrl(imgUrl, "news");
 
         //插入数据库
-        System.out.println("run post news");
-        News news = new News(title, content, sdf.parse(date), destFileLocation);
+        News news = new News(title, content, sdf.parse(date), destWebUrl);
         System.out.println(news.toString());
         newsService.addOneNews(news);
-        RestMessage<News> restMessage = new RestMessage();
+
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
         restMessage.setData(null);
@@ -93,25 +98,30 @@ public class NewsAPI {
     @RequestMapping(value = "/change", method = POST, produces = "application/json")
     @ResponseBody
     public RestMessage<News> updateOneNews(
-            @RequestParam(value = "id") String id,
+            @RequestParam(value = "id") Integer id,
             @RequestParam(value = "title") String title,
             @RequestParam(value = "content") String content,
             @RequestParam(value = "date") String date,
             @RequestParam(value = "imgUrl", required = false) MultipartFile imgUrl) throws IOException, ParseException {
+        System.out.println("imgUrl:" + imgUrl);
+        RestMessage<News> restMessage = new RestMessage();
         if(imgUrl != null) {
             //上传文件
-            String destFileLocation = "E:\\\\tmp\\" + "news_" + System.currentTimeMillis();//上传的文件路径
-            File destFile = new File(destFileLocation);
-            imgUrl.transferTo(destFile);
+            if(imgUrl.getSize() > 5 * 1024 *1024) {//如果文件大于5M，返回失败提示
+                restMessage.setCode(213);
+                restMessage.setMsg("error:change pic out of 5MB");
+                restMessage.setData(null);
+                return  restMessage;
+            }
+            String destWebUrl = FileUpload.returnWebUrl(imgUrl, "news");
             //更新数据库
-            System.out.println("run post news");
-            News news = new News(Integer.valueOf(id), title, content, sdf.parse(date), destFileLocation);//如果用户没有更新图片，执行带imgUrl的SQL
+            System.out.println("run post news:" + destWebUrl);
+            News news = new News(id, title, content, sdf.parse(date), destWebUrl);//如果用户没有更新图片，执行带imgUrl的SQL
             newsService.updateOneNews(news);
         } else {
             News news = new News(Integer.valueOf(id), title, content, sdf.parse(date), null);//如果用户没有更新图片，执行不带imgUrl的SQL
             newsService.updateOneNews(news);
         }
-        RestMessage<News> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
         restMessage.setData(null);

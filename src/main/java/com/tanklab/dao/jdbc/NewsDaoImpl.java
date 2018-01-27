@@ -71,13 +71,15 @@ public class NewsDaoImpl implements NewsDao {
                         news.getTitle(),
                         news.getContent(),
                         news.getDate(),
-                        news.getImgUrl());
+                        news.getImgUrl(),
+                        news.getId());
             } else {
                 jdbcTemplate.update(updateOneNewsWithoutImg,
                         news.getId(),
                         news.getTitle(),
                         news.getContent(),
-                        news.getDate());
+                        news.getDate(),
+                        news.getId());
             }
             status = JDBC_STATUS.SUCCESS;
         } catch (Exception ex) {
