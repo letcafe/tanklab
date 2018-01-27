@@ -26,6 +26,12 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="./dist/css/skins/_all-skins.min.css">
 
+  <style>
+    tbody tr td img {
+      width: 180px;
+    }
+  </style>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -125,7 +131,7 @@
         <li class="active menu-open"><a href="./news.jsp"><i class="fa fa-circle-o text-red"></i> <span>近期新闻管理</span></a></li>
         <li><a href="./notices"><i class="fa fa-circle-o text-yellow"></i> <span>近期提醒管理</span></a></li>
         <li><a href="./announcement"><i class="fa fa-circle-o text-aqua"></i> <span>长期公告管理</span></a></li>
-        <li><a href="./files"><i class="fa fa-circle-o text-aqua"></i> <span>文件下载上传管理</span></a></li>
+        <li><a href="./file"><i class="fa fa-circle-o text-aqua"></i> <span>文件下载上传管理</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -219,18 +225,18 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form id="add_news_form" role="form" enctype="multipart/form-data">
+            <form id="add_news_form" role="form" action="/tanklab/api/v1/news/" method="post" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">新闻标题</label>
+                  <label for="add_title">新闻标题</label>
                   <input name="title" type="text" class="form-control" id="add_title" placeholder="请输入新闻标题">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">正文内容</label>
+                  <label for="add_content">正文内容</label>
                   <textarea name="content" class="form-control" rows="10" id="add_content" placeholder="请输入新闻主要内容"></textarea>
                 </div>
                 <div class="form-group" style="padding:0px;">
-                  <label for="exampleInputPassword1">日期</label>
+                  <label for="add_date">日期</label>
                   <div class="form-group">
 	                <div class="input-group date">
 	                  <div class="input-group-addon">
@@ -242,7 +248,7 @@
               </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">上传图片</label>
+                  <label for="add_images">上传图片</label>
                   <input name="imgUrl" type="file" id="add_images"/><br>
                   <p class="help-block">图片格式不限，请上传5M以下的图片</p>
                 </div>
@@ -263,7 +269,7 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form id="change_news_form" role="form" enctype="multipart/form-data">
+            <form id="change_news_form" role="form" action="/tanklab/api/v1/news/change" method="post" enctype="multipart/form-data">
               <input name="id" type="hidden" id="change_id">
               <div class="box-body">
                 <div class="form-group">
@@ -287,8 +293,8 @@
               </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">初始图片</label>
-                  <img id="img_change_source" style="width:200px;height:150px;"/>
+                  <label for="change_images">初始图片</label>
+                  <img id="img_change_source" style="width:200px;height:150px;" src=""/>
                   <input name="imgUrl" type="file" id="change_images"/><br>
                   <p class="help-block">图片格式不限，请上传5M以下的图片（修改后的图片将不会直接显示在修改页面，请在控制台上直接查看）</p>
                 </div>

@@ -26,6 +26,12 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="./dist/css/skins/_all-skins.min.css">
 
+  <style>
+    tbody tr td img {
+      width: 180px;
+    }
+  </style>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -71,10 +77,7 @@
                 <img src="./dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Dongyu Guo<br/>
-                  Yanan Yang<br/>
-                  Jiuwu Zhang<br/>
-                  JiayiSun<br/> - Web Developers
+                  DongyuGuo
                   <small>Member since Jan. 2018</small>
                 </p>
               </li>
@@ -125,10 +128,10 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">管理</li>
-        <li><a href="./news"><i class="fa fa-circle-o text-red"></i> <span>近期新闻管理</span></a></li>
-        <li class="active menu-open"><a href="./notices.jsp"><i class="fa fa-circle-o text-yellow"></i> <span>近期提醒管理</span></a></li>
+        <li><a href="./news.jsp"><i class="fa fa-circle-o text-red"></i> <span>近期新闻管理</span></a></li>
+        <li class="active menu-open"><a href="./notices"><i class="fa fa-circle-o text-yellow"></i> <span>近期提醒管理</span></a></li>
         <li><a href="./announcement"><i class="fa fa-circle-o text-aqua"></i> <span>长期公告管理</span></a></li>
-        <li><a href="./files"><i class="fa fa-circle-o text-aqua"></i> <span>文件下载上传管理</span></a></li>
+        <li><a href="./file"><i class="fa fa-circle-o text-aqua"></i> <span>文件下载上传管理</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
@@ -139,7 +142,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        近期通知管理控制台
+                  近期新闻管理控制台
         <small>Admin Console</small>
       </h1>
       <ol class="breadcrumb">
@@ -155,7 +158,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">近期通知列表</h3>
+              <h3 class="box-title">近期新闻</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -174,7 +177,21 @@
                   <th>操作</th>
                 </tr>
                 </thead>
-                <tbody id="tableNews">
+                <tbody id="news_form_body">
+                <c:forEach items="${newsList}" var="list" varStatus="idx">
+                  <tr>
+                  <td class="col-xs-1" id="index_${idx.index+1}"><c:out value="${idx.index+1}"></c:out></td>
+                  <td class="col-xs-1" id="news_id_${list.id}"><c:out value="${list.id}"></c:out></td>
+                  <td class="col-xs-2" id="news_date_${list.id}"><c:out value="${list.date}"></c:out></td>
+                  <td class="col-xs-2" id="news_title_${list.id}"><c:out value="${list.title}"></c:out></td>
+                  <td class="col-xs-3" id="news_content_${list.id}">${list.content}</td>
+                  <td class="col-xs-2" id="news_imgUrl_${list.id}"><img src="${list.imgUrl}"/></td>
+                  <td class="col-xs-1">
+                    <button class="btn btn-info" id="chg_news_${list.id}" data-id="${list.id}" btnType="chgButton">修改</button>
+                    <button class="btn btn-danger" id="del_news_${list.id}" data-id="${list.id}" btnType="delButton">删除</button>
+                  </td>
+                  </tr>
+                </c:forEach>
                 </tbody>            
                 </tfoot>
               </table>
@@ -183,7 +200,6 @@
           </div>
           <!-- /.box -->
 
-          
       <!-- /.row -->
     </section>
     <!-- /.content -->
@@ -209,31 +225,31 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form id="add_news_form" role="form" action="/tanktju/News" enctype="multipart/form-data" method="post">
+            <form id="add_news_form" role="form" action="/tanklab/api/v1/news/" method="post" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">新闻标题</label>
-                  <input name="add_title" type="text" class="form-control" id="add_title" placeholder="请输入新闻标题">
+                  <label for="add_title">新闻标题</label>
+                  <input name="title" type="text" class="form-control" id="add_title" placeholder="请输入新闻标题">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">正文内容</label>
-                  <textarea name="add_content" class="form-control" rows="10" id="add_content" placeholder="请输入新闻主要内容"></textarea>
+                  <label for="add_content">正文内容</label>
+                  <textarea name="content" class="form-control" rows="10" id="add_content" placeholder="请输入新闻主要内容"></textarea>
                 </div>
                 <div class="form-group" style="padding:0px;">
-                  <label for="exampleInputPassword1">日期</label>
+                  <label for="add_date">日期</label>
                   <div class="form-group">
 	                <div class="input-group date">
 	                  <div class="input-group-addon">
 	                    <i class="fa fa-calendar"></i>
 	                  </div>
-	                  <input type="text" name="add_date" class="form-control pull-right" id="add_date" data-date-format="yyyy-mm-dd">
+	                  <input type="text" name="date" class="form-control pull-right" id="add_date" data-date-format="yyyy-mm-dd">
 	                </div>
                 <!-- /.input group -->
               </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">上传图片</label>
-                  <input name="add_images" type="file" id="add_images"/><br>
+                  <label for="add_images">上传图片</label>
+                  <input name="imgUrl" type="file" id="add_images"/><br>
                   <p class="help-block">图片格式不限，请上传5M以下的图片</p>
                 </div>
               </div>
@@ -253,33 +269,33 @@
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form id="change_news_form" role="form" action="/tanktju/News" enctype="multipart/form-data">
-              <input name="change_id" type="hidden" id="change_id">
+            <form id="change_news_form" role="form" action="/tanklab/api/v1/news/change" method="post" enctype="multipart/form-data">
+              <input name="id" type="hidden" id="change_id">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">新闻标题</label>
-                  <input name="change_title" type="text" class="form-control" id="change_title" placeholder="请输入新闻标题">
+                  <label for="change_title">新闻标题</label>
+                  <input name="title" type="text" class="form-control" id="change_title" placeholder="请输入新闻标题">
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">正文内容</label>
-                  <textarea name="change_content" class="form-control" rows="10" id="change_content" placeholder="请输入新闻主要内容"></textarea>
+                  <label for="change_content">正文内容</label>
+                  <textarea name="content" class="form-control" rows="10" id="change_content" placeholder="请输入新闻主要内容"></textarea>
                 </div>
                 <div class="form-group" style="padding:0px;">
-                  <label for="exampleInputPassword1">日期</label>
+                  <label for="change_date">日期</label>
                   <div class="form-group">
 	                <div class="input-group date">
 	                  <div class="input-group-addon">
 	                    <i class="fa fa-calendar"></i>
 	                  </div>
-	                  <input type="text" name="change_date" class="form-control pull-right" id="change_date" data-date-format="yyyy-mm-dd">
+	                  <input type="text" name="date" class="form-control pull-right" id="change_date" data-date-format="yyyy-mm-dd">
 	                </div>
                 <!-- /.input group -->
               </div>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputFile">初始图片</label>
-                  <img id="img_change_source" style="width:200px;height:150px;"/>
-                  <input name="change_images" type="file" id="change_images"/><br>
+                  <label for="change_images">初始图片</label>
+                  <img id="img_change_source" style="width:200px;height:150px;" src=""/>
+                  <input name="imgUrl" type="file" id="change_images"/><br>
                   <p class="help-block">图片格式不限，请上传5M以下的图片（修改后的图片将不会直接显示在修改页面，请在控制台上直接查看）</p>
                 </div>
               </div>
@@ -312,26 +328,12 @@
 <script src="./dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="./dist/js/demo.js"></script>
-<!-- page script -->
-<script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
-</script>
 <!-- CK Editor -->
 <script src="./bower_components/ckeditor/ckeditor.js"></script>
 <!-- Bootstrap WYSIHTML5 -->
 <script src="./plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
-<script src="./js_control/news.js"></script>
+<script src="./js_control/notices.js"></script>
 <script>
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
