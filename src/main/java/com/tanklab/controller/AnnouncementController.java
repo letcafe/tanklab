@@ -34,7 +34,7 @@ public class AnnouncementController {
      */
     @RequestMapping(value = "/getAnnouncement", method = GET)
     public String getAnnouncement(Model model,
-            @RequestParam(value="id",required=true) Integer id) {
+            @RequestParam(value="id",required=true) int id) {
         Announcement announceBean= announcementService.getAnnouncement(id);
         model.addAttribute("announceBean",announceBean);
 
@@ -49,7 +49,7 @@ public class AnnouncementController {
      */
     @RequestMapping(value = "/getAnnounceTopList", method = GET)
     public String getAnnounceTopList(Model model,
-            @RequestParam(value="size",required=true) Integer size) {
+            @RequestParam(value="size",required=true) int size) {
         List<Announcement> announceTopList= announcementService.getAnnounceTopList(size);
         model.addAttribute("announceTopList",announceTopList);
 
@@ -62,9 +62,9 @@ public class AnnouncementController {
      * @param page 当前页码
      * @return 操作状态
      */
-    @RequestMapping(value = "/getAnnounceList", method = GET)
+    @RequestMapping(value = "admin/announcement", method = GET)
     public String getAnnounceList(Model model,
-            @RequestParam(value="page",required=true) Integer page) {
+            @RequestParam(value="page",required=true) int page) {
         int totalCount= announcementService.getAnnounceCount();  //查询总条数
         int size=10; //每页显示大小
         int maxPage=(totalCount%size==0)?totalCount/size:totalCount/size+1;//最大页数
@@ -81,11 +81,11 @@ public class AnnouncementController {
         model.addAttribute("page",page);
         model.addAttribute("totalCount",totalCount);
         if(page>1)//生成并封装上一页的链接
-            model.addAttribute("prePageHref","getAnnounceList.do?&page="+(page-1));
+            model.addAttribute("prePageHref","page="+(page-1));
         if(page<maxPage)//生成并封装下一页的链接
-            model.addAttribute("nextPageHref","getAnnounceList.do?&page="+(page+1));
+            model.addAttribute("nextPageHref","page="+(page+1));
 
-        return "announceList";
+        return "admin/announcement";
     }
 
 
