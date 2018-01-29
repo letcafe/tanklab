@@ -80,13 +80,6 @@
 	.tg-themepostcontent {
 		padding:0px 0px 0px 15px !important;
 	}
-	#tg-content div figure {
-		text-align:center;
-	}
-	#tg-content div figure img {
-		display:inline-block;
-		height:370px;
-	}
 	</style>
 </head>
 <body class="tg-home tg-homeone">
@@ -153,81 +146,82 @@
 								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
 									<ul>
 										<li>
-											<a href="index.html">首页</a>
+											<a href="javascript:void(0);">首页</a>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="tanklab.html">实验室</a>
+											<a href="javascript:void(0);">实验室</a>
 											<ul class="sub-menu">
-												<li><a href="tanklab.html">实验室简介</a></li>
-												<li><a href="tanklab.html">主任祝语</a></li>
-												<li><a href="tanklab.html">学术委员会</a></li>
-												<li><a href="tanklab.html">仪器设备</a></li>
-												<li><a href="tanklab.html">科研环境</a></li>
+												<li><a href="departments.html">实验室简介</a></li>
+												<li><a href="departmentdetail.html">主任祝语</a></li>
+												<li><a href="departments.html">学术委员会</a></li>
+												<li><a href="departmentdetail.html">仪器设备</a></li>
+												<li><a href="departmentdetail.html">科研环境</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
 											<a href="javascript:void(0);">资讯速递</a>
 											<ul class="sub-menu">
-												<li><a href="404error.html">通知公告</a></li>
-												<li><a href="newsList.html">新闻动态</a></li>
+												<li><a href="admissions.html">通知公告</a></li>
+												<li><a href="newsList.jsp">新闻动态</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
 											<a href="javascript:void(0);">科研方向</a>
 											<ul class="sub-menu">
-												<li><a href="tanklab.html">未来网络体系结构</a></li>
-												<li><a href="tanklab.html">智能网络技术与应用</a></li>
-												<li><a href="tanklab.html">智慧城市与大数据</a></li>
-												<li><a href="tanklab.html">网络信息安全</a></li>
+												<li><a href="departments.html">未来网络体系结构</a></li>
+												<li><a href="departmentdetail.html">智能网络技术与应用</a></li>
+												<li><a href="departments.html">智慧城市与大数据</a></li>
+												<li><a href="departmentdetail.html">网络信息安全</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="researchs.html">研究项目</a>
+											<a href="javascript:void(0);">研究项目</a>
 											<ul class="sub-menu">
-												<li><a href="researchs.html">进行项目</a></li>
-												<li><a href="researchs.html">合作项目</a></li>
-												<li><a href="researchs.html">结题项目</a></li>
+												<li><a href="departments.html">进行项目</a></li>
+												<li><a href="departmentdetail.html">合作项目</a></li>
+												<li><a href="departments.html">结题项目</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="teacherGridView.html">科研团队</a>
+											<a href="javascript:void(0);">科研团队</a>
 											<ul class="sub-menu">
-												<li><a href="teacherGridView.html">固定科研人员</a></li>
-												<li><a href="teacherGridView.html">客座科研人员</a></li>
-												<li><a href="teacherGridView.html">流动科研人员</a></li>
-												<li><a href="teacherGridView.html">研究生阵容</a></li>
-												<li><a href="teacherGridView.html">人才招聘</a></li>
+												<li><a href="departments.html">固定科研人员</a></li>
+												<li><a href="departmentdetail.html">客座科研人员</a></li>
+												<li><a href="departments.html">流动科研人员</a></li>
+												<li><a href="departmentdetail.html">研究生阵容</a></li>
+												<li><a href="departmentdetail.html">人才招聘</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="researchs.html">科研成果</a>
+											<a href="javascript:void(0);">科研成果</a>
 											<ul class="sub-menu">
-												<li><a href="researchs.html">论文及专著</a></li>
-												<li><a href="researchs.html">获奖情况</a></li>
-												<li><a href="researchs.html">专利、软件著作权</a></li>
-												<li><a href="researchs.html">成果展示</a></li>
+												<li><a href="departments.html">论文及专著</a></li>
+												<li><a href="departmentdetail.html">获奖情况</a></li>
+												<li><a href="departments.html">专利、软件著作权</a></li>
+												<li><a href="departmentdetail.html">成果展示</a></li>
+												<li><a href="departments.html">开源下载</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="404error.html">开放交流</a>
+											<a href="javascript:void(0);">开放交流</a>
 											<ul class="sub-menu">
-												<li><a href="404error.html">学术交流</a></li>
-												<li><a href="404error.html">开放课题</a></li>
+												<li><a href="departmentdetail.html">学术交流</a></li>
+												<li><a href="departmentdetail.html">开放课题</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="tanklab.html">人才培养</a>
+											<a href="javascript:void(0);">人才培养</a>
 											<ul class="sub-menu">
-												<li><a href="tanklab.html">招生计划</a></li>
-												<li><a href="tanklab.html">培养计划</a></li>
-												<li><a href="tanklab.html">课程资源</a></li>
+												<li><a href="departments.html">招生计划</a></li>
+												<li><a href="departmentdetail.html">培养计划</a></li>
+												<li><a href="departments.html">课程资源</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="index.html">联系我们</a>
+											<a href="javascript:void(0);">联系我们</a>
 											<ul class="sub-menu">
-												<li><a href="index.html">联系方式</a></li>
-												<li><a href="index.html">交通指南</a></li>
+												<li><a href="departmentdetail.html">联系方式</a></li>
+												<li><a href="departmentdetail.html">交通指南</a></li>
 											</ul>
 										</li>
 										<li>
@@ -257,47 +251,12 @@
 			<div class="container">
 				<div class="row">
 					<div id="tg-twocolumns" class="tg-twocolumns">
-						<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-							<aside id="tg-sidebar" class="tg-sidebar">
-								<div class="tg-widget tg-widgetaboutusnav">
-									<div class="tg-widgettitle">
-										<h3>导师介绍</h3>
-									</div>
-									<div class="tg-widgetcontent">
-										<ul>
-											<!--<li><a href="javascript:void(0);">Rector's Message</a></li>-->
-											<!--<li class="tg-active"><a href="javascript:void(0);">Vision &amp; Mission</a></li>-->
-											<!--<li><a href="javascript:void(0);">Leadership</a></li>-->
-											<!--<li><a href="javascript:void(0);">Objectives</a></li>-->
-											<!--<li><a href="javascript:void(0);">Our Identity</a></li>-->
-											<!--<li><a href="javascript:void(0);">Honors &amp; Awards</a></li>-->
-											<!--<li><a href="javascript:void(0);">Campus Life</a></li>-->
-										</ul>
-									</div>
-								</div>
-							</aside>
-						</div>
-						<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+						<div class="col-sm-12">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure><img src="images/courses/geweimin.jpg" alt="image description"></figure>
-									<h3>个人简介</h3>
-									<p>最高学位：博士<br>
-                                       邮箱：gewm@tju.edu.cn<br>
-                                       通讯地址：北洋园校区55楼B532<br>
-                                      
-                                       个人主页：http://cs.tju.edu.cn/faculty/gewm/<br></p>
-									<h3>研究方向</h3>
-									<p>计算机网络、移动计算、信息系统开发及应用<br></p>
-									<h3>科研项目</h3>
-									<p>1.横向合作项目，公交车辆视频监控系统研究，2010.6—2011.6<br>
-									   2.天津市软件产业发展基金项目，公交车辆嵌入式3G视频监控系统，2011-2012
-									   3.国家工信部物联网发展专项资金项目，基于物联网技术的智能化公交运营管理系统，2011-2013<br></p>
-									 <h3>代表论文</h3> 
-									 <p>1.Ge Weimin, Li Juan, Wang Junke, Ran Fang, Meng Zhaopeng ，Enhanced Network Coding for TCP in Wireless Networks， Proceedings of the International Conference on Wireless Communications, Networking and Mobile Computing，2011<br>
-									    2.GUO Xiao-feil,GE Wei-min*,JinZhi-gang,KANG yang， Priority scheduling algorithm to improve short-term fairness, Proceedings of the 2011 International Conference on Consumer Electronics,Communication， (EI:20112414060268)<br>
-										3.葛卫民，赵冬雪，邱胜男，罗咏梅，Ad hoc 网络中基于带宽延迟估计的TCP 拥塞控制，天津大学学报，43（10）:866-872，2010年10月<br>
-										4. Lv Heng, Ge Weimin, Luo Yongmei, Zhao Dongxu，A New Method for TCP Congestion Control Based on AODV Congestion Indication，Proceedings of the 2009 International Conference on Wireless Communications and Signal Processing， Nanjing, China, November 13 - 15, 2009.（ EI： 20101012760534）<br></p>
+									<figure style="text-align:center"><img style="height:200px;display:inline-block;" id="news_detail_img" src="" alt="image description"></figure>
+									<h3 id="news_detail_title"></h1>
+									<div id="news_detail_content"></div>
 								</div>
 							</div>
 						</div>

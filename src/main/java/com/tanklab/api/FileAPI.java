@@ -3,9 +3,8 @@ package com.tanklab.api;
 import com.tanklab.bean.File;
 import com.tanklab.bean.JDBC_STATUS;
 import com.tanklab.bean.RestMessage;
-import com.tanklab.dao.FileDao;
 import com.tanklab.service.FileService;
-import com.tanklab.util.CommonFileUpload;
+import com.tanklab.util.FileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,7 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
@@ -73,7 +71,7 @@ public class FileAPI {
         }
 
 
-        String destWebUrl = CommonFileUpload.returnWebUrl(path, "file");
+        String destWebUrl = FileUpload.returnWebUrl(path, "file");
 
         //插入数据库
         File file = new File(fileName, destWebUrl, sdf.parse(uploadTime));
@@ -116,7 +114,7 @@ public class FileAPI {
                 restMessage.setData(null);
                 return  restMessage;
             }
-            String destWebUrl = CommonFileUpload.returnWebUrl(path, "file");
+            String destWebUrl = FileUpload.returnWebUrl(path, "file");
             //更新数据库
             System.out.println("run post file:" + destWebUrl);
             File file = new File(id,fileName,destWebUrl,sdf.parse(uploadTime));//如果用户没有更新图片，执行带imgUrl的SQL
