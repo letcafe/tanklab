@@ -8,18 +8,18 @@ import java.io.IOException;
 
 public class FileUpload {
 
-    public static String fileUploadPath = "\\tanklab\"uploadFile\\\\news\\\\images\"";
+    public static String fileUploadPath;
 
     static {
-        fileUploadPath = System.getProperty("webDeployPath") + "uploadFile\\news\\images\\";
+        fileUploadPath = System.getProperty("webDeployPath") + "..\\TankUploadFile\\";
         System.out.println("fileUploadPath:" + fileUploadPath);
     }
 
     public static String returnWebUrl(MultipartFile multipartFile, String typeName) throws IOException {
         String fileSuffix = multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf("."));
         String fileName = typeName + "_" + System.currentTimeMillis() + fileSuffix;
-        String returnWebUrl = "/tanklab/uploadFile/" + typeName + "/images/" + fileName;
-        String fileStorePath = fileUploadPath + fileName;
+        String returnWebUrl = "/TankUploadFile/" + typeName + "/images/" + fileName;
+        String fileStorePath = fileUploadPath + "\\"+ typeName + "\\" + fileName;
 
         File file = new File(fileStorePath);
         if(!file.getParentFile().exists()) {//如果该文件的上级所有目录未创建，一次创建所有目录

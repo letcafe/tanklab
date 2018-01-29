@@ -10,12 +10,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.sql.Date;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
 @Controller
-@RequestMapping("/api/v1/announce")
+@RequestMapping("/api/v1/announcement")
 public class AnnouncementAPI {
 
     private AnnouncementService announcementService;
@@ -23,7 +26,7 @@ public class AnnouncementAPI {
     public AnnouncementAPI(AnnouncementService announcementService) {
         this.announcementService = announcementService;
     }
-
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     /**
      * 根据id查询单条公告信息
      * @param model
@@ -68,7 +71,7 @@ public class AnnouncementAPI {
      * @param page 当前页码
      * @return 操作状态
      */
-    @RequestMapping(value = "/List", method = GET, produces = "application/json")
+    @RequestMapping(value = "", method = GET, produces = "application/json")
     @ResponseBody
     public RestMessage<List<Announcement>> getAnnounceList(Model model,
             @RequestParam(value="page",required=true) int page) {
@@ -98,8 +101,8 @@ public class AnnouncementAPI {
     public RestMessage addAnnouncement(
             @RequestParam(value = "title") String title,
             @RequestParam(value = "content") String content,
-            @RequestParam(value = "date") Date date) {
-        Announcement announceBean=new Announcement(title,content,date);
+            @RequestParam(value = "date") String date) throws ParseException {
+        Announcement announceBean=new Announcement(title,content,sdf.parse(date));
         JDBC_STATUS status= announcementService.addAnnouncement(announceBean);
         RestMessage restMessage = new RestMessage();
         restMessage.setCode(200);
@@ -117,14 +120,14 @@ public class AnnouncementAPI {
      * @param date
      * @return 操作状态
      */
-    @RequestMapping(value = "", method = PUT, produces = "application/json")
+    @RequestMapping(value = "/change", method = POST, produces = "application/json")
     @ResponseBody
     public RestMessage<Announcement> modifyAnnouncement(
             @RequestParam(value = "id") int id,
             @RequestParam(value = "title") String title,
             @RequestParam(value = "content") String content,
-            @RequestParam(value = "date") Date date) {
-        Announcement announceBean=new Announcement(id,title,content,date);
+            @RequestParam(value = "date") String date) throws ParseException {
+        Announcement announceBean=new Announcement(id,title,content,sdf.parse(date));
         JDBC_STATUS status= announcementService.modifyAnnouncement(announceBean);
         RestMessage restMessage = new RestMessage();
         restMessage.setCode(200);
