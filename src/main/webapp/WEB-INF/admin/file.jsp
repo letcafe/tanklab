@@ -128,7 +128,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">管理</li>
-        <li><a href="./news.jsp"><i class="fa fa-circle-o text-red"></i> <span>近期新闻管理</span></a></li>
+        <li><a href="./news"><i class="fa fa-circle-o text-red"></i> <span>近期新闻管理</span></a></li>
         <li><a href="./notices"><i class="fa fa-circle-o text-yellow"></i> <span>近期提醒管理</span></a></li>
         <li><a href="./announcement"><i class="fa fa-circle-o text-aqua"></i> <span>长期公告管理</span></a></li>
         <li class="active menu-open"><a href="./file"><i class="fa fa-circle-o text-aqua"></i> <span>文件下载上传管理</span></a></li>
@@ -158,37 +158,35 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">近期新闻</h3>
+              <h3 class="box-title">近期文件</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <div>
-              	<button id="add_news" class="btn btn-sm btn-success" data-toggle="modal" data-target="#add_news_modal">添加新闻</button>
+              	<button id="add_file" class="btn btn-sm btn-success" data-toggle="modal" data-target="#add_file_modal">添加文件</button>
               </div>
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>No</th>
-                  <th>新闻ID</th>
-                  <th>日期</th>
-                  <th>标题</th>
-                  <th>内容</th>
-                  <th>图片</th>
+                  <th>文件ID</th>
+                  <th>文件名</th>
+                  <th>上传日期</th>
+                  <th>链接</th>
                   <th>操作</th>
                 </tr>
                 </thead>
-                <tbody id="news_form_body">
-                <c:forEach items="${newsList}" var="list" varStatus="idx">
+                <tbody id="file_form_body">
+                <c:forEach items="${fileList}" var="list" varStatus="idx">
                   <tr>
                   <td class="col-xs-1" id="index_${idx.index+1}"><c:out value="${idx.index+1}"></c:out></td>
-                  <td class="col-xs-1" id="news_id_${list.id}"><c:out value="${list.id}"></c:out></td>
-                  <td class="col-xs-2" id="news_date_${list.id}"><c:out value="${list.date}"></c:out></td>
-                  <td class="col-xs-2" id="news_title_${list.id}"><c:out value="${list.title}"></c:out></td>
-                  <td class="col-xs-3" id="news_content_${list.id}">${list.content}</td>
-                  <td class="col-xs-2" id="news_imgUrl_${list.id}"><img src="${list.imgUrl}"/></td>
+                  <td class="col-xs-1" id="file_id_${list.id}"><c:out value="${list.id}"></c:out></td>
+                  <td class="col-xs-2" id="file_fileName_${list.id}"><c:out value="${list.fileName}"></c:out></td>
+                  <td class="col-xs-2" id="file_uploadTime_${list.id}"><c:out value="${list.uploadTime}"></c:out></td>
+                    <td class="col-xs-2" id="file_path_${list.id}"><a href="${list.path}">${list.path}</a></td>
                   <td class="col-xs-1">
-                    <button class="btn btn-info" id="chg_news_${list.id}" data-id="${list.id}" btnType="chgButton">修改</button>
-                    <button class="btn btn-danger" id="del_news_${list.id}" data-id="${list.id}" btnType="delButton">删除</button>
+                    <button class="btn btn-info" id="chg_file_${list.id}" data-id="${list.id}" btnType="chgButton">修改</button>
+                    <button class="btn btn-danger" id="del_file_${list.id}" data-id="${list.id}" btnType="delButton">删除</button>
                   </td>
                   </tr>
                 </c:forEach>
@@ -218,41 +216,41 @@
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
-  <div id="add_news_modal" class="row modal fade" role="dialog" aria-labelledby="add_news_modal" aria_hidden="true">
+  <div id="add_file_modal" class="row modal fade" role="dialog" aria-labelledby="add_file_modal" aria_hidden="true">
   	<div class="box box-primary col-lg-6 col-xs-offset-3" style="width:50%;margin-top:5%;">
             <div class="box-header with-border">
-              <h3 class="box-title">添加新闻</h3>
+              <h3 class="box-title">添加文件</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form id="add_news_form" role="form" action="/tanklab/api/v1/news/" method="post" enctype="multipart/form-data">
+            <form id="add_file_form" role="form" action="/tanklab/api/v1/file/" method="post" enctype="multipart/form-data">
               <div class="box-body">
                 <div class="form-group">
-                  <label for="add_title">新闻标题</label>
-                  <input name="title" type="text" class="form-control" id="add_title" placeholder="请输入新闻标题">
+                  <label for="add_fileName">文件名</label>
+                  <input name="fileName" type="text" class="form-control" id="add_fileName" placeholder="请输入文件名">
                 </div>
-                <div class="form-group">
-                  <label for="add_content">正文内容</label>
-                  <textarea name="content" class="form-control" rows="10" id="add_content" placeholder="请输入新闻主要内容"></textarea>
-                </div>
+
                 <div class="form-group" style="padding:0px;">
-                  <label for="add_date">日期</label>
+                  <label for="add_uploadTime">日期</label>
                   <div class="form-group">
 	                <div class="input-group date">
 	                  <div class="input-group-addon">
 	                    <i class="fa fa-calendar"></i>
 	                  </div>
-	                  <input type="text" name="date" class="form-control pull-right" id="add_date" data-date-format="yyyy-mm-dd">
+	                  <input type="text" name="uploadTime" class="form-control pull-right" id="add_uploadTime" data-date-format="yyyy-mm-dd">
 	                </div>
                 <!-- /.input group -->
               </div>
+
                 </div>
                 <div class="form-group">
-                  <label for="add_images">上传图片</label>
-                  <input name="imgUrl" type="file" id="add_images"/><br>
-                  <p class="help-block">图片格式不限，请上传5M以下的图片</p>
+                  <label for="add_file">上传图片</label>
+                  <input name="path" type="file" id="add_file"/><br>
+                  <p class="help-block">文件格式不限，请上传200M以下的图片</p>
                 </div>
+
               </div>
+
               <!-- /.box-body -->
               <div class="box-footer">
                 <button id="add_submit" type="button" class="btn btn-primary">添加</button>
@@ -262,41 +260,39 @@
   </div>
   
   <!-- 修改modal框 -->
-  <div id="change_news_modal" class="row modal fade" role="dialog" aria-labelledby="change_news_modal" aria_hidden="true">
+  <div id="change_file_modal" class="row modal fade" role="dialog" aria-labelledby="change_file_modal" aria_hidden="true">
   	<div class="box box-primary col-lg-6 col-xs-offset-3" style="width:50%;margin-top:5%;">
             <div class="box-header with-border">
-              <h3 class="box-title">修改新闻</h3>
+              <h3 class="box-title">修改文件信息</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
-            <form id="change_news_form" role="form" action="/tanklab/api/v1/news/change" method="post" enctype="multipart/form-data">
+            <form id="change_file_form" role="form" action="/tanklab/api/v1/file/change" method="post" enctype="multipart/form-data">
               <input name="id" type="hidden" id="change_id">
               <div class="box-body">
+
                 <div class="form-group">
-                  <label for="change_title">新闻标题</label>
-                  <input name="title" type="text" class="form-control" id="change_title" placeholder="请输入新闻标题">
+                  <label for="change_fileName">文件名</label>
+                  <input name="fileName" type="text" class="form-control" id="change_fileName" placeholder="请输入文件标题">
                 </div>
-                <div class="form-group">
-                  <label for="change_content">正文内容</label>
-                  <textarea name="content" class="form-control" rows="10" id="change_content" placeholder="请输入新闻主要内容"></textarea>
-                </div>
+
                 <div class="form-group" style="padding:0px;">
-                  <label for="change_date">日期</label>
+                  <label for="change_uploadTime">日期</label>
                   <div class="form-group">
 	                <div class="input-group date">
 	                  <div class="input-group-addon">
 	                    <i class="fa fa-calendar"></i>
 	                  </div>
-	                  <input type="text" name="date" class="form-control pull-right" id="change_date" data-date-format="yyyy-mm-dd">
+	                  <input type="text" name="uploadTime" class="form-control pull-right" id="change_uploadTime" data-date-format="yyyy-mm-dd">
 	                </div>
                 <!-- /.input group -->
-              </div>
+                  </div>
                 </div>
                 <div class="form-group">
-                  <label for="change_images">初始图片</label>
-                  <img id="img_change_source" style="width:200px;height:150px;" src=""/>
-                  <input name="imgUrl" type="file" id="change_images"/><br>
-                  <p class="help-block">图片格式不限，请上传5M以下的图片（修改后的图片将不会直接显示在修改页面，请在控制台上直接查看）</p>
+                  <label for="change_file">当前文件</label>
+                  <a id="file_change_source" style="width:200px;height:150px;" href="">文件下载</a>
+                  <input name="path" type="file" id="change_file"/><br>
+                  <p class="help-block">文件格式不限，请上传200M以下的文件</p>
                 </div>
               </div>
               <!-- /.box-body -->
@@ -338,8 +334,8 @@
   $(function () {
     // Replace the <textarea id="editor1"> with a CKEditor
     // instance, using default configuration.
-    CKEDITOR.replace('add_content');
-    CKEDITOR.replace('change_content');
+    //CKEDITOR.replace('add_content');
+    //CKEDITOR.replace('change_content');
   })
 </script>
 </body>

@@ -18,11 +18,6 @@ public class File {
         this.uploadTime = uploadTime;
     }
 
-
-
-
-
-
     private int id;
     private String fileName;
     private String path;

@@ -10,6 +10,10 @@ public interface FileService {
 
     List<File> selectFileList();
 
+    File selectDetailedFile(int id);
+
+    List<File> selectMany(int startIndex, int size);
+
     JDBC_STATUS updateOneFile(File file);
 
     JDBC_STATUS deleteOneFile(int fileId);

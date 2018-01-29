@@ -30,6 +30,16 @@ public class FileServiceImpl implements FileService {
     }
 
     @Override
+    public File selectDetailedFile(int id) {
+        return fileDao.selectDetailedFile(id);
+    }
+
+    @Override
+    public List<File> selectMany(int startIndex, int size) {
+        return fileDao.selectMany(startIndex, size);
+    }
+
+    @Override
     public JDBC_STATUS updateOneFile(File file) {
         return fileDao.updateOneFile(file);
     }

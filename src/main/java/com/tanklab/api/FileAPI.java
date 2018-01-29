@@ -4,6 +4,8 @@ import com.tanklab.bean.File;
 import com.tanklab.bean.JDBC_STATUS;
 import com.tanklab.bean.RestMessage;
 import com.tanklab.dao.FileDao;
+import com.tanklab.service.FileService;
+import com.tanklab.util.CommonFileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -21,11 +25,11 @@ import static org.springframework.web.bind.annotation.RequestMethod.*;
 @RequestMapping("/api/v1/file")
 public class FileAPI {
 
-    private FileDao fileDao;
-
+    private FileService fileService;
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     @Autowired
-    public FileAPI(FileDao fileDao) {
-        this.fileDao = fileDao;
+    public FileAPI(FileService fileService) {
+        this.fileService = fileService;
     }
 
     //return file count
@@ -35,7 +39,7 @@ public class FileAPI {
         RestMessage<Integer> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
-        restMessage.setData(fileDao.getTableCount());
+        restMessage.setData(fileService.getTableCount());
         return restMessage;
     }
 
@@ -46,7 +50,7 @@ public class FileAPI {
         RestMessage<List<File>> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
-        restMessage.setData(fileDao.selectFileList());
+        restMessage.setData(fileService.selectFileList());
         return restMessage;
     }
 
@@ -55,24 +59,38 @@ public class FileAPI {
     @ResponseBody
     public RestMessage<File> addOneFile(
             @RequestParam(value = "fileName") String fileName,
-            @RequestParam(value = "path") MultipartFile path) throws IOException {
-        String destFileLocation = "E:\\\\tmp\\" + path.getOriginalFilename();//上传的文件路径
-        java.io.File destFile = new java.io.File(destFileLocation);
-        path.transferTo(destFile);
-//        File file = new File(fileName, "file_" + System.currentTimeMillis()+"_"+path, new Date());
-//        fileDao.addOneFile(file);
-//        RestMessage<File> restMessage = new RestMessage();
-//        restMessage.setCode(200);
-//        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
-//        restMessage.setData(null);
-        return null;
+            @RequestParam(value = "path") MultipartFile path,
+            @RequestParam(value="uploadTime")String uploadTime ) throws IOException ,ParseException {
+
+        RestMessage<File> restMessage = new RestMessage();
+
+        //判断文件大小
+        if(path.getSize() > 200 * 1024 *1024) {//如果文件大于200M，返回失败提示
+            restMessage.setCode(213);
+            restMessage.setMsg("error:add file out of 200MB");
+            restMessage.setData(null);
+            return  restMessage;
+        }
+
+
+        String destWebUrl = CommonFileUpload.returnWebUrl(path, "file");
+
+        //插入数据库
+        File file = new File(fileName, destWebUrl, sdf.parse(uploadTime));
+        System.out.println(file.toString());
+        fileService.addOneFile(file);
+
+        restMessage.setCode(200);
+        restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
+        restMessage.setData(null);
+        return restMessage;
     }
 
     //delete all files
     @RequestMapping(value = "", method = DELETE, produces = "application/json")
     @ResponseBody
-    public RestMessage<String> deleteOneFile(@RequestParam(value = "id") String id) {
-        fileDao.deleteOneFile(Integer.valueOf(id));
+    public RestMessage<String> deleteOneFile(@RequestParam(value = "id") int id) {
+        fileService.deleteOneFile(id);
         RestMessage<String> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
@@ -80,17 +98,33 @@ public class FileAPI {
         return restMessage;
     }
 
-    //update all file
-    @RequestMapping(value = "", method = PUT, produces = "application/json")
+    //update one file
+    @RequestMapping(value = "/change", method = POST, produces = "application/json")
     @ResponseBody
-    public RestMessage<String> updateOneFile(
+    public RestMessage<File> updateOneFile(
             @RequestParam(value = "id") int id,
             @RequestParam(value = "fileName") String fileName,
-            @RequestParam(value = "path") MultipartFile path,
-            @RequestParam(value = "uploadTime") Date uploadTime) {
-        File file = new File(id, fileName, "file_" + System.currentTimeMillis()+"_"+path, uploadTime);
-        fileDao.updateOneFile(file);
-        RestMessage<String> restMessage = new RestMessage();
+            @RequestParam(value = "path",required = false) MultipartFile path,
+            @RequestParam(value="uploadTime")String uploadTime ) throws IOException, ParseException {
+        System.out.println("path:" + path);
+        RestMessage<File> restMessage = new RestMessage();
+        if(path != null) {
+            //上传文件
+            if(path.getSize() > 200 * 1024 *1024) {//如果文件大于200M，返回失败提示
+                restMessage.setCode(213);
+                restMessage.setMsg("error:change file out of 200MB");
+                restMessage.setData(null);
+                return  restMessage;
+            }
+            String destWebUrl = CommonFileUpload.returnWebUrl(path, "file");
+            //更新数据库
+            System.out.println("run post file:" + destWebUrl);
+            File file = new File(id,fileName,destWebUrl,sdf.parse(uploadTime));//如果用户没有更新图片，执行带imgUrl的SQL
+            fileService.updateOneFile(file);
+        } else {
+            File file = new File(id, fileName,null,sdf.parse(uploadTime));//如果用户没有更新图片，执行不带imgUrl的SQL
+            fileService.updateOneFile(file);
+        }
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
         restMessage.setData(null);

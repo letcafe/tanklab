@@ -18,9 +18,17 @@ public class FileDaoImpl implements FileDao {
     //定义SQL语句
     public static final String getTableCount = "SELECT COUNT(*) FROM files";
 
+    public static final String selectDetailedFile = "SELECT id, fileName, path, uploadTime FROM files WHERE id = ?";
+
     public static final String selectFileList = "SELECT id, fileName, path, uploadTime FROM files ORDER BY uploadTime DESC";
 
-    public static final String updateOneFile = "UPDATE files SET id = ?, fileName = ?, path = ?, uploadTime = ?";
+    public static final String selectBetween = "SELECT id, fileName, path, uploadTime FROM files ORDER BY id DESC LIMIT ?, ?";
+
+    public static final String updateOneFile = "UPDATE files SET id = ?, fileName = ?, path = ?, uploadTime = ? WHERE id = ?";
+
+    public static final String updateOneFileWithPath = "UPDATE files SET id = ?, fileName = ?, path = ?, uploadTime = ? WHERE id = ?";
+
+    public static final String updateOneFileWithoutPath = "UPDATE files SET id = ?, fileName = ?, uploadTime = ? WHERE id = ?";
 
     public static final String deleteOneFileById = "DELETE FROM files WHERE id = ?";
 
@@ -46,8 +54,39 @@ public class FileDaoImpl implements FileDao {
     }
 
     @Override
+    public File selectDetailedFile(int id) {
+        return jdbcTemplate.queryForObject(selectDetailedFile, new FileRowMapper(), id);
+    }
+
+    @Override
+    public List<File> selectMany(int startIndex, int size) {
+        return jdbcTemplate.query(selectBetween, new FileRowMapper(), startIndex, size);
+    }
+
+    @Override
     public JDBC_STATUS updateOneFile(File file) {
-        return null;
+        JDBC_STATUS status = null;
+        try {
+            if(file.getPath() != null) {
+                jdbcTemplate.update(updateOneFileWithPath,
+                        //id = ?, fileName = ?, path = ?, uploadTime = ?
+                        file.getId(),
+                        file.getFileName(),
+                        file.getPath(),
+                        file.getUploadTime(),
+                        file.getId());
+            } else {
+                jdbcTemplate.update(updateOneFileWithoutPath,
+                        file.getId(),
+                        file.getFileName(),
+                        file.getUploadTime(),
+                        file.getId());
+            }
+            status = JDBC_STATUS.SUCCESS;
+        } catch (Exception ex) {
+            status = JDBC_STATUS.FAIL;
+        }
+        return status;
     }
 
     @Override
