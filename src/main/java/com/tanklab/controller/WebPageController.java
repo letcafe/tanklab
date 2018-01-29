@@ -11,7 +11,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @RequestMapping(value = "/")
 public class WebPageController {
 
-//    //获取路径下的所有JSP文件并正常返回
+    //获取路径下的所有JSP文件并正常返回
 //    @RequestMapping(value = "/{jspPages}", method = GET)
 //    public String getJspPages(@PathVariable(value = "jspPages") String jspPages) {
 //        System.out.println(jspPages);
