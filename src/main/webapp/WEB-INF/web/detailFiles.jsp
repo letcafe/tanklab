@@ -80,13 +80,6 @@
 	.tg-themepostcontent {
 		padding:0px 0px 0px 15px !important;
 	}
-	#tg-content div figure {
-		text-align:center;
-	}
-	#tg-content div figure img {
-		display:inline-block;
-		height:370px;
-	}
 	</style>
 </head>
 <body class="tg-home tg-homeone">
@@ -153,81 +146,82 @@
 								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
 									<ul>
 										<li>
-											<a href="index.html">首页</a>
+											<a href="javascript:void(0);">首页</a>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="tanklab.html">实验室</a>
+											<a href="javascript:void(0);">实验室</a>
 											<ul class="sub-menu">
-												<li><a href="tanklab.html">实验室简介</a></li>
-												<li><a href="tanklab.html">主任祝语</a></li>
-												<li><a href="tanklab.html">学术委员会</a></li>
-												<li><a href="tanklab.html">仪器设备</a></li>
-												<li><a href="tanklab.html">科研环境</a></li>
+												<li><a href="departments.html">实验室简介</a></li>
+												<li><a href="departmentdetail.html">主任祝语</a></li>
+												<li><a href="departments.html">学术委员会</a></li>
+												<li><a href="departmentdetail.html">仪器设备</a></li>
+												<li><a href="departmentdetail.html">科研环境</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
 											<a href="javascript:void(0);">资讯速递</a>
 											<ul class="sub-menu">
-												<li><a href="404error.html">通知公告</a></li>
-												<li><a href="newsList.html">新闻动态</a></li>
+												<li><a href="admissions.html">通知公告</a></li>
+												<li><a href="newsList.jsp">新闻动态</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
 											<a href="javascript:void(0);">科研方向</a>
 											<ul class="sub-menu">
-												<li><a href="tanklab.html">未来网络体系结构</a></li>
-												<li><a href="tanklab.html">智能网络技术与应用</a></li>
-												<li><a href="tanklab.html">智慧城市与大数据</a></li>
-												<li><a href="tanklab.html">网络信息安全</a></li>
+												<li><a href="departments.html">未来网络体系结构</a></li>
+												<li><a href="departmentdetail.html">智能网络技术与应用</a></li>
+												<li><a href="departments.html">智慧城市与大数据</a></li>
+												<li><a href="departmentdetail.html">网络信息安全</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="researchs.html">研究项目</a>
+											<a href="javascript:void(0);">研究项目</a>
 											<ul class="sub-menu">
-												<li><a href="researchs.html">进行项目</a></li>
-												<li><a href="researchs.html">合作项目</a></li>
-												<li><a href="researchs.html">结题项目</a></li>
+												<li><a href="departments.html">进行项目</a></li>
+												<li><a href="departmentdetail.html">合作项目</a></li>
+												<li><a href="departments.html">结题项目</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="teacherGridView.html">科研团队</a>
+											<a href="javascript:void(0);">科研团队</a>
 											<ul class="sub-menu">
-												<li><a href="teacherGridView.html">固定科研人员</a></li>
-												<li><a href="teacherGridView.html">客座科研人员</a></li>
-												<li><a href="teacherGridView.html">流动科研人员</a></li>
-												<li><a href="teacherGridView.html">研究生阵容</a></li>
-												<li><a href="teacherGridView.html">人才招聘</a></li>
+												<li><a href="departments.html">固定科研人员</a></li>
+												<li><a href="departmentdetail.html">客座科研人员</a></li>
+												<li><a href="departments.html">流动科研人员</a></li>
+												<li><a href="departmentdetail.html">研究生阵容</a></li>
+												<li><a href="departmentdetail.html">人才招聘</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="researchs.html">科研成果</a>
+											<a href="javascript:void(0);">科研成果</a>
 											<ul class="sub-menu">
-												<li><a href="researchs.html">论文及专著</a></li>
-												<li><a href="researchs.html">获奖情况</a></li>
-												<li><a href="researchs.html">专利、软件著作权</a></li>
-												<li><a href="researchs.html">成果展示</a></li>
+												<li><a href="departments.html">论文及专著</a></li>
+												<li><a href="departmentdetail.html">获奖情况</a></li>
+												<li><a href="departments.html">专利、软件著作权</a></li>
+												<li><a href="departmentdetail.html">成果展示</a></li>
+												<li><a href="departments.html">开源下载</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="404error.html">开放交流</a>
+											<a href="javascript:void(0);">开放交流</a>
 											<ul class="sub-menu">
-												<li><a href="404error.html">学术交流</a></li>
-												<li><a href="404error.html">开放课题</a></li>
+												<li><a href="departmentdetail.html">学术交流</a></li>
+												<li><a href="departmentdetail.html">开放课题</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="tanklab.html">人才培养</a>
+											<a href="javascript:void(0);">人才培养</a>
 											<ul class="sub-menu">
-												<li><a href="tanklab.html">招生计划</a></li>
-												<li><a href="tanklab.html">培养计划</a></li>
-												<li><a href="tanklab.html">课程资源</a></li>
+												<li><a href="departments.html">招生计划</a></li>
+												<li><a href="departmentdetail.html">培养计划</a></li>
+												<li><a href="departments.html">课程资源</a></li>
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="index.html">联系我们</a>
+											<a href="javascript:void(0);">联系我们</a>
 											<ul class="sub-menu">
-												<li><a href="index.html">联系方式</a></li>
-												<li><a href="index.html">交通指南</a></li>
+												<li><a href="departmentdetail.html">联系方式</a></li>
+												<li><a href="departmentdetail.html">交通指南</a></li>
 											</ul>
 										</li>
 										<li>
@@ -257,50 +251,12 @@
 			<div class="container">
 				<div class="row">
 					<div id="tg-twocolumns" class="tg-twocolumns">
-						<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-							<aside id="tg-sidebar" class="tg-sidebar">
-								<div class="tg-widget tg-widgetaboutusnav">
-									<div class="tg-widgettitle">
-										<h3>导师介绍</h3>
-									</div>
-									<div class="tg-widgetcontent">
-										<ul>
-											<!--<li><a href="javascript:void(0);">Rector's Message</a></li>-->
-											<!--<li class="tg-active"><a href="javascript:void(0);">Vision &amp; Mission</a></li>-->
-											<!--<li><a href="javascript:void(0);">Leadership</a></li>-->
-											<!--<li><a href="javascript:void(0);">Objectives</a></li>-->
-											<!--<li><a href="javascript:void(0);">Our Identity</a></li>-->
-											<!--<li><a href="javascript:void(0);">Honors &amp; Awards</a></li>-->
-											<!--<li><a href="javascript:void(0);">Campus Life</a></li>-->
-										</ul>
-									</div>
-								</div>
-							</aside>
-						</div>
-						<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
+						<div class="col-sm-12">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure><img src="images/courses/guowei.jpg" alt="image description"></figure>
-									<h3>个人简介</h3>
-									<p>最高学位：硕士<br>
-									邮箱：weiguo@tju.edu.cn<br>
-									通讯地址：北洋园校区55楼B420<br>
-									个人主页：http://cs.tju.edu.cn/faculty/weiguo/index</p>
-									<h3>研究方向</h3>
-									<p>计算机系统结构、嵌入式系统、SoC设计、安全处理器、密码电路与密码分析</p>
-									<h3>科研项目</h3>
-									<p><b>在研究项目</b><br> 
-									国家工业和信息化部项目：面向物联网传感器节点的信息安全嵌入式系统芯片及其方案的研发 <br>
-									天津市自然科学基金： 高可信密码片上系统的关键技术研究 <br>
-									中国科学院计算机体系结构国重实验室开放课题基金: 面向云计算服务器的高可信安全处理器新型体系结构的研究<br>
-									苏州国芯半导体有限公司项目：C*Core处理器的ESL建模研究与实现<br>
-									国家自然科学基金项目：基于可配置处理器的Ray-Tracing算法专用硬件体系结构的研究 </p>
-									<h3>代表性论著</h3>
-									<p>【1】《SoC设计与实现》，电子工业出版社，2007年6月。。"十一五"国家级规划教材，2008年教育部普通高等教育精品教材。第二版，电子工业出版社，2011年8月。<br>
-									【2】《SoC嵌入式系統晶片設計 ─ 從理論邁向實務》，（台湾）博硕出版，2008年05月。海外发行。 <br>
-									【3】Guo W, Ri K H, Cui L, et al. An Area-Efficient Unified Architecture for Multi-Functional Double-Precision Floating-Point Computation[J]. Journal of Circuits, Systems and Computers, 2015, 24(10): 1550151.（SCI） <br>
-									【4】Jingwei Hu, Wei Guo, Jizeng Wei, Ray C.C. Cheung， Fast Inversion Architectures over GF(2m) Using Modified Itoh-Tsujii Algorithms，to appear in IEEE Transactions on Circuits and Systems II: Express Briefs. Published online,DOI 10.1109/TCSII.2014.2387612， Jan. 2015. （SCI） <br>
-									【5】Jizeng Wei, Xulong Liu, Hao Liu, Wei Guo, A low-time-complexity and secure dual-field scalar multiplication based on co-Z protected NAF, IEICE Electronics Express, Vol.11, No.11, 1-12， 2014 （SCI） </p>
+									<figure style="text-align:center"><img style="height:200px;display:inline-block;" id="news_detail_img" src="" alt="image description"></figure>
+									<h3 id="news_detail_title"></h1>
+									<div id="news_detail_content"></div>
 								</div>
 							</div>
 						</div>
