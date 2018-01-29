@@ -18,7 +18,7 @@ public class FileUpload {
     public static String returnWebUrl(MultipartFile multipartFile, String typeName) throws IOException {
         String fileSuffix = multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf("."));
         String fileName = typeName + "_" + System.currentTimeMillis() + fileSuffix;
-        String returnWebUrl = "/TankUploadFile/" + typeName + "/images/" + fileName;
+        String returnWebUrl = "/TankUploadFile/" + typeName + "/" + fileName;
         String fileStorePath = fileUploadPath + "\\"+ typeName + "\\" + fileName;
 
         File file = new File(fileStorePath);
