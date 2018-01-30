@@ -3,6 +3,7 @@ package com.tanklab.api;
 import com.tanklab.bean.Notices;
 import com.tanklab.bean.JDBC_STATUS;
 import com.tanklab.bean.RestMessage;
+import com.tanklab.service.AnnouncementService;
 import com.tanklab.service.NoticesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.sql.Date;
 import static org.springframework.web.bind.annotation.RequestMethod.*;
@@ -22,6 +25,7 @@ public class NoticesAPI {
     public NoticesAPI(NoticesService noticesService) {
         this.noticesService = noticesService;
     }
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
     /**
      * 根据id查询单条公告信息
@@ -67,7 +71,7 @@ public class NoticesAPI {
      * @param page 当前页码
      * @return 操作状态
      */
-    @RequestMapping(value = "/List", method = GET, produces = "application/json")
+    @RequestMapping(value = "", method = GET, produces = "application/json")
     @ResponseBody
     public RestMessage<List<Notices>> getNoticesList(Model model,
                                                            @RequestParam(value="page",required=true) int page) {
@@ -92,7 +96,7 @@ public class NoticesAPI {
      * @param date 添加日期
      * @return 操作状态
      */
-    @RequestMapping(value = "/", method = POST, produces = "application/json")
+    @RequestMapping(value = "", method = POST, produces = "application/json")
     @ResponseBody
     public RestMessage addNotices(
             @RequestParam(value = "title") String title,
@@ -117,7 +121,7 @@ public class NoticesAPI {
      * @param date
      * @return 操作状态
      */
-    @RequestMapping(value = "", method = PUT, produces = "application/json")
+    @RequestMapping(value = "/change", method = POST, produces = "application/json")
     @ResponseBody
     public RestMessage<Notices> modifyNotices(
             @RequestParam(value = "id") int id,

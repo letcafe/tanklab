@@ -57,9 +57,11 @@ public class NoticesController {
      * @param page 当前页码
      * @return 操作状态
      */
-    @RequestMapping(value = "/getNoticesList", method = GET)
-    public String getNoticesList(Model model,
-                                 @RequestParam(value="page",required=true) Integer page) {
+
+    /**封装一个noticesList对象返回到视图jsp中**/
+    @RequestMapping(value = "admin/notices", method = GET)
+    public String getAnnounceList(Model model,
+                                  @RequestParam(value="page",required=true) int page) {
         int totalCount= noticesService.getNoticesCount();  //查询总条数
         int size=10; //每页显示大小
         int maxPage=(totalCount%size==0)?totalCount/size:totalCount/size+1;//最大页数
@@ -76,11 +78,12 @@ public class NoticesController {
         model.addAttribute("page",page);
         model.addAttribute("totalCount",totalCount);
         if(page>1)//生成并封装上一页的链接
-            model.addAttribute("prePageHref","getAnnounceList.do?&page="+(page-1));
+            model.addAttribute("prePageHref","page="+(page-1));
         if(page<maxPage)//生成并封装下一页的链接
-            model.addAttribute("nextPageHref","getAnnounceList.do?&page="+(page+1));
+            model.addAttribute("nextPageHref","page="+(page+1));
 
-        return "noticesList";
+        return "admin/notices";
     }
+
 
 }
