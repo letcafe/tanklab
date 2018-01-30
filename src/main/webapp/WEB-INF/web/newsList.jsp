@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -126,7 +130,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="index.html"><img src="images/logo.png" alt="University of Education and knowledge"></a></strong>
+							<strong class="tg-logo"><a href="index.jsp"><img src="images/logo.png" alt="University of Education and knowledge"></a></strong>
 							<div class="tg-noticeboard hidden-xs">
 								<div id="titleRight" class="tg-textbox">
 									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
@@ -254,24 +258,71 @@
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pull-right">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-titleborder">
-									<h2>新闻 &amp; 通知</h2>
+									<h2>近期实验室新闻</h2>
 								</div>
 								<div class="tg-newsandarticle tg-list">
 									<div id="newsList" class="row">
-									<!-- 插入的新闻列表 -->
+									<c:forEach items="${pagedNews}" var="news">
+										<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+										<article class="tg-themepost tg-newspost">
+											<figure class="tg-featuredimg left_picture">
+												<a href="javascript:void(0);">
+													<img src="${news.imgUrl}" alt="image description">
+												</a>
+											</figure>
+											<div class="tg-themepostcontent">
+												<ul class="tg-matadata">
+													<li>
+														<a href="javascript:void(0);">
+															<i class="fa fa-calendar"></i>
+															<span>${news.date}</span>
+														</a>
+													</li>
+												</ul>
+												<div class="tg-themeposttitle">
+													<h3><a href="javascript:void(0);">${news.title}</a></h3>
+												</div>
+												<div style="text-align:left;" class="tg-description">
+													<p>${news.content}</p>
+												</div>
+												<a class="tg-btn tg-btn-sm" href="/tanklab/detailNews?id=${news.id}">更多详情</a>
+											</div>
+										</article>
+										</div>
+									</c:forEach>
 									</div>
 								</div>
 								<nav class="tg-pagination">
 									<ul>
-										<li class="tg-prevpage"><a href="#"><i class="fa fa-angle-left"></i></a></li>
-										<li class="tg-active"><a href="#">1</a></li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-										<li><a href="#">5</a></li>
-										<li>...</li>
-										<li><a href="#">10</a></li>
-										<li class="tg-nextpage"><a href="#"><i class="fa fa-angle-right"></i></a></li>
+										<%--page不等于1显示首页--%>
+										<c:if test="${page != 1}">
+											<li class="tg-prevpage"><a href="/tanklab/newsList?page=1">首页</a></li>
+										</c:if>
+										<%--前一页不为空显示上一页--%>
+										<c:if test="${prePageIndex != null}">
+										<li class="tg-prevpage"><a href="/tanklab/newsList?page=${prePageIndex}">上页</a></li>
+										</c:if>
+										<%--遍历列表--%>
+										<c:forEach var="index" begin="1" end="${maxPage}" step="1">
+											<c:choose>
+												<%--如果page等于当前页，当前页高亮--%>
+												<c:when test="${page == index}">
+													<li class="tg-active"><a href="/tanklab/newsList?page=${index}">${index}</a></li>
+												</c:when>
+												<%--否则正常输出--%>
+												<c:otherwise>
+													<li><a href="/tanklab/newsList?page=${index}">${index}</a></li>
+												</c:otherwise>
+											</c:choose>
+										</c:forEach>
+										<%--前一页不为空显示上一页--%>
+										<c:if test="${nextPageIndex != null}">
+											<li class="tg-nextpage"><a href="/tanklab/newsList?page=${nextPageIndex}">下页</a></li>
+										</c:if>
+										<%--page不等于maxPage显示尾页--%>
+										<c:if test="${page != maxPage}">
+											<li class="tg-nextpage"><a href="/tanklab/newsList?page=${maxPage}">尾页</a></li>
+										</c:if>
 									</ul>
 								</nav>
 							</div>
@@ -305,7 +356,7 @@
 						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 							<div class="tg-widget tg-widgetcompanyinfo">
 								<div class="tg-widgetcontent">
-									<strong class="tg-logo"><a href="index.html"><img src="images/logo2.png" alt="image description"></a></strong>
+									<strong class="tg-logo"><a href="index.jsp"><img src="images/logo2.png" alt="image description"></a></strong>
 									<div class="tg-description">
 										<p>先进未来网络实验室是一个专注于未来网络前沿技术的研究团队，实验室主要有SDN软件定义网络方向...<a href="javascript:void(0);">更多</a></p>
 									</div>

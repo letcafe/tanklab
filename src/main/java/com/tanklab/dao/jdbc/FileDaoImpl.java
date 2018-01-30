@@ -22,7 +22,7 @@ public class FileDaoImpl implements FileDao {
 
     public static final String selectFileList = "SELECT id, fileName, path, uploadTime FROM files ORDER BY uploadTime DESC";
 
-    public static final String selectBetween = "SELECT id, fileName, path, uploadTime FROM files ORDER BY id DESC LIMIT ?, ?";
+    public static final String selectBetween = "SELECT id, fileName, path, uploadTime FROM files ORDER BY date DESC LIMIT ?, ?";
 
     public static final String updateOneFile = "UPDATE files SET id = ?, fileName = ?, path = ?, uploadTime = ? WHERE id = ?";
 

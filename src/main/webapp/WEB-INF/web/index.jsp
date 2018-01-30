@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -94,7 +98,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="index.html"><img src="images/logo.png" alt="University of Education and knowledge"></a></strong>
+							<strong class="tg-logo"><a href="index.jsp"><img src="images/logo.png" alt="University of Education and knowledge"></a></strong>
 							<div class="tg-noticeboard hidden-xs">
 								<div id="titleRight" class="tg-textbox">
 									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
@@ -114,7 +118,7 @@
 								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
 									<ul>
 										<li>
-											<a href="index.html">首页</a>
+											<a href="index.jsp">首页</a>
 										</li>
 										<li class="menu-item-has-children">
 											<a href="tanklab.html">实验室</a>
@@ -185,10 +189,10 @@
 											</ul>
 										</li>
 										<li class="menu-item-has-children">
-											<a href="index.html">联系我们</a>
+											<a href="index.jsp">联系我们</a>
 											<ul class="sub-menu">
-												<li><a href="index.html">联系方式</a></li>
-												<li><a href="index.html">交通指南</a></li>
+												<li><a href="index.jsp">联系方式</a></li>
+												<li><a href="index.jsp">交通指南</a></li>
 											</ul>
 										</li>
 										<li>
@@ -214,79 +218,23 @@
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<div class="tg-homebannervtwo">
 						<div id="tg-homeslider" class="tg-homeslider owl-carousel tg-btnround tg-haslayout">
-							<div class="item">
-								<figure>
-									<!-- 网站分辨率：873*424 -->
-									<img style="width: 873px;height: 424px" src="images/slider/31.jpg" alt="image description">
-									<figcaption class="tg-slidercontent">
-										<div class="tg-slidercontentbox">
-											<a class="tg-btn" href="javascript:void(0);">read more</a>
-											<div class="tg-titledescription">
-												<h1>未来网络学术研讨会 2017.6</h1>
-												<div class="tg-description"><p>未来网络学术研讨会，众多国际顶级专家聚焦未来网络</p></div>
+							<c:forEach items="${newsList}" var="list">
+								<div class="item">
+									<figure>
+										<!-- 网站分辨率：873*424 -->
+										<img style="width: 873px;height: 424px" src="images/slider/31.jpg" alt="image description">
+										<figcaption class="tg-slidercontent">
+											<div class="tg-slidercontentbox">
+												<a class="tg-btn" href="javascript:void(0);">read more</a>
+												<div class="tg-titledescription">
+													<h1>${list.title} ${list.date}</h1>
+													<div class="tg-description">${list.content}</div>
+												</div>
 											</div>
-										</div>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="item">
-								<figure>
-									<!-- 网站分辨率：873*424 -->
-									<img style="width: 873px;height: 424px" src="images/slider/21.jpg" alt="image description">
-									<figcaption class="tg-slidercontent">
-										<div class="tg-slidercontentbox">
-											<a class="tg-btn" href="javascript:void(0);">read more</a>
-											<div class="tg-titledescription">
-												<h1>未来网络学术研讨会 2017.6</h1>
-												<div class="tg-description"><p>未来网络学术研讨会，众多国际顶级专家聚焦未来网络</p></div>
-											</div>
-										</div>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="item">
-								<figure>
-								<!-- 网站分辨率：873*424 -->
-									<img src="images/slider/img-04.jpg" alt="image description">
-									<figcaption class="tg-slidercontent">
-										<div class="tg-slidercontentbox">
-											<a class="tg-btn" href="javascript:void(0);">read more</a>
-											<div class="tg-titledescription">
-												<h1>科研参观 2017</h1>
-												<div class="tg-description"><p>法国尼斯理工大学菲利浦校长访问IT学科创新创...</p></div>
-											</div>
-										</div>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="item">
-								<figure>
-									<img src="images/slider/img-05.jpg" alt="image description">
-									<figcaption class="tg-slidercontent">
-										<div class="tg-slidercontentbox">
-											<a class="tg-btn" href="javascript:void(0);">read more</a>
-											<div class="tg-titledescription">
-												<h1>集体会议 2017</h1>
-												<div class="tg-description"><p>天津市先进未来网络与应用重点实验室成功举办未来网络前沿技术研讨会...</p></div>
-											</div>
-										</div>
-									</figcaption>
-								</figure>
-							</div>
-							<div class="item">
-								<figure>
-									<img src="images/slider/img-06.jpg" alt="image description">
-									<figcaption class="tg-slidercontent">
-										<div class="tg-slidercontentbox">
-											<a class="tg-btn" href="javascript:void(0);">read more</a>
-											<div class="tg-titledescription">
-												<h1>高校云计算创新应用大赛 2017</h1>
-												<div class="tg-description"><p>我院学生勇夺第三届全国高校云计算应用创新大赛总决赛特等奖...</p></div>
-											</div>
-										</div>
-									</figcaption>
-								</figure>
-							</div>
+										</figcaption>
+									</figure>
+								</div>
+							</c:forEach>
 						</div>
 						<div class="tg-noticeboardarea">
 							<div class="tg-widget tg-widgetadmissionform">
@@ -318,21 +266,13 @@
 					<div class="tg-tickerbox">
 						<span>日常公告:</span>
 						<div id="tg-ticker" class="tg-ticker owl-carousel">
-							<div class="item">
-								<div class="tg-description">
-									<p>计算机学院2015级硕士2班党支部与冯校长共话高校思政会议精神 </p>
+							<c:forEach items="${noticesList}" var="notices">
+								<div class="item">
+									<div class="tg-description">
+										<p>${notices.title}</p>
+									</div>
 								</div>
-							</div>
-							<div class="item">
-								<div class="tg-description">
-									<p>计算机学院举办喜迎六一“家有萌宝”微视频、摄影作品评选大赛 </p>
-								</div>
-							</div>
-							<div class="item">
-								<div class="tg-description">
-									<p>国家“千人计划”入选者来我院进行学术交流 </p>
-								</div>
-							</div>
+							</c:forEach>
 						</div>
 					</div>
 				</div>
@@ -358,7 +298,7 @@
 										<article class="tg-themepost tg-themepostleftimg">
 											<figure class="tg-featuredimg">
 												<a href="javascript:void(0);">
-													<img id="news_img_1" style="width: 270px;height: 185px;" src="images/slider/31.jpg" alt="image description">
+													<img id="news_img_1" style="width: 270px;height: 185px;" src="${news_index1.imgUrl}" alt="image description">
 												</a>
 											</figure>
 											<div class="tg-themepostcontent">
@@ -366,152 +306,44 @@
 													<li>
 														<a href="javascript:void(0);">
 															<i class="fa fa-calendar"></i>
-															<span id="news_date_1">yyyy-mm-dd</span>
+															<span id="news_date_1">${news_index1.date}</span>
 														</a>
 													</li>
 												</ul>
 												<div class="tg-themeposttitle">
-													<h3 id="news_title_1"><a href="javascript:void(0);">news_title1</a></h3>
+													<h3 id="news_title_1"><a href="javascript:void(0);">${news_index1.title}</a></h3>
 												</div>
 												<div class="tg-description" id="news_content_1">
-													<p>news_content1</p>
+													<p>${news_index1.content}</p>
 												</div>
 											</div>
 										</article>
 										<div class="clearfix"></div>
 										<div class="row">
-											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-												<article class="tg-themepost tg-themepostleftthumb">
-													<figure class="tg-featuredimg">
-														<a href="javascript:void(0);">
-															<img id="news_img_2"  src="images/events/e01.jpg" alt="image description">
-														</a>
-													</figure>
-													<div class="tg-themepostcontent">
-														<ul class="tg-matadata">
-															<li>
-																<a href="javascript:void(0);">
-																	<i class="fa fa-calendar"></i>
-																	<span id="news_date_2">yyyy-mm-dd</span>
-																</a>
-															</li>
-														</ul>
-														<div class="tg-themeposttitle">
-															<h3 id="news_title_2"><a href="javascript:void(0);">news_title2</a></h3>
+											<c:forEach items="${news_index2To4}" var="news">
+												<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
+													<article class="tg-themepost tg-themepostleftthumb">
+														<figure class="tg-featuredimg">
+															<a href="javascript:void(0);">
+																<img id="news_img_2"  src="${news.imgUrl}" alt="image description">
+															</a>
+														</figure>
+														<div class="tg-themepostcontent">
+															<ul class="tg-matadata">
+																<li>
+																	<a href="javascript:void(0);">
+																		<i class="fa fa-calendar"></i>
+																		<span id="news_date_2">${news.date}</span>
+																	</a>
+																</li>
+															</ul>
+															<div class="tg-themeposttitle">
+																<h3 id="news_title_2"><a href="javascript:void(0);">${news.title}</a></h3>
+															</div>
 														</div>
-													</div>
-												</article>
-											</div>
-											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-												<article class="tg-themepost tg-themepostleftthumb">
-													<figure class="tg-featuredimg">
-														<a href="javascript:void(0);">
-															<img id="news_img_3" src="images/events/e02.jpg" alt="image description">
-														</a>
-													</figure>
-													<div class="tg-themepostcontent">
-														<ul class="tg-matadata">
-															<li>
-																<a href="javascript:void(0);">
-																	<i class="fa fa-calendar"></i>
-																	<span id="news_date_3">yyyy-mm-dd</span>
-																</a>
-															</li>
-														</ul>
-														<div class="tg-themeposttitle">
-															<h3 id="news_title_3"><a href="javascript:void(0);">news_title3</a></h3>
-														</div>
-													</div>
-												</article>
-											</div>
-											<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
-												<article class="tg-themepost tg-themepostleftthumb">
-													<figure class="tg-featuredimg">
-														<a href="javascript:void(0);">
-															<img id="news_img_4" src="images/events/e03.jpg" alt="image description">
-														</a>
-													</figure>
-													<div class="tg-themepostcontent">
-														<ul class="tg-matadata">
-															<li>
-																<a href="javascript:void(0);">
-																	<i class="fa fa-calendar"></i>
-																	<span id="news_date_4">yyyy-mm-dd</span>
-																</a>
-															</li>
-														</ul>
-														<div class="tg-themeposttitle">
-															<h3 id="news_title_4"><a href="javascript:void(0);">news_title4</a></h3>
-														</div>
-													</div>
-												</article>
-											</div>
-											<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">-->
-												<!--<article class="tg-themepost tg-themepostleftthumb">-->
-													<!--<figure class="tg-featuredimg">-->
-														<!--<a href="javascript:void(0);">-->
-															<!--<img src="images/events/img-05.jpg" alt="image description">-->
-														<!--</a>-->
-													<!--</figure>-->
-													<!--<div class="tg-themepostcontent">-->
-														<!--<ul class="tg-matadata">-->
-															<!--<li>-->
-																<!--<a href="javascript:void(0);">-->
-																	<!--<i class="fa fa-calendar"></i>-->
-																	<!--<span>Tuesday, Apr 21, 2017</span>-->
-																<!--</a>-->
-															<!--</li>-->
-														<!--</ul>-->
-														<!--<div class="tg-themeposttitle">-->
-															<!--<h3><a href="javascript:void(0);">Result Announcement for Fresh Graduates 2017</a></h3>-->
-														<!--</div>-->
-													<!--</div>-->
-												<!--</article>-->
-											<!--</div>-->
-											<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">-->
-												<!--<article class="tg-themepost tg-themepostleftthumb">-->
-													<!--<figure class="tg-featuredimg">-->
-														<!--<a href="javascript:void(0);">-->
-															<!--<img src="images/events/img-06.jpg" alt="image description">-->
-														<!--</a>-->
-													<!--</figure>-->
-													<!--<div class="tg-themepostcontent">-->
-														<!--<ul class="tg-matadata">-->
-															<!--<li>-->
-																<!--<a href="javascript:void(0);">-->
-																	<!--<i class="fa fa-calendar"></i>-->
-																	<!--<span>Tuesday, Apr 21, 2017</span>-->
-																<!--</a>-->
-															<!--</li>-->
-														<!--</ul>-->
-														<!--<div class="tg-themeposttitle">-->
-															<!--<h3><a href="javascript:void(0);">Outdoor Dinner with Reputed Prof. Darwin ...</a></h3>-->
-														<!--</div>-->
-													<!--</div>-->
-												<!--</article>-->
-											<!--</div>-->
-											<!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">-->
-												<!--<article class="tg-themepost tg-themepostleftthumb">-->
-													<!--<figure class="tg-featuredimg">-->
-														<!--<a href="javascript:void(0);">-->
-															<!--<img src="images/events/img-07.jpg" alt="image description">-->
-														<!--</a>-->
-													<!--</figure>-->
-													<!--<div class="tg-themepostcontent">-->
-														<!--<ul class="tg-matadata">-->
-															<!--<li>-->
-																<!--<a href="javascript:void(0);">-->
-																	<!--<i class="fa fa-calendar"></i>-->
-																	<!--<span>Tuesday, Apr 21, 2017</span>-->
-																<!--</a>-->
-															<!--</li>-->
-														<!--</ul>-->
-														<!--<div class="tg-themeposttitle">-->
-															<!--<h3><a href="javascript:void(0);">One Day Exibition at Mall of Dubai</a></h3>-->
-														<!--</div>-->
-													<!--</div>-->
-												<!--</article>-->
-											<!--</div>-->
+													</article>
+												</div>
+											</c:forEach>
 										</div>
 									</div>
 								</section>
@@ -571,7 +403,6 @@
 															<img src="images/brands/fc8.png" alt="image description">
 														</figure>
 													</li>
-
 												</ul>
 											</div>
 										</div>
@@ -584,12 +415,12 @@
 													<ul id="quickLinkList">
 														<li><a href="http://cs.tju.edu.cn/csweb/">天大计算机学院</a></li>
 														<li><a href="http://www.tju.edu.cn/">天津大学主页</a></li>
-														<li><a href="http://gs.tju.edu.cn/html/pms/index.html">天大研究生院</a></li>
-														<!--<li><a href="javascript:void(0);">Multimedia</a></li>-->
-														<!--<li><a href="javascript:void(0);">Annual</a></li>-->
-														<!--<li><a href="javascript:void(0);">Student</a></li>-->
-														<!--<li><a href="javascript:void(0);">Parents</a></li>-->
-														<!--<li><a href="javascript:void(0);">Overseas</a></li>-->
+														<li><a href="http://gs.tju.edu.cn">天大研究生院</a></li>
+														<li><a href="https://www.twt.edu.cn/">天外天</a></li>
+														<li><a href="http://nc.tju.edu.cn/">信网中心</a></li>
+														<li><a href="http://e.tju.edu.cn/">天大办公网</a></li>
+														<li><a href="http://tieba.baidu.com/f?kw=%CC%EC%BD%F2%B4%F3%D1%A7&fr=ala0&tpl=5">百度贴吧</a></li>
+														<li><a href="http://j.map.baidu.com/DE_lO">百度地图</a></li>
 													</ul>
 												</div>
 											</div>
@@ -616,15 +447,11 @@
 									</div>
 									<div class="tg-widgetcontent">
 										<ul>
-											<li>
-												<a href="javascript:void(0);">天津大学计算机学院2017年博士招生拟录取名单-补录</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);">2017年度高等学校科学研究成果奖公示--王雷 </a>
-											</li>
-											<li>
-												<a href="javascript:void(0);">关于天津大学推荐2017年度高等学校科学研究优秀成果奖（科学技术）推荐项目的公示</a>
-											</li>
+											<c:forEach items="${announcementList}" var="announcement">
+												<li>
+													<a href="/announcementList?id=${announcement.id}">${announcement.title}</a>
+												</li>
+											</c:forEach>
 										</ul>
 									</div>
 								</div>
@@ -763,7 +590,7 @@
 						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 							<div class="tg-widget tg-widgetcompanyinfo">
 								<div class="tg-widgetcontent">
-									<strong class="tg-logo"><a href="index.html"><img src="images/logo2.png" alt="image description"></a></strong>
+									<strong class="tg-logo"><a href="index.jsp"><img src="images/logo2.png" alt="image description"></a></strong>
 									<div class="tg-description">
 										<p>先进未来网络实验室是一个专注于未来网络前沿技术的研究团队，实验室主要有SDN软件定义网络方向...<a href="javascript:void(0);">更多</a></p>
 									</div>

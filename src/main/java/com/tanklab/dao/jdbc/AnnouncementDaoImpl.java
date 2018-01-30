@@ -22,8 +22,8 @@ import java.util.List;
 @Repository
 public class AnnouncementDaoImpl implements AnnouncementDao {
     private final static String getAnnouncement="SELECT id,title,content,date FROM announcement WHERE id=?";
-    private final static String getAnnounceTopList="SELECT id,title,content,date FROM announcement ORDER BY id DESC LIMIT 0,?";
-    private final static String getAnnounceList="SELECT id,title,content,date FROM announcement ORDER BY id DESC LIMIT ?,?";
+    private final static String getAnnounceTopList="SELECT id,title,content,date FROM announcement ORDER BY date DESC LIMIT 0,?";
+    private final static String getAnnounceList="SELECT id,title,content,date FROM announcement ORDER BY date DESC LIMIT ?,?";
     private final static String getAnnounceCount="SELECT count(0) FROM announcement";
     private final static String addAnnouncement="INSERT INTO announcement(title,content,date) VALUES(?,?,?)";
     private final static String modifyAnnouncement="UPDATE announcement SET title=?,content=?,date=? WHERE id=?";

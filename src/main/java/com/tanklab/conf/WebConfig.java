@@ -32,7 +32,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        //前者为web映射路径，后者为webapp项目物理路径
         registry.addResourceHandler("/admin/**").addResourceLocations("/WEB-INF/admin/");
-        registry.addResourceHandler("/web/**").addResourceLocations("/WEB-INF/web/");
+        registry.addResourceHandler("/**").addResourceLocations("/WEB-INF/web/");
     }
 }

@@ -22,7 +22,7 @@ public class NewsDaoImpl implements NewsDao {
 
     public static final String selectNewsList = "SELECT id, title, content, date, imgUrl FROM news ORDER BY date DESC";
 
-    public static final String selectBetween = "SELECT id, title, content, date, imgUrl FROM news ORDER BY id DESC LIMIT ?, ?";
+    public static final String selectBetween = "SELECT id, title, content, date, imgUrl FROM news ORDER BY date DESC LIMIT ?, ?";
 
     public static final String updateOneNewsWithImg = "UPDATE news SET id = ?, title = ?, content = ?, date = ?, imgUrl = ? WHERE id = ?";
 

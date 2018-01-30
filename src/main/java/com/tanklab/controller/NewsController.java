@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -24,7 +25,7 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/admin/news")
-    public String getAllNews(Model model) {
+    public String getAllNews(HttpSession sesion, Model model) {
         model.addAttribute("newsList", newsService.selectNewsList());
         return "admin/news";
     }
@@ -43,7 +44,7 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/newsList")
-    public String getPagedNews(Model model, @RequestParam(value = "page") int page) {
+    public String getPagedNews(Model model, @RequestParam(value = "page") Integer page) {
         int totalCount = newsService.getTableCount();
         int pageSize = 10;
         int maxPage = (totalCount % pageSize == 0) ? (totalCount / pageSize) : (totalCount / pageSize + 1);
@@ -56,11 +57,13 @@ public class NewsController {
         model.addAttribute("page", page);
         model.addAttribute("maxPage", maxPage);
         if(page > 1) {
-            model.addAttribute("prePageHref", "newsList?page=" + (page - 1));
-        } else if(page < maxPage) {
-            model.addAttribute("nextPageHref", "newsList?page" + (page + 1));
+            model.addAttribute("prePageIndex", page - 1);
         }
-        return "newsList";
+        if(page < maxPage) {
+            model.addAttribute("nextPageIndex", page + 1);
+        }
+        return "/web/newsList";
     }
+
 
 }
