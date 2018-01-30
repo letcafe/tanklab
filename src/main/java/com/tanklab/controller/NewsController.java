@@ -65,5 +65,12 @@ public class NewsController {
         return "/web/newsList";
     }
 
+    @RequestMapping(value = "/detailNews")
+    public String detailNewsJsp(Model model, @RequestParam(value = "id") Integer id) {
+        News news = newsService.selectDetailedNews(id);
+        model.addAttribute("detailNews", news);
+        return "/web/detailNews";
+    }
+
 
 }
