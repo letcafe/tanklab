@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -254,9 +258,12 @@
 						<div class="col-sm-12">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure style="text-align:center"><img style="height:200px;display:inline-block;" id="news_detail_img" src="" alt="image description"></figure>
-									<h1 id="news_detail_title"></h1>
-									<div id="news_detail_content"></div>
+									<figure style="text-align:center"><img style="height:200px;display:inline-block;" id="news_detail_img" src="${detailNews.imgUrl}" alt="image description"></figure>
+									<div style="text-align:center">
+										<h2 id="news_detail_title">${detailNews.title}</h2>
+										<h3 id="news_detail_date">时间：${detailNews.date}</h3>
+									</div>
+									<div id="news_detail_content" style="font-size: 15px;">${detailNews.content}</div>
 								</div>
 							</div>
 						</div>
@@ -272,15 +279,6 @@
 		*************************************-->
 		<footer id="tg-footer" class="tg-footer tg-haslayout">
 			<div class="tg-signupbox">
-<!-- 				<div class="tg-signuptextbox">
-					<h3>Free Signup!</h3>
-					<div class="tg-description"><p>Subscribe Monthly Newsletter &amp; Get Latest New &amp; Updates.</p></div>
-				</div>
-				<form class="tg-formtheme tg-formsignupfree">
-					<fieldset>
-						<div class="form-group"><input type="text" name="emailid" class="form-control" placeholder="Enter Email ID"></div>
-						<div class="form-group"><button type="submit" class="tg-btn">Signup Now</button></div>
-					</fieldset>
 				</form> -->
 			</div>
 			<div class="tg-footermiddlebar">
@@ -313,13 +311,6 @@
 											</a>
 										</li>
 									</ul>
-<!-- 下排图标：facebook,twitter等		<ul class="tg-socialicons">
-										<li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-										<li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-										<li class="tg-linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-										<li class="tg-googleplus"><a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a></li>
-										<li class="tg-rss"><a href="javascript:void(0);"><i class="fa fa-rss"></i></a></li>
-									</ul> -->
 								</div>
 							</div>
 						</div>
