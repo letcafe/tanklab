@@ -1,11 +1,16 @@
 package com.tanklab.controller;
 
+import com.tanklab.bean.User;
 import com.tanklab.service.UserService;
+import com.tanklab.util.MD5;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
-
+@Controller
+@RequestMapping(value="/")
 public class LoginSessionController {
 
     private UserService userService;
@@ -15,18 +20,23 @@ public class LoginSessionController {
         this.userService = userService;
     }
 
-    @RequestMapping(value="/login")
-    public String login(HttpSession session, String loginName, String password) throws Exception{
+    @RequestMapping(value="/admin/login")
+    public String login(HttpSession session, Model model,
+            String loginName, String password) throws Exception{
         //验证
-        boolean isLogin = userService.loginRight(loginName, password);
-        if(isLogin == true) {
+
+        User user = userService.loginRight(loginName,MD5.GetMD5Code(password));
+        if(user!=null) {
             //在Session里保存信息
-            session.setAttribute("loginName", loginName);
+            session.setAttribute("loginName",loginName);
             //Session超时时间，单位秒
             session.setMaxInactiveInterval(60 * 60);
-            return "/web/login";
+            return "/admin/index";
         } else {
-            return "/web/loginError";
+            model.addAttribute("message","用户名或密码错误");
+            model.addAttribute("loginName",loginName);
+            model.addAttribute("password",password);
+            return "/admin/login";
         }
     }
 
@@ -37,10 +47,10 @@ public class LoginSessionController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value="/logout")
+    @RequestMapping(value="/admin/logout")
     public String logout(HttpSession session) throws Exception{
         //清除Session
         session.invalidate();
-        return "/web/index";
+        return "/admin/login";
     }
 }
