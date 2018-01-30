@@ -76,7 +76,7 @@ public class NoticesAPI {
     public RestMessage<List<Notices>> getNoticesList(Model model,
                                                            @RequestParam(value="page",required=true) int page) {
         int totalCount=noticesService.getNoticesCount();  //查询总条数
-        int size=1; //每页显示大小
+        int size=10; //每页显示大小
         int maxPage=(totalCount%size==0)?totalCount/size:totalCount/size+1;//最大页数
         page=(page==0)?1:page; //当前第几页
         int start=(page-1)*size;
@@ -102,8 +102,7 @@ public class NoticesAPI {
             @RequestParam(value = "title") String title,
             @RequestParam(value = "content") String content,
             @RequestParam(value = "date") Date date) {
-        System.out.println("1yhhyhyh");
-       Notices noticesBean=new Notices(title,content,date);
+        Notices noticesBean=new Notices(title,content,date);
         JDBC_STATUS status= noticesService.addNotices(noticesBean);
         RestMessage restMessage = new RestMessage();
         restMessage.setCode(200);
