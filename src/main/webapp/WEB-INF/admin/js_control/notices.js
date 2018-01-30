@@ -33,8 +33,8 @@ $(function(){
                             "                  <td class=\"col-xs-2\" id=\"notices_title_" + noticesObj.id + "\">" + noticesObj.title + "</td>\n" +
                             "                  <td class=\"col-xs-3\" id=\"notices_content_" + noticesObj.id + "\">" + noticesObj.content + "</td>\n" +
                             "                  <td class=\"col-xs-1\">\n" +
-                            "                    <button class=\"btn btn-info\" id=\"chg_news_" + newsObj.id + "\" data-id=\"" + newsObj.id + "\" btnType=\"chgButton\">修改</button>\n" +
-                            "                    <button class=\"btn btn-danger\" id=\"del_news_" + newsObj.id + "\" data-id=\"" + newsObj.id + "\" btnType=\"delButton\">删除</button>\n" +
+                            "                    <button class=\"btn btn-info\" id=\"chg_news_" + noticesObj.id + "\" data-id=\"" + noticesObj.id + "\" btnType=\"chgButton\">修改</button>\n" +
+                            "                    <button class=\"btn btn-danger\" id=\"del_news_" + noticesObj.id + "\" data-id=\"" + noticesObj.id + "\" btnType=\"delButton\">删除</button>\n" +
                             "                  </td>\n" +
                             "                  </tr>");
 					}
@@ -48,7 +48,6 @@ $(function(){
 
     //单击提交添加日常公告按钮异步上传文件
     $('#add_submit').on('click', function() {
-        alert(1);
         add_content_string = CKEDITOR.instances.add_content.getData();
         $('#add_content').val(add_content_string);
         $('#add_notices_form').ajaxSubmit({
@@ -59,6 +58,8 @@ $(function(){
                     $('#add_title,#add_date').val("");
                     CKEDITOR.instances.add_content.setData("");
                     refreshAllList();
+                    bindingEveryDeleteButton();
+                    bindingEveryUpdateButton();
                 } else {
                     alert('插入失败');
                 }
