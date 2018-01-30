@@ -142,7 +142,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-                  近期新闻管理控制台
+                  近期文件管理控制台
         <small>Admin Console</small>
       </h1>
       <ol class="breadcrumb">

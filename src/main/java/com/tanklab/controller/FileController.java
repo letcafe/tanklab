@@ -62,7 +62,7 @@ public class FileController {
         } else if(page < maxPage) {
             model.addAttribute("nextPageHref", "fileList?page" + (page + 1));
         }
-        return "fileList";
+        return "/web/fileList";
     }
 
 

@@ -476,7 +476,7 @@
 											<li>
 												<a href="javascript:void(0);">
 													<i class="fa fa-paperclip"></i>
-													<span>招聘文件</span>
+													<span><a href="/tanklab/fileList">下载文件</a></span>
 												</a>
 											</li>
 											<li>
