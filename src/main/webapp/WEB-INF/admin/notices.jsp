@@ -128,9 +128,9 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">管理</li>
-        <li><a href="./news.jsp"><i class="fa fa-circle-o text-red"></i> <span>近期新闻管理</span></a></li>
-        <li class="active menu-open"><a href="./notices"><i class="fa fa-circle-o text-yellow"></i> <span>近期提醒管理</span></a></li>
-        <li><a href="./announcement"><i class="fa fa-circle-o text-aqua"></i> <span>长期公告管理</span></a></li>
+        <li><a href="./news.jsp"><i class="fa fa-circle-o text-red"></i> <span>近期公告管理</span></a></li>
+        <li><a href="./notices?page=1><i class="fa fa-circle-o text-yellow"></i> <span>近期提醒管理</span></a></li>
+        <li class="active menu-open"><a href="./announcement?page=1"><i class="fa fa-circle-o text-aqua"></i> <span>长期公告管理</span></a></li>
         <li><a href="./file"><i class="fa fa-circle-o text-aqua"></i> <span>文件下载上传管理</span></a></li>
       </ul>
     </section>
@@ -142,7 +142,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-                  近期新闻管理控制台
+        近期提醒管理控制台
         <small>Admin Console</small>
       </h1>
       <ol class="breadcrumb">
@@ -158,49 +158,46 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">近期新闻</h3>
+              <h3 class="box-title">近期公告</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
               <div>
-              	<button id="add_news" class="btn btn-sm btn-success" data-toggle="modal" data-target="#add_news_modal">添加新闻</button>
+                <button id="add_notices" class="btn btn-sm btn-success" data-toggle="modal" data-target="#add_notices_modal">添加公告</button>
               </div>
               <table id="example2" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>No</th>
-                  <th>新闻ID</th>
+                  <th>公告ID</th>
                   <th>日期</th>
                   <th>标题</th>
                   <th>内容</th>
-                  <th>图片</th>
                   <th>操作</th>
                 </tr>
                 </thead>
-                <tbody id="news_form_body">
-                <c:forEach items="${newsList}" var="list" varStatus="idx">
+                <tbody id="notices_form_body">
+                <c:forEach items="${noticesList}" var="list" varStatus="idx">
                   <tr>
-                  <td class="col-xs-1" id="index_${idx.index+1}"><c:out value="${idx.index+1}"></c:out></td>
-                  <td class="col-xs-1" id="news_id_${list.id}"><c:out value="${list.id}"></c:out></td>
-                  <td class="col-xs-2" id="news_date_${list.id}"><c:out value="${list.date}"></c:out></td>
-                  <td class="col-xs-2" id="news_title_${list.id}"><c:out value="${list.title}"></c:out></td>
-                  <td class="col-xs-3" id="news_content_${list.id}">${list.content}</td>
-                  <td class="col-xs-2" id="news_imgUrl_${list.id}"><img src="${list.imgUrl}"/></td>
-                  <td class="col-xs-1">
-                    <button class="btn btn-info" id="chg_news_${list.id}" data-id="${list.id}" btnType="chgButton">修改</button>
-                    <button class="btn btn-danger" id="del_news_${list.id}" data-id="${list.id}" btnType="delButton">删除</button>
-                  </td>
+                    <td class="col-xs-1" id="index_${idx.index+1}"><c:out value="${idx.index+1}"></c:out></td>
+                    <td class="col-xs-1" id="notices_id_${list.id}"><c:out value="${list.id}"></c:out></td>
+                    <td class="col-xs-2" id="notices_date_${list.id}"><c:out value="${list.date}"></c:out></td>
+                    <td class="col-xs-2" id="notices_title_${list.id}"><c:out value="${list.title}"></c:out></td>
+                    <td class="col-xs-3" id="notices_content_${list.id}">${list.content}</td>
+                    <td class="col-xs-1">
+                      <button class="btn btn-info" id="chg_notices_${list.id}" data-id="${list.id}" btnType="chgButton">修改</button>
+                      <button class="btn btn-danger" id="del_notices_${list.id}" data-id="${list.id}" btnType="delButton">删除</button>
+                    </td>
                   </tr>
                 </c:forEach>
-                </tbody>            
-                </tfoot>
+                </tbody>
               </table>
             </div>
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
 
-      <!-- /.row -->
+          <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>
@@ -218,93 +215,83 @@
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
-  <div id="add_news_modal" class="row modal fade" role="dialog" aria-labelledby="add_news_modal" aria_hidden="true">
-  	<div class="box box-primary col-lg-6 col-xs-offset-3" style="width:50%;margin-top:5%;">
-            <div class="box-header with-border">
-              <h3 class="box-title">添加新闻</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form id="add_news_form" role="form" action="/tanklab/api/v1/news/" method="post" enctype="multipart/form-data">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="add_title">新闻标题</label>
-                  <input name="title" type="text" class="form-control" id="add_title" placeholder="请输入新闻标题">
-                </div>
-                <div class="form-group">
-                  <label for="add_content">正文内容</label>
-                  <textarea name="content" class="form-control" rows="10" id="add_content" placeholder="请输入新闻主要内容"></textarea>
-                </div>
-                <div class="form-group" style="padding:0px;">
-                  <label for="add_date">日期</label>
-                  <div class="form-group">
-	                <div class="input-group date">
-	                  <div class="input-group-addon">
-	                    <i class="fa fa-calendar"></i>
-	                  </div>
-	                  <input type="text" name="date" class="form-control pull-right" id="add_date" data-date-format="yyyy-mm-dd">
-	                </div>
-                <!-- /.input group -->
-              </div>
-                </div>
-                <div class="form-group">
-                  <label for="add_images">上传图片</label>
-                  <input name="imgUrl" type="file" id="add_images"/><br>
-                  <p class="help-block">图片格式不限，请上传5M以下的图片</p>
-                </div>
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button id="add_submit" type="button" class="btn btn-primary">添加</button>
-              </div>
-            </form>
+  <div id="add_notices_modal" class="row modal fade" role="dialog" aria-labelledby="add_notices_modal" aria_hidden="true">
+    <div class="box box-primary col-lg-6 col-xs-offset-3" style="width:50%;margin-top:5%;">
+      <div class="box-header with-border">
+        <h3 class="box-title">添加公告</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form id="add_notices_form" role="form" action="/tanklab/api/v1/notices" method="post">
+        <div class="box-body">
+          <div class="form-group">
+            <label for="add_title">公告标题</label>
+            <input name="title" type="text" class="form-control" id="add_title" placeholder="请输入公告标题">
           </div>
+          <div class="form-group">
+            <label for="add_content">正文内容</label>
+            <textarea name="content" class="form-control" rows="10" id="add_content" placeholder="请输入公告主要内容"></textarea>
+          </div>
+          <div class="form-group" style="padding:0px;">
+            <label for="add_date">日期</label>
+            <div class="form-group">
+              <div class="input-group date">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" name="date" class="form-control pull-right" id="add_date" data-date-format="yyyy-mm-dd">
+              </div>
+              <!-- /.input group -->
+            </div>
+          </div>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          <button id="add_submit" type="button" class="btn btn-primary">添加</button>
+        </div>
+      </form>
+    </div>
   </div>
-  
+
   <!-- 修改modal框 -->
-  <div id="change_news_modal" class="row modal fade" role="dialog" aria-labelledby="change_news_modal" aria_hidden="true">
-  	<div class="box box-primary col-lg-6 col-xs-offset-3" style="width:50%;margin-top:5%;">
-            <div class="box-header with-border">
-              <h3 class="box-title">修改新闻</h3>
-            </div>
-            <!-- /.box-header -->
-            <!-- form start -->
-            <form id="change_news_form" role="form" action="/tanklab/api/v1/news/change" method="post" enctype="multipart/form-data">
-              <input name="id" type="hidden" id="change_id">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="change_title">新闻标题</label>
-                  <input name="title" type="text" class="form-control" id="change_title" placeholder="请输入新闻标题">
-                </div>
-                <div class="form-group">
-                  <label for="change_content">正文内容</label>
-                  <textarea name="content" class="form-control" rows="10" id="change_content" placeholder="请输入新闻主要内容"></textarea>
-                </div>
-                <div class="form-group" style="padding:0px;">
-                  <label for="change_date">日期</label>
-                  <div class="form-group">
-	                <div class="input-group date">
-	                  <div class="input-group-addon">
-	                    <i class="fa fa-calendar"></i>
-	                  </div>
-	                  <input type="text" name="date" class="form-control pull-right" id="change_date" data-date-format="yyyy-mm-dd">
-	                </div>
-                <!-- /.input group -->
-              </div>
-                </div>
-                <div class="form-group">
-                  <label for="change_images">初始图片</label>
-                  <img id="img_change_source" style="width:200px;height:150px;" src=""/>
-                  <input name="imgUrl" type="file" id="change_images"/><br>
-                  <p class="help-block">图片格式不限，请上传5M以下的图片（修改后的图片将不会直接显示在修改页面，请在控制台上直接查看）</p>
-                </div>
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button id="change_submit" type="button" class="btn btn-primary">提交修改</button>
-              </div>
-            </form>
+  <div id="change_notices_modal" class="row modal fade" role="dialog" aria-labelledby="change_notices_modal" aria_hidden="true">
+    <div class="box box-primary col-lg-6 col-xs-offset-3" style="width:50%;margin-top:5%;">
+      <div class="box-header with-border">
+        <h3 class="box-title">修改公告</h3>
+      </div>
+      <!-- /.box-header -->
+      <!-- form start -->
+      <form id="change_notices_form" role="form" action="/tanklab/api/v1/notices/change" method="post">
+        <input name="id" type="hidden" id="change_id">
+        <div class="box-body">
+          <div class="form-group">
+            <label for="change_title">公告标题</label>
+            <input name="title" type="text" class="form-control" id="change_title" placeholder="请输入公告标题">
           </div>
+          <div class="form-group">
+            <label for="change_content">正文内容</label>
+            <textarea name="content" class="form-control" rows="10" id="change_content" placeholder="请输入公告主要内容"></textarea>
+          </div>
+          <div class="form-group" style="padding:0px;">
+            <label for="change_date">日期</label>
+            <div class="form-group">
+              <div class="input-group date">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar"></i>
+                </div>
+                <input type="text" name="date" class="form-control pull-right" id="change_date" data-date-format="yyyy-mm-dd">
+              </div>
+              <!-- /.input group -->
+            </div>
+          </div>
+
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+          <button id="change_submit" type="button" class="btn btn-primary">提交修改</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 <!-- ./wrapper -->
@@ -335,12 +322,12 @@
 
 <script src="./js_control/notices.js"></script>
 <script>
-  $(function () {
-    // Replace the <textarea id="editor1"> with a CKEditor
-    // instance, using default configuration.
-    CKEDITOR.replace('add_content');
-    CKEDITOR.replace('change_content');
-  })
+    $(function () {
+        // Replace the <textarea id="editor1"> with a CKEditor
+        // instance, using default configuration.
+        CKEDITOR.replace('add_content');
+        CKEDITOR.replace('change_content');
+    })
 </script>
 </body>
 </html>
