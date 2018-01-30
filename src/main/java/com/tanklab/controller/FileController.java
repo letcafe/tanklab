@@ -2,13 +2,18 @@ package com.tanklab.controller;
 
 import com.tanklab.bean.File;
 import com.tanklab.service.FileService;
+import javafx.animation.KeyValue;
+import javafx.util.Pair;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 
 @Controller
@@ -52,7 +57,20 @@ public class FileController {
         page = (page == 0) ? 1 : page;
         int startIndex = (page - 1) * pageSize;
         List<File> fileList = fileService.selectMany(startIndex, pageSize);
+        //获取后缀
+        Map<String,String> suffixes=new HashMap<String,String>();
+        for(int i=0;i<fileList.size();i++){
+            String tmpStr=fileList.get(i).getPath();
+            int n=tmpStr.lastIndexOf('.');
+            if(n!=-1){
+                System.out.println("后缀："+tmpStr.substring(n));
+                suffixes.put(tmpStr,tmpStr.substring(n));
+            }else {
+                suffixes.put(tmpStr,tmpStr.substring(tmpStr.length()-3));
+            }
 
+        }
+        model.addAttribute("suffixes", suffixes);
         model.addAttribute("pagedFile", fileList);
         page = (maxPage == 0) ? 0 : page;
         model.addAttribute("page", page);

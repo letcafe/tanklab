@@ -27,7 +27,14 @@
     <link rel="stylesheet" href="css/color.css">
     <link rel="stylesheet" href="css/responsive.css">
     <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script language="javascript">
+        function getSuffix(str){
+            var n=str.lastIndexOf(".",0);
+            return str.substring(n,str.length-1);
+        }
+    </script>
 
+    <sc>
     <!-- 自定义index.html的CSS -->
     <style>
         #quickLinkList li a {
@@ -273,9 +280,9 @@
                                         <tbody id="file_form_body">
                                             <c:forEach items="${pagedFile}" var="file">
                                                 <tr>
-                                                    <td class="col-xs-2"}><c:out value="${file.fileName}"></c:out></td>
-                                                    <td class="col-xs-2" id="file_path_${list.id}"><a href="${file.path}" download="${file.fileName}">${file.path}</a></td>
-                                                    <td class="col-xs-1" id="file_id_${list.id}"><i class="fa fa-calendar"></i><span>${file.uploadTime}</span></td>
+                                                    <td class="col-xs-2" ><c:out value="${file.fileName}"></c:out></td>
+                                                    <td class="col-xs-2" ><a href="${file.path}" download="${file.fileName}${suffixes.get(file.path)}">${file.path}</a></td>
+                                                    <td class="col-xs-1" ><i class="fa fa-calendar"></i><span>${file.uploadTime}</span></td>
                                                 </tr>
                                             </c:forEach>
                                         </tbody>
