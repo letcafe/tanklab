@@ -126,7 +126,7 @@
 				<div class="row">
 					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="index.html"><img src="images/logo.png" alt="University of Education and knowledge"></a></strong>
+							<strong class="tg-logo"><a href="index.jsp"><img src="images/logo.png" alt="University of Education and knowledge"></a></strong>
 							<div class="tg-noticeboard hidden-xs">
 								<div id="titleRight" class="tg-textbox">
 									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
@@ -289,7 +289,7 @@
 						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 							<div class="tg-widget tg-widgetcompanyinfo">
 								<div class="tg-widgetcontent">
-									<strong class="tg-logo"><a href="index.html"><img src="images/logo2.png" alt="image description"></a></strong>
+									<strong class="tg-logo"><a href="index.jsp"><img src="images/logo2.png" alt="image description"></a></strong>
 									<div class="tg-description">
 										<p>先进未来网络实验室是一个专注于未来网络前沿技术的研究团队，实验室主要有SDN软件定义网络方向...<a href="javascript:void(0);">更多</a></p>
 									</div>
