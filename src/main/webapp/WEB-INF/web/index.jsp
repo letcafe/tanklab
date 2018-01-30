@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="t" uri="http://tiles.apache.org/tag-tiles" %>
 <%@ page language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -65,147 +66,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<header id="tg-header" class="tg-header tg-haslayout">
-			<div class="tg-topbar">
-				<div class="tg-leftbox">
-					<span id="tg-datebox" class="tg-datebox"></span>
-					<span class="tg-rtltextbox"><em>天津市先进网络技术与应用重点实验室</em></span>
-				</div>
-				<div class="tg-rightbox">
-					<span class="tg-tollfree">地址: 天津大学计算机科学与技术学院B214</span>
-					<div class="tg-themedropdown tg-languagesdropdown">
-						<a href="javascript:void(0);" id="tg-languages" class="tg-btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span><img src="images/flags/img-01.jpg" alt="image description"></span>
-							<span>中文</span>
-						</a>
-						<div class="tg-themedropdownbox" aria-labelledby="tg-languages">
-							<ul class="tg-languageslist">
-								<li>
-									<span><img src="images/flags/img-01.jpg" alt="image description"></span>
-									<span>中文</span>
-								</li>
-								<li>
-									<span><img src="images/flags/img-02.jpg" alt="image description"></span>
-									<span>English</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="index.jsp"><img src="images/logo.png" alt="University of Education and knowledge"></a></strong>
-							<div class="tg-noticeboard hidden-xs">
-								<div id="titleRight" class="tg-textbox">
-									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
-								</div>
-							</div>
-						</div>
-						<div class="tg-navigationarea">
-							<nav id="tg-nav" class="tg-nav">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-								</div>
-								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
-									<ul>
-										<li>
-											<a href="index.jsp">首页</a>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="tanklab.html">实验室</a>
-											<ul class="sub-menu">
-												<li><a href="tanklab.html">实验室简介</a></li>
-												<li><a href="tanklab.html">主任祝语</a></li>
-												<li><a href="tanklab.html">学术委员会</a></li>
-												<li><a href="tanklab.html">仪器设备</a></li>
-												<li><a href="tanklab.html">科研环境</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">资讯速递</a>
-											<ul class="sub-menu">
-												<li><a href="404error.html">通知公告</a></li>
-												<li><a href="newsList.jsp">新闻动态</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研方向</a>
-											<ul class="sub-menu">
-												<li><a href="tanklab.html">未来网络体系结构</a></li>
-												<li><a href="tanklab.html">智能网络技术与应用</a></li>
-												<li><a href="tanklab.html">智慧城市与大数据</a></li>
-												<li><a href="tanklab.html">网络信息安全</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="researchs.html">研究项目</a>
-											<ul class="sub-menu">
-												<li><a href="researchs.html">进行项目</a></li>
-												<li><a href="researchs.html">合作项目</a></li>
-												<li><a href="researchs.html">结题项目</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="teacherGridView.html">科研团队</a>
-											<ul class="sub-menu">
-												<li><a href="teacherGridView.html">固定科研人员</a></li>
-												<li><a href="teacherGridView.html">客座科研人员</a></li>
-												<li><a href="teacherGridView.html">流动科研人员</a></li>
-												<li><a href="teacherGridView.html">研究生阵容</a></li>
-												<li><a href="teacherGridView.html">人才招聘</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="researchs.html">科研成果</a>
-											<ul class="sub-menu">
-												<li><a href="researchs.html">论文及专著</a></li>
-												<li><a href="researchs.html">获奖情况</a></li>
-												<li><a href="researchs.html">专利、软件著作权</a></li>
-												<li><a href="researchs.html">成果展示</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="404error.html">开放交流</a>
-											<ul class="sub-menu">
-												<li><a href="404error.html">学术交流</a></li>
-												<li><a href="404error.html">开放课题</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="tanklab.html">人才培养</a>
-											<ul class="sub-menu">
-												<li><a href="tanklab.html">招生计划</a></li>
-												<li><a href="tanklab.html">培养计划</a></li>
-												<li><a href="tanklab.html">课程资源</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="index.jsp">联系我们</a>
-											<ul class="sub-menu">
-												<li><a href="index.jsp">联系方式</a></li>
-												<li><a href="index.jsp">交通指南</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="javascript:void(0);">内部网络</a>
-										</li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+		<t:insertAttribute name="header"></t:insertAttribute>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -225,10 +86,10 @@
 										<img style="width: 873px;height: 424px" src="images/slider/31.jpg" alt="image description">
 										<figcaption class="tg-slidercontent">
 											<div class="tg-slidercontentbox">
-												<a class="tg-btn" href="javascript:void(0);">read more</a>
+												<a class="tg-btn" href="/tanklab/detailNews?id=${list.id}">更多</a>
 												<div class="tg-titledescription">
 													<h1>${list.title} ${list.date}</h1>
-													<div class="tg-description">${list.content}</div>
+													<div class="tg-description">${list.content.substring(0, 200)}</div>
 												</div>
 											</div>
 										</figcaption>
@@ -314,7 +175,7 @@
 													<h3 id="news_title_1"><a href="javascript:void(0);">${news_index1.title}</a></h3>
 												</div>
 												<div class="tg-description" id="news_content_1">
-													<p>${news_index1.content}</p>
+													<p>${news_index1.content.substring(0, 300)}</p>
 												</div>
 											</div>
 										</article>
