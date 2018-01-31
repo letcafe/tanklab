@@ -162,7 +162,7 @@
                             <h3 class="box-title">近期新闻</h3>
                         </div>
                         <!-- /.box-header -->
-                        <div class="box-body">
+                        <div id="mainTable" class="box-body">
                             <div>
                                 <button id="add_news" class="btn btn-sm btn-success" data-toggle="modal"
                                         data-target="#add_news_modal">添加新闻
