@@ -183,7 +183,7 @@
                     <td class="col-xs-1" id="file_id_${list.id}"><c:out value="${list.id}"></c:out></td>
                     <td class="col-xs-2" id="file_fileName_${list.id}"><c:out value="${list.fileName}"></c:out></td>
                     <td class="col-xs-2" id="file_uploadTime_${list.id}"><c:out value="${list.uploadTime}"></c:out></td>
-                    <td class="col-xs-2" id="file_path_${list.id}"><a href="${list.path}" download="${list.fileName}${suffixes.get(list.path)}">${list.path}</a></td>
+                    <td class="col-xs-2" id="file_path_${list.id}"><a href="${list.path}" download="${list.fileName}${list.path.substring(list.path.lastIndexOf('.'))}">${list.path}</a></td>
                     <td class="col-xs-1">
                     <button class="btn btn-info" id="chg_file_${list.id}" data-id="${list.id}" btnType="chgButton">修改</button>
                     <button class="btn btn-danger" id="del_file_${list.id}" data-id="${list.id}" btnType="delButton">删除</button>

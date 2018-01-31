@@ -269,20 +269,20 @@
                             </div>
                             <div class="tg-newsandarticle tg-list">
                                 <div id="fileList" class="row">
-                                    <table id="fileListView" class="table table-bordered table-hover">
+                                    <table id="fileListView" class="table table-hover">
                                         <thead>
                                         <tr>
-                                            <th>文件名</th>
-                                            <th>下载链接</th>
-                                            <th>日期</th>
+                                            <th style="border-right: 0;border-left: 0;border-top:0;">文件名</th>
+                                            <th style="border-right: 0;border-left: 0;border-top:0;">下载链接</th>
+                                            <th style="border-right: 0;border-left: 0;border-top:0;">日期</th>
                                         </tr>
                                         </thead>
                                         <tbody id="file_form_body">
                                             <c:forEach items="${pagedFile}" var="file">
                                                 <tr>
-                                                    <td class="col-xs-2" ><c:out value="${file.fileName}"></c:out></td>
-                                                    <td class="col-xs-2" ><a href="${file.path}" download="${file.fileName}${suffixes.get(file.path)}">点我下载</a></td>
-                                                    <td class="col-xs-1" ><i class="fa fa-calendar"></i><span>${file.uploadTime}</span></td>
+                                                    <td class="col-xs-2 " style="border-right: 0;border-left: 0" ><c:out value="${file.fileName}"></c:out></td>
+                                                    <td class="col-xs-2" style="border-right: 0;border-left: 0"><a href="${file.path}" download="${file.fileName}${file.path.substring(file.path.lastIndexOf('.'))}">点我下载</a></td>
+                                                    <td class="col-xs-1" style="border-right: 0;border-left: 0"><i class="fa fa-calendar"></i><span>${file.uploadTime}</span></td>
                                                 </tr>
                                             </c:forEach>
                                         </tbody>
