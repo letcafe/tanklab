@@ -2,8 +2,8 @@ $(function(){
     hostip='172.18.16.134'; //server true ip:123.207.162.21
 
     //隐藏表单空白显示的提示文字
-	$('.dataTables_empty').hide();
-	//设置日期选择器的基本属性
+    $('.dataTables_empty').hide();
+    //设置日期选择器的基本属性
     $('#add_date').datepicker({
         autoclose: true,
     });
@@ -15,18 +15,18 @@ $(function(){
 
 
     //对页面的列表进行重新加载
-	var refreshAllList = function() {
-		$.ajax({
-			url:'/tanklab/api/v1/news',
-			method:'GET',
-			success:function(restMessage) {
-				if(restMessage.code == 200) {
-					//清空tbody里的所有行
+    var refreshAllList = function() {
+        $.ajax({
+            url:'/tanklab/api/v1/news',
+            method:'GET',
+            success:function(restMessage) {
+                if(restMessage.code == 200) {
+                    //清空tbody里的所有行
                     $('#news_form_body').html('');
-					for(var i = 0; i < restMessage.data.length; i++) {
-						var newsObj = restMessage.data[i];
-						//append遍历添加每一行
-						$('#news_form_body').append("<tr>\n" +
+                    for(var i = 0; i < restMessage.data.length; i++) {
+                        var newsObj = restMessage.data[i];
+                        //append遍历添加每一行
+                        $('#news_form_body').append("<tr>\n" +
                             "                  <td class=\"col-xs-1\" id=\"index_" + (i+1) + "\">" + (i+1) + "</td>\n" +
                             "                  <td class=\"col-xs-1\" id=\"news_id_" + newsObj.id + "\">" + newsObj.id + "</td>\n" +
                             "                  <td class=\"col-xs-2\" id=\"news_date_" + newsObj.id +"\">" + timeStamp2String(newsObj.date) + "</td>\n" +
@@ -38,13 +38,13 @@ $(function(){
                             "                    <button class=\"btn btn-danger\" id=\"del_news_" + newsObj.id + "\" data-id=\"" + newsObj.id + "\" btnType=\"delButton\">删除</button>\n" +
                             "                  </td>\n" +
                             "                  </tr>");
-					}
+                    }
                     bindingEveryDeleteButton();//对新生成的按钮连接进行绑定
                     bindingEveryUpdateButton();
-				}
-			}
-		});
-	}
+                }
+            }
+        });
+    }
 
 
     //单击提交添加新闻按钮出发异步上传文件
@@ -68,52 +68,59 @@ $(function(){
         });
     });
 
-	//根据按钮的btnType属性遍历每个删除按钮
-	var bindingEveryDeleteButton = function() {
-	    //开始前清空所有绑定事件
-	    $('button[btnType="delButton"]').unbind('click');
-        //获取遍历中的当前按钮，绑定单击事件，传递其data-id属性对应的参数
-        $('#mainTable').delegate('button[btnType="delButton"]', 'click', function() {
-            var news_id = $(this).attr('data-id');
-            //弹出确认对话框，防止用户失(shou)误(can)
-            confirm_message = confirm('确认要删除吗？');
-            if(confirm_message == true) {
-                $.ajax({
-                    url: "/tanklab/api/v1/news?id=" + news_id,//请求异步的API路径加上变量
-                    type: "DELETE",//请求类型，删除的话是DELETE
-                    success: function(data) {
-                        //根据返回的JSON中的code字段是否为200判断是否删除成功，并给用户提示
-                        if(data.code == 200) {
-                            $("#del_news_" + news_id).parent().parent().hide(1500);
-                            alert('删除成功');
-                        }else {
-                            alert('操作失拜，请稍后再试');
+    //根据按钮的btnType属性遍历每个删除按钮
+    var bindingEveryDeleteButton = function() {
+        $('button[btnType="delButton"]').each(function() {
+            param_del_id = $(this).data('id');
+            //获取遍历中的当前按钮，绑定单击事件，传递其data-id属性对应的参数
+            $(this).on('click', {id:param_del_id}, function(event) {
+                //弹出确认对话框，防止用户失(shou)误(can)
+                confirm_message = confirm('确认要删除吗？');
+                if(confirm_message == true) {
+                    $.ajax({
+                        url: "/tanklab/api/v1/news?id=" + event.data.id,//请求异步的API路径加上变量
+                        type: "DELETE",//请求类型，删除的话是DELETE
+                        success: function(data) {
+                            //根据返回的JSON中的code字段是否为200判断是否删除成功，并给用户提示
+                            if(data.code == 200) {
+                                $("#del_news_" + event.data.id).parent().parent().hide(1500);
+                                alert('删除成功');
+                            }else {
+                                alert('操作失拜，请稍后再试');
+                            }
                         }
-                    }
-                });
-            } else {
-                alert('删除操作已撤销');
-            }
+                    });
+                } else {
+                    alert('删除操作已撤销');
+                }
+            });
         });
-	}
+    }
 
 
     //根据按钮的btnType属性遍历每个修改按钮
     var bindingEveryUpdateButton = function() {
-        //开始前清空所有绑定事件
-        $('button[btnType="chgButton"]').unbind('click');
-        var chg_id = $(this).data('id');
-        //获取遍历中的当前按钮，绑定修改单击事件，传递其data-id属性对应的参数，并获取每个id选择器对应的值传递参数
-        $('#mainTable').delegate('button[btnType="chgButton"]','click', function(){
-            var index = $(this).attr('data-id');
-            $('#change_news_modal').modal();//调用弹出模态框
-            $('#change_id').val($("#news_id_" + index).text());
-            $('#change_title').val($("#news_title_" + index).text());
-            CKEDITOR.instances.change_content.setData($("#news_content_" + index).html());
-            $('#change_date').val($("#news_date_" + index).text());
-            $('#img_change_source').attr('src',$("#news_imgUrl_" + index + " img").attr("src"));
+        $('button[btnType="chgButton"]').each(function() {
+            var chg_id = $(this).data('id');
+            //获取遍历中的当前按钮，绑定修改单击事件，传递其data-id属性对应的参数，并获取每个id选择器对应的值传递参数
+            $(this).on('click', {
+                id:$("#news_id_" + chg_id).text(),
+                title:$("#news_title_" + chg_id).text(),
+                content:$("#news_content_" + chg_id).html(),//由于首页使用substring()，因此为了读到全文，在该表格的一个属性中封装字段，使其能读出，修改全文
+                date:$("#news_date_" + chg_id).text(),
+                imgUrl:$("#news_imgUrl_" + chg_id + " img").attr("src"),//获取图片标签的src源并准备赋值给模态框中的图片预览
+            }, function(event) {
+                var chg_data = event.data;//获取传参数的对象
+                console.log("img_url:" + chg_data.imgUrl);
+                $('#change_news_modal').modal();//调用弹出模态框
+                $('#change_id').val(chg_data.id);
+                $('#change_title').val(chg_data.title);
+                CKEDITOR.instances.change_content.setData(chg_data.content);
+                $('#change_date').val(chg_data.date);
+                $('#img_change_source').attr('src',chg_data.imgUrl);
+            });
         });
-	}
+    }
 
     //绑定修改页面的提交按钮单击事件，修改新闻并提交数据库
     $('#change_submit').on('click', function() {
@@ -121,18 +128,18 @@ $(function(){
         $('#change_content').val(change_content_string);
         $('#change_news_form').ajaxSubmit({
             success: function(restMessage) {
-            	if(restMessage.code == 200) {
+                if(restMessage.code == 200) {
                     alert('修改成功')
                     $('#change_news_modal').modal('hide');
                     refreshAllList();
-				} else {
-            		alert('修改失败，请稍后再试');
-				}
+                } else {
+                    alert('修改失败，请稍后再试');
+                }
             }
         });
     });
 
-	//调用绑定的方法
+    //调用绑定的方法
     bindingEveryDeleteButton();
     bindingEveryUpdateButton();
 
