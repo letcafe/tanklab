@@ -21,7 +21,8 @@ import java.util.List;
  */
 @Repository
 public class AnnouncementDaoImpl implements AnnouncementDao {
-    private final static String getAnnouncement="SELECT id,title,content,date FROM announcement WHERE id=?";
+    private final static String getAnnouncement="SELECT id,title,content,date FROM announcement WHERE id=? ORDER BY date";
+    private final static String getAnnouncementAll="SELECT id,title,content,date FROM announcement";
     private final static String getAnnounceTopList="SELECT id,title,content,date FROM announcement ORDER BY date DESC LIMIT 0,?";
     private final static String getAnnounceList="SELECT id,title,content,date FROM announcement ORDER BY date DESC LIMIT ?,?";
     private final static String getAnnounceCount="SELECT count(0) FROM announcement";
@@ -52,6 +53,11 @@ public class AnnouncementDaoImpl implements AnnouncementDao {
         } catch(EmptyResultDataAccessException e) {
             return null;
         }
+    }
+
+    @Override
+    public List<Announcement> getAnnounceAll() {
+        return jdbcTemplate.query(getAnnouncementAll, new AnnounceRowMapper());
     }
 
     @Override
