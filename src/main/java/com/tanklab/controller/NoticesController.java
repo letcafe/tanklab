@@ -85,5 +85,36 @@ public class NoticesController {
         return "admin/notices";
     }
 
+    /**前台展示部分，进行jsp映射**/
+    @RequestMapping(value = "/noticesList")
+    public String getPagedNews(Model model, @RequestParam(value = "page") Integer page) {
+        int totalCount = noticesService.getNoticesCount();
+        int pageSize = 10;
+        int maxPage = (totalCount % pageSize == 0) ? (totalCount / pageSize) : (totalCount / pageSize + 1);
+        page = (page == 0) ? 1 : page;
+        int start = (page - 1) * pageSize;
+        List<Notices> noticesList = noticesService.getNoticesList(start,pageSize);
+       
+
+        model.addAttribute("pagedNotices", noticesList);
+        page = (maxPage == 0) ? 0 : page;
+        model.addAttribute("page", page);
+        model.addAttribute("maxPage", maxPage);
+        if(page > 1) {
+            model.addAttribute("prePageIndex", page - 1);
+        }
+        if(page < maxPage) {
+            model.addAttribute("nextPageIndex", page + 1);
+        }
+        return "/web/noticesList";
+    }
+
+    @RequestMapping(value = "/detailNotices")
+    public String detailNewsJsp(Model model, @RequestParam(value = "id") Integer id) {
+        Notices notices = noticesService.getNotices(id);
+        model.addAttribute("detailNotices", notices);
+        return "/web/detailNotices";
+    }
+
 
 }

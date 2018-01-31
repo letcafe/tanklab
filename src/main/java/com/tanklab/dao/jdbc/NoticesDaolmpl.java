@@ -16,9 +16,9 @@ import java.util.List;
 @Repository
 public class NoticesDaolmpl implements NoticesDao {
     private final static String getNotices="SELECT id,title,content,date FROM notices WHERE id=?";
-    private final static String getNoticesTopList="SELECT id,title,content,date FROM notices ORDER BY id DESC LIMIT 0,?";
-    private final static String getNoticesList="SELECT id,title,content,date FROM notices ORDER BY id DESC LIMIT ?,?";
-    private final static String getNoticesCount="SELECT count(0) FROM notices";
+    private final static String getNoticesTopList="SELECT id,title,content,date FROM notices ORDER BY date DESC LIMIT 0,?";
+    private final static String getNoticesList="SELECT id,title,content,date FROM notices ORDER BY date DESC LIMIT ?,?";
+    private final static String getNoticesCount="SELECT count(*) FROM notices";
     private final static String addNotices="INSERT INTO notices(title,content,date) VALUES(?,?,?)";
     private final static String modifyNotices="UPDATE notices SET title=?,content=?,date=? WHERE id=?";
     private final static String deleteNotices="DELETE FROM notices WHERE id=?";

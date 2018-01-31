@@ -3,6 +3,7 @@
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>			<html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->	<html class="no-js" lang="zxx"> <!--<![endif]-->
+<%@ page language="java" pageEncoding="UTF-8" %>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -254,9 +255,11 @@
 						<div class="col-sm-12">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure style="text-align:center"><img style="height:200px;display:inline-block;" id="news_detail_img" src="" alt="image description"></figure>
-									<h3 id="news_detail_title"></h1>
-									<div id="news_detail_content"></div>
+									<div style="text-align:center">
+										<h2 id="notices_detail_title">${detailNotices.title}</h2>
+										<h3 id="notices_detail_date">${detailNotices.date}</h3>
+										<h4 id="notices_detail_content">${detailNotices.content}</h4>
+									</div>
 								</div>
 							</div>
 						</div>
