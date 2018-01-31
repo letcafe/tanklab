@@ -33,7 +33,7 @@ public class AnnouncementAPI {
      * @param id 公告id
      * @return 操作状态
      */
-    @RequestMapping(value = "/annuouncement", method = GET, produces = "application/json")
+    @RequestMapping(value = "/announcement", method = GET, produces = "application/json")
     @ResponseBody
     public RestMessage<Announcement> getAnnouncement(Model model,
             @RequestParam(value="id",required=true) int id) {

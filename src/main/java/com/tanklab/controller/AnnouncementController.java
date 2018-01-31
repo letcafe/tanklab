@@ -63,36 +63,35 @@ public class AnnouncementController {
         return "/admin/announcement";
     }
 
-    /**
-     * 根据页码获取多条公告信息
-     * @param model
-     * @param page 当前页码
-     * @return 操作状态
-     */
-    @RequestMapping(value = "/announcementList", method = GET)
-    public String getAnnounceList(Model model,
-            @RequestParam(value="page",required=true) int page) {
-        int totalCount= announcementService.getAnnounceCount();  //查询总条数
-        int size=10; //每页显示大小
-        int maxPage=(totalCount%size==0)?totalCount/size:totalCount/size+1;//最大页数
-        page=(page==0)?1:page; //当前第几页
-        int start=(page-1)*size;
+    /**前台展示部分，进行jsp映射**/
+    @RequestMapping(value = "/announcementList")
+    public String getPagedNews(Model model, @RequestParam(value = "page") Integer page) {
+        int totalCount = announcementService.getAnnounceCount();
+        int pageSize = 10;
+        int maxPage = (totalCount % pageSize == 0) ? (totalCount / pageSize) : (totalCount / pageSize + 1);
+        page = (page == 0) ? 1 : page;
+        int start = (page - 1) * pageSize;
+        List<Announcement> announcementList = announcementService.getAnnounceList(start,pageSize);
 
-        List<Announcement> announceList= announcementService.getAnnounceList(start,size);
-        model.addAttribute("announceList",announceList);
-        /**
-         * 封装翻页信息
-         */
-        model.addAttribute("maxPage",maxPage);
-        page=maxPage==0?0:page;
-        model.addAttribute("page",page);
-        model.addAttribute("totalCount",totalCount);
-        if(page>1)//生成并封装上一页的链接
-            model.addAttribute("prePageHref","page="+(page-1));
-        if(page<maxPage)//生成并封装下一页的链接
-            model.addAttribute("nextPageHref","page="+(page+1));
 
-        return "admin/announcement";
+        model.addAttribute("pagedAnnouncement", announcementList);
+        page = (maxPage == 0) ? 0 : page;
+        model.addAttribute("page", page);
+        model.addAttribute("maxPage", maxPage);
+        if(page > 1) {
+            model.addAttribute("prePageIndex", page - 1);
+        }
+        if(page < maxPage) {
+            model.addAttribute("nextPageIndex", page + 1);
+        }
+        return "/web/announcementList";
+    }
+
+    @RequestMapping(value = "/detailAnnouncement")
+    public String detailAnnouncementJsp(Model model, @RequestParam(value = "id") Integer id) {
+        Announcement announcement = announcementService.getAnnouncement(id);
+        model.addAttribute("detailAnnouncement", announcement);
+        return "/web/detailAnnouncement";
     }
 
 

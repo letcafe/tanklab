@@ -258,8 +258,8 @@
 									<div style="text-align:center">
 										<h2 id="notices_detail_title">${detailNotices.title}</h2>
 										<h3 id="notices_detail_date">${detailNotices.date}</h3>
-										<h4 id="notices_detail_content">${detailNotices.content}</h4>
 									</div>
+									<h4 id="notices_detail_content">${detailNotices.content}</h4>
 								</div>
 							</div>
 						</div>

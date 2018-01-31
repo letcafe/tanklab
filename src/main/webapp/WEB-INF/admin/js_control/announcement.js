@@ -48,7 +48,6 @@ $(function(){
 
     //单击提交添加公告按钮出发异步上传文件
     $('#add_submit').on('click', function() {
-        alert(1);
         add_content_string = CKEDITOR.instances.add_content.getData();
         $('#add_content').val(add_content_string);
         $('#add_announcement_form').ajaxSubmit({

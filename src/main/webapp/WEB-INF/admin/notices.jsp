@@ -322,7 +322,7 @@
 <script src="./plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 
-<script src="./js_control/notices.js"></script>
+
 <script>
     $(function () {
         // Replace the <textarea id="editor1"> with a CKEditor
@@ -336,6 +336,7 @@
     });
     $("#noticesTable_length").hide();
 </script>
+<script src="./js_control/notices.js"></script>
 </body>
 </html>
 
