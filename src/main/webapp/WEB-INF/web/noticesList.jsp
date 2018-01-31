@@ -268,13 +268,13 @@
                                 <h2>实验室近期公告</h2>
                             </div>
                             <div class="tg-newsandarticle tg-list">
-                                <table id="fileListView" class="table table-bordered table-hover">
+                                <table id="fileListView" class="table table-hover">
                                     <tbody id="notices_form_body">
                                     <c:forEach items="${pagedNotices}" var="notices">
                                         <tr>
-                                            <td class="col-xs-2" ><c:out value="${notices.date}"></c:out></td>
-                                            <td class="col-xs-2" ><c:out value="${notices.title}"></c:out></td>
-                                            <td class="col-xs-1" ><a class="tg-btn tg-btn-sm" href="/tanklab/detailNotices?id=${notices.id}">更多详情</a></td>
+                                            <td class="col-xs-2" style="border-right: 0;border-left: 0;border-top: 0"><c:out value="${notices.date}"></c:out></td>
+                                            <td class="col-xs-2" style="border-right: 0;border-left: 0;border-top: 0"><c:out value="${notices.title}"></c:out></td>
+                                            <td class="col-xs-1" style="border-right: 0;border-left: 0;border-top: 0"><button class="label label-info"><a href="/tanklab/detailNotices?id=${notices.id}">More Info</a></button></td>
                                         </tr>
                                     </c:forEach>
                                     </tbody>
