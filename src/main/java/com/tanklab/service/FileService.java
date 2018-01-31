@@ -21,5 +21,4 @@ public interface FileService {
 
     JDBC_STATUS addOneFile(File file);
 
-    Map<String,String> getSuffixes(List<File> fileList);
 }

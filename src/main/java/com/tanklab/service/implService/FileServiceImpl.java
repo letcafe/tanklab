@@ -55,8 +55,4 @@ public class FileServiceImpl implements FileService {
         return fileDao.addOneFile(file);
     }
 
-    @Override
-    public Map<String, String> getSuffixes(List<File> fileList) {
-        return fileDao.getSuffixes(fileList);
-    }
 }

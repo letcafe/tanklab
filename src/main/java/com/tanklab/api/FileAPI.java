@@ -48,13 +48,11 @@ public class FileAPI {
     //select all files
     @RequestMapping(value = "", method = GET, produces = "application/json")
     @ResponseBody
-    public RestMessage<List<File>> getAllFiles(Model model) {
+    public RestMessage<List<File>> getAllFiles() {
         RestMessage<List<File>> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
         List<File> fileList=fileService.selectFileList();
-        Map<String,String> suffixes=fileService.getSuffixes(fileList);
-        model.addAttribute("suffixes",suffixes);
         restMessage.setData(fileList);
 
         return restMessage;

@@ -57,9 +57,6 @@ public class FileController {
         page = (page == 0) ? 1 : page;
         int startIndex = (page - 1) * pageSize;
         List<File> fileList = fileService.selectMany(startIndex, pageSize);
-        //获取后缀
-        Map<String,String> suffixes=fileService.getSuffixes(fileList);
-        model.addAttribute("suffixes", suffixes);
         model.addAttribute("pagedFile", fileList);
         page = (maxPage == 0) ? 0 : page;
         model.addAttribute("page", page);
