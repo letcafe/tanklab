@@ -18,44 +18,49 @@ import java.util.List;
 @Transactional
 public class AnnouncementServiceImpl implements AnnouncementService {
 
-    private AnnouncementDao announceDao;
+    private AnnouncementDao announcementDao;
     @Autowired
-    public AnnouncementServiceImpl(AnnouncementDao announceDao) {
-        this.announceDao = announceDao;
+    public AnnouncementServiceImpl(AnnouncementDao announcementDao) {
+        this.announcementDao = announcementDao;
     }
 
     @Override
     public Announcement getAnnouncement(int id) {
-        return announceDao.getAnnouncement(id);
+        return announcementDao.getAnnouncement(id);
+    }
+
+    @Override
+    public List<Announcement> getAnnounceAll() {
+        return announcementDao.getAnnounceAll();
     }
 
     @Override
     public List<Announcement> getAnnounceTopList(int size) {
-        return announceDao.getAnnounceTopList(size);
+        return announcementDao.getAnnounceTopList(size);
     }
 
     @Override
     public List<Announcement> getAnnounceList(int start,int size) {
-        return announceDao.getAnnounceList(start,size);
+        return announcementDao.getAnnounceList(start,size);
     }
 
     @Override
     public int getAnnounceCount() {
-        return announceDao.getAnnounceCount();
+        return announcementDao.getAnnounceCount();
     }
 
     @Override
     public JDBC_STATUS addAnnouncement(Announcement announceBean) {
-        return announceDao.addAnnouncement(announceBean);
+        return announcementDao.addAnnouncement(announceBean);
     }
 
     @Override
     public JDBC_STATUS modifyAnnouncement(Announcement announceBean) {
-        return announceDao.modifyAnnouncement(announceBean);
+        return announcementDao.modifyAnnouncement(announceBean);
     }
 
     @Override
     public JDBC_STATUS deleteAnnouncement(int id) {
-        return announceDao.deleteAnnouncement(id);
+        return announcementDao.deleteAnnouncement(id);
     }
 }

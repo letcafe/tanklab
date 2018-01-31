@@ -56,13 +56,20 @@ public class AnnouncementController {
         return "announceTopList";
     }
 
+    @RequestMapping(value = "/admin/announcement", method = GET)
+    public String getAnnounceTopList(Model model) {
+        List<Announcement> announcementList= announcementService.getAnnounceAll();
+        model.addAttribute("announcementList",announcementList);
+        return "/admin/announcement";
+    }
+
     /**
      * 根据页码获取多条公告信息
      * @param model
      * @param page 当前页码
      * @return 操作状态
      */
-    @RequestMapping(value = "admin/announcement", method = GET)
+    @RequestMapping(value = "/announcementList", method = GET)
     public String getAnnounceList(Model model,
             @RequestParam(value="page",required=true) int page) {
         int totalCount= announcementService.getAnnounceCount();  //查询总条数

@@ -165,7 +165,7 @@
               <div>
               	<button id="add_announcement" class="btn btn-sm btn-success" data-toggle="modal" data-target="#add_announcement_modal">添加公告</button>
               </div>
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="announcementTable" data-page-length="10" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -177,7 +177,7 @@
                 </tr>
                 </thead>
                 <tbody id="announcement_form_body">
-                <c:forEach items="${announceList}" var="list" varStatus="idx">
+                <c:forEach items="${announcementList}" var="list" varStatus="idx">
                   <tr>
                   <td class="col-xs-1" id="index_${idx.index+1}"><c:out value="${idx.index+1}"></c:out></td>
                   <td class="col-xs-1" id="announcement_id_${list.id}"><c:out value="${list.id}"></c:out></td>
@@ -327,7 +327,12 @@
     // instance, using default configuration.
     CKEDITOR.replace('add_content');
     CKEDITOR.replace('change_content');
-  })
+  });
+  $("#announcementTable").DataTable({
+      searching:false,
+      lengthMenu:10
+  });
+  $("#announcementTable_length").hide();
 </script>
 </body>
 </html>
