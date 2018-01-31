@@ -46,8 +46,9 @@ public class WebPageController {
     }
 
     //获取路径下的所有JSP文件并正常返回
-    @RequestMapping(value = "/login", method = GET)
+    @RequestMapping(value = "/admin/goToLogin", method = GET)
     public String loginJsp() {
         return "/admin/login";
     }
+
 }
