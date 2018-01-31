@@ -15,6 +15,7 @@ import java.sql.SQLException;
 import java.util.List;
 @Repository
 public class NoticesDaolmpl implements NoticesDao {
+    private final static String getAllNotices="SELECT id, title, content, date FROM notices ORDER BY date DESC";
     private final static String getNotices="SELECT id,title,content,date FROM notices WHERE id=?";
     private final static String getNoticesTopList="SELECT id,title,content,date FROM notices ORDER BY date DESC LIMIT 0,?";
     private final static String getNoticesList="SELECT id,title,content,date FROM notices ORDER BY date DESC LIMIT ?,?";
@@ -23,11 +24,22 @@ public class NoticesDaolmpl implements NoticesDao {
     private final static String modifyNotices="UPDATE notices SET title=?,content=?,date=? WHERE id=?";
     private final static String deleteNotices="DELETE FROM notices WHERE id=?";
 
+
     private JDBC_STATUS status = null;
     private JdbcTemplate jdbcTemplate;
     @Autowired
     public NoticesDaolmpl(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
+    }
+
+
+    @Override
+    public List<Notices> getAllNotices() {
+        try {
+            return jdbcTemplate.query(getAllNotices,new NoticesDaolmpl.NoticesRowMapper());
+        } catch(EmptyResultDataAccessException e) {
+            return null;
+        }
     }
 
     @Override
