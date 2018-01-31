@@ -165,7 +165,8 @@
               <div>
                 <button id="add_notices" class="btn btn-sm btn-success" data-toggle="modal" data-target="#add_notices_modal">添加公告</button>
               </div>
-              <table id="example2" class="table table-bordered table-hover">
+
+              <table id="noticesTable" data-page-length="10" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -320,6 +321,7 @@
 <!-- Bootstrap WYSIHTML5 -->
 <script src="./plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
+
 <script src="./js_control/notices.js"></script>
 <script>
     $(function () {
@@ -328,6 +330,12 @@
         CKEDITOR.replace('add_content');
         CKEDITOR.replace('change_content');
     })
+    $("#noticesTable").DataTable({
+        searching: false,
+        lengthMenu: [10]
+    });
+    $("#noticesTable_length").hide();
 </script>
 </body>
 </html>
+

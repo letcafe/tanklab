@@ -15,6 +15,10 @@ public class NoticesServicelmpl implements NoticesService {
     private NoticesDao noticesDao;
     @Autowired
     public NoticesServicelmpl(NoticesDao noticesDao) { this.noticesDao = noticesDao;}
+
+    @Override
+    public List<Notices> getAllNotices() { return noticesDao.getAllNotices(); }
+
     @Override
     public Notices getNotices(int id) { return noticesDao.getNotices(id); }
 

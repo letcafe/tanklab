@@ -5,6 +5,7 @@ import com.tanklab.bean.JDBC_STATUS;
 import java.util.List;
 
 public interface NoticesService {
+    public List<Notices> getAllNotices();//获取所有公告信息
     public Notices getNotices(int id); //查询指定id的公告
     public List<Notices> getNoticesTopList(int size); //获取指定size条数的公告信息，用于首页展示topList
     public List<Notices> getNoticesList(int start, int size); //获取翻页公告信息，start,size用于sql查询"limit start,size;"
