@@ -4,6 +4,7 @@ import com.tanklab.bean.File;
 import com.tanklab.bean.JDBC_STATUS;
 
 import java.util.List;
+import java.util.Map;
 
 public interface FileDao {
     int getTableCount();
@@ -19,4 +20,6 @@ public interface FileDao {
     JDBC_STATUS deleteOneFile(int fileId);
 
     JDBC_STATUS addOneFile(File file);
+
+    Map<String,String> getSuffixes(List<File> fileList);
 }

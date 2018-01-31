@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class FileServiceImpl implements FileService {
@@ -52,5 +53,10 @@ public class FileServiceImpl implements FileService {
     @Override
     public JDBC_STATUS addOneFile(File file) {
         return fileDao.addOneFile(file);
+    }
+
+    @Override
+    public Map<String, String> getSuffixes(List<File> fileList) {
+        return fileDao.getSuffixes(fileList);
     }
 }
