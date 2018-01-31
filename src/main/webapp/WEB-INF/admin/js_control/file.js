@@ -31,7 +31,7 @@ $(function(){
                             "                  <td class=\"col-xs-1\" id=\"file_id_" + fileObj.id + "\">" + fileObj.id + "</td>\n" +
                             "                  <td class=\"col-xs-2\" id=\"file_fileName_" + fileObj.id + "\">" + fileObj.fileName + "</td>\n" +
                             "                  <td class=\"col-xs-2\" id=\"file_uploadTime_" + fileObj.id +"\">" + timeStamp2String(fileObj.uploadTime) + "</td>\n" +
-                            "                  <td class=\"col-xs-2\" id=\"file_path_" + fileObj.id + "\"><a href=\"" + fileObj.path + "\">" + fileObj.path+" </a></td>\n" +
+                            "                  <td class=\"col-xs-2\" id=\"file_path_" + fileObj.id + "\"><a href=\"" + fileObj.path + "\" download=\""+fileObj.fileName+suffixes.get(fileObj.path)+"\">" + fileObj.path+" </a></td>\n" +
                             "                  <td class=\"col-xs-1\">\n" +
                             "                    <button class=\"btn btn-info\" id=\"chg_file_" + fileObj.id + "\" data-id=\"" + fileObj.id + "\" btnType=\"chgButton\">修改</button>\n" +
                             "                    <button class=\"btn btn-danger\" id=\"del_file_" + fileObj.id + "\" data-id=\"" + fileObj.id + "\" btnType=\"delButton\">删除</button>\n" +

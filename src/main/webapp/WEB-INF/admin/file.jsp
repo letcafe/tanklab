@@ -165,7 +165,7 @@
               <div>
               	<button id="add_file" class="btn btn-sm btn-success" data-toggle="modal" data-target="#add_file_modal">添加文件</button>
               </div>
-              <table id="example2" class="table table-bordered table-hover">
+              <table id="fileTable" class="table table-bordered table-hover">
                 <thead>
                 <tr>
                   <th>No</th>
@@ -179,12 +179,12 @@
                 <tbody id="file_form_body">
                 <c:forEach items="${fileList}" var="list" varStatus="idx">
                   <tr>
-                  <td class="col-xs-1" id="index_${idx.index+1}"><c:out value="${idx.index+1}"></c:out></td>
-                  <td class="col-xs-1" id="file_id_${list.id}"><c:out value="${list.id}"></c:out></td>
-                  <td class="col-xs-2" id="file_fileName_${list.id}"><c:out value="${list.fileName}"></c:out></td>
-                  <td class="col-xs-2" id="file_uploadTime_${list.id}"><c:out value="${list.uploadTime}"></c:out></td>
-                    <td class="col-xs-2" id="file_path_${list.id}"><a href="${list.path}">${list.path}</a></td>
-                  <td class="col-xs-1">
+                    <td class="col-xs-1" id="index_${idx.index+1}"><c:out value="${idx.index+1}"></c:out></td>
+                    <td class="col-xs-1" id="file_id_${list.id}"><c:out value="${list.id}"></c:out></td>
+                    <td class="col-xs-2" id="file_fileName_${list.id}"><c:out value="${list.fileName}"></c:out></td>
+                    <td class="col-xs-2" id="file_uploadTime_${list.id}"><c:out value="${list.uploadTime}"></c:out></td>
+                    <td class="col-xs-2" id="file_path_${list.id}"><a href="${list.path}" download="${list.fileName}${suffixes.get(list.path)}">${list.path}</a></td>
+                    <td class="col-xs-1">
                     <button class="btn btn-info" id="chg_file_${list.id}" data-id="${list.id}" btnType="chgButton">修改</button>
                     <button class="btn btn-danger" id="del_file_${list.id}" data-id="${list.id}" btnType="delButton">删除</button>
                   </td>
@@ -336,7 +336,12 @@
     // instance, using default configuration.
     //CKEDITOR.replace('add_content');
     //CKEDITOR.replace('change_content');
+  });
+  $('#fileTable').DataTable({
+      searching:false,
+      lengthMenu:[10]
   })
+  $('#fileTable_length').hide();
 </script>
 </body>
 </html>

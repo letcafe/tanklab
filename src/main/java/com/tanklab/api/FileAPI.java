@@ -7,6 +7,7 @@ import com.tanklab.service.FileService;
 import com.tanklab.util.FileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,7 +16,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
 
@@ -38,17 +41,22 @@ public class FileAPI {
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
         restMessage.setData(fileService.getTableCount());
+
         return restMessage;
     }
 
     //select all files
     @RequestMapping(value = "", method = GET, produces = "application/json")
     @ResponseBody
-    public RestMessage<List<File>> getAllFiles() {
+    public RestMessage<List<File>> getAllFiles(Model model) {
         RestMessage<List<File>> restMessage = new RestMessage();
         restMessage.setCode(200);
         restMessage.setMsg(JDBC_STATUS.SUCCESS.toString());
-        restMessage.setData(fileService.selectFileList());
+        List<File> fileList=fileService.selectFileList();
+        Map<String,String> suffixes=fileService.getSuffixes(fileList);
+        model.addAttribute("suffixes",suffixes);
+        restMessage.setData(fileList);
+
         return restMessage;
     }
 
@@ -128,6 +136,8 @@ public class FileAPI {
         restMessage.setData(null);
         return restMessage;
     }
+
+
 
 }
 

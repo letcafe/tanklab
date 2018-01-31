@@ -58,18 +58,7 @@ public class FileController {
         int startIndex = (page - 1) * pageSize;
         List<File> fileList = fileService.selectMany(startIndex, pageSize);
         //获取后缀
-        Map<String,String> suffixes=new HashMap<String,String>();
-        for(int i=0;i<fileList.size();i++){
-            String tmpStr=fileList.get(i).getPath();
-            int n=tmpStr.lastIndexOf('.');
-            if(n!=-1){
-                System.out.println("后缀："+tmpStr.substring(n));
-                suffixes.put(tmpStr,tmpStr.substring(n));
-            }else {
-                suffixes.put(tmpStr,tmpStr.substring(tmpStr.length()-3));
-            }
-
-        }
+        Map<String,String> suffixes=fileService.getSuffixes(fileList);
         model.addAttribute("suffixes", suffixes);
         model.addAttribute("pagedFile", fileList);
         page = (maxPage == 0) ? 0 : page;
