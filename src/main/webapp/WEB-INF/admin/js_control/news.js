@@ -75,7 +75,6 @@ $(function(){
         //获取遍历中的当前按钮，绑定单击事件，传递其data-id属性对应的参数
         $('#mainTable').delegate('button[btnType="delButton"]', 'click', function() {
             var news_id = $(this).attr('data-id');
-            console.log("this id:" + $(this).attr('data-id'));
             //弹出确认对话框，防止用户失(shou)误(can)
             confirm_message = confirm('确认要删除吗？');
             if(confirm_message == true) {
