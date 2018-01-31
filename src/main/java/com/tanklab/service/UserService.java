@@ -1,5 +1,7 @@
 package com.tanklab.service;
 
+import com.tanklab.bean.User;
+
 public interface UserService {
-    public boolean loginRight(String loginName, String passwoed);
+    public User loginRight(String loginName, String passwoed);
 }

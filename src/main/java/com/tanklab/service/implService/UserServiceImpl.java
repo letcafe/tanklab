@@ -1,5 +1,6 @@
 package com.tanklab.service.implService;
 
+import com.tanklab.bean.User;
 import com.tanklab.dao.UserDao;
 import com.tanklab.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean loginRight(String loginName, String passwoed) {
+    public User loginRight(String loginName, String passwoed) {
         return userDao.loginRight(loginName, passwoed);
     }
 }

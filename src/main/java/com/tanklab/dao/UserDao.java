@@ -1,5 +1,7 @@
 package com.tanklab.dao;
 
+import com.tanklab.bean.User;
+
 public interface UserDao {
-    public boolean loginRight(String loginName, String passwoed);
+    public User loginRight(String loginName, String passwoed);
 }
