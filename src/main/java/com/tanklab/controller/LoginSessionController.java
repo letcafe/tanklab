@@ -31,7 +31,7 @@ public class LoginSessionController {
             session.setAttribute("loginName",loginName);
             //Session超时时间，单位秒
             session.setMaxInactiveInterval(60 * 60);
-            return "/admin/index";
+            return "/admin/news?page=1";
         } else {
             model.addAttribute("message","用户名或密码错误");
             model.addAttribute("loginName",loginName);
