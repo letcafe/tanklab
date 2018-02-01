@@ -1,3 +1,4 @@
+<%@ page language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -100,147 +101,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<header id="tg-header" class="tg-header tg-haslayout">
-			<div class="tg-topbar">
-				<div class="tg-leftbox">
-					<span id="tg-datebox" class="tg-datebox"></span>
-					<span class="tg-rtltextbox"><em>天津市先进网络技术与应用重点实验室</em></span>
-				</div>
-				<div class="tg-rightbox">
-					<span class="tg-tollfree">地址: 天津大学计算机科学与技术学院B214</span>
-					<div class="tg-themedropdown tg-languagesdropdown">
-						<a href="javascript:void(0);" id="tg-languages" class="tg-btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-							<span>中文</span>
-						</a>
-						<div class="tg-themedropdownbox" aria-labelledby="tg-languages">
-							<ul class="tg-languageslist">
-								<li>
-									<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-									<span>中文</span>
-								</li>
-								<li>
-									<span><img src="../images/flags/img-02.jpg" alt="image description"></span>
-									<span>English</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="../index.jsp"><img src="../images/logo.png" alt="University of Education and knowledge"></a></strong>
-							<div class="tg-noticeboard hidden-xs">
-								<div id="titleRight" class="tg-textbox">
-									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
-								</div>
-							</div>
-						</div>
-						<div class="tg-navigationarea">
-							<nav id="tg-nav" class="tg-nav">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-								</div>
-								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
-									<ul>
-										<li>
-											<a href="../index.jsp">首页</a>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">实验室</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">实验室简介</a></li>
-												<li><a href="../tanklab.html">主任祝语</a></li>
-												<li><a href="../tanklab.html">学术委员会</a></li>
-												<li><a href="../tanklab.html">仪器设备</a></li>
-												<li><a href="../tanklab.html">科研环境</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">资讯速递</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">通知公告</a></li>
-												<li><a href="../newsList.jsp">新闻动态</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研方向</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">未来网络体系结构</a></li>
-												<li><a href="../tanklab.html">智能网络技术与应用</a></li>
-												<li><a href="../tanklab.html">智慧城市与大数据</a></li>
-												<li><a href="../tanklab.html">网络信息安全</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">研究项目</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">进行项目</a></li>
-												<li><a href="../researchs.html">合作项目</a></li>
-												<li><a href="../researchs.html">结题项目</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../teacherGridView.html">科研团队</a>
-											<ul class="sub-menu">
-												<li><a href="../teacherGridView.html">固定科研人员</a></li>
-												<li><a href="../teacherGridView.html">客座科研人员</a></li>
-												<li><a href="../teacherGridView.html">流动科研人员</a></li>
-												<li><a href="../teacherGridView.html">研究生阵容</a></li>
-												<li><a href="../teacherGridView.html">人才招聘</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">科研成果</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">论文及专著</a></li>
-												<li><a href="../researchs.html">获奖情况</a></li>
-												<li><a href="../researchs.html">专利、软件著作权</a></li>
-												<li><a href="../researchs.html">成果展示</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../404error.html">开放交流</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">学术交流</a></li>
-												<li><a href="../404error.html">开放课题</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">人才培养</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">招生计划</a></li>
-												<li><a href="../tanklab.html">培养计划</a></li>
-												<li><a href="../tanklab.html">课程资源</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../index.jsp">联系我们</a>
-											<ul class="sub-menu">
-												<li><a href="../index.jsp">联系方式</a></li>
-												<li><a href="../index.jsp">交通指南</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="javascript:void(0);">内部网络</a>
-										</li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+		<%@ include file = "../header.jsp" %>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -280,24 +141,27 @@
 						<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure><img src="../images/courses/geweimin.jpg" alt="image description"></figure>
+									<figure><img src="../images/courses/xuguangquan.jpg" alt="image description"></figure>
 									<h3>个人简介</h3>
-									<p>最高学位：博士<br>
-                                       邮箱：gewm@tju.edu.cn<br>
-                                       通讯地址：北洋园校区55楼B532<br>
-                                      
-                                       个人主页：http://cs.tju.edu.cn/faculty/gewm/<br></p>
+									<p>
+									   最高学位：博士<br>
+                                       邮箱：losin@tju.edu.cn<br>
+                                       通讯地址：北洋园校区55楼B407<br>
+                                       
+                                       个人主页：http://cs.tju.edu.cn/faculty/xugq<br></p>
 									<h3>研究方向</h3>
-									<p>计算机网络、移动计算、信息系统开发及应用<br></p>
-									<h3>科研项目</h3>
-									<p>1.横向合作项目，公交车辆视频监控系统研究，2010.6—2011.6<br>
-									   2.天津市软件产业发展基金项目，公交车辆嵌入式3G视频监控系统，2011-2012
-									   3.国家工信部物联网发展专项资金项目，基于物联网技术的智能化公交运营管理系统，2011-2013<br></p>
-									 <h3>代表论文</h3> 
-									 <p>1.Ge Weimin, Li Juan, Wang Junke, Ran Fang, Meng Zhaopeng ，Enhanced Network Coding for TCP in Wireless Networks， Proceedings of the International Conference on Wireless Communications, Networking and Mobile Computing，2011<br>
-									    2.GUO Xiao-feil,GE Wei-min*,JinZhi-gang,KANG yang， Priority scheduling algorithm to improve short-term fairness, Proceedings of the 2011 International Conference on Consumer Electronics,Communication， (EI:20112414060268)<br>
-										3.葛卫民，赵冬雪，邱胜男，罗咏梅，Ad hoc 网络中基于带宽延迟估计的TCP 拥塞控制，天津大学学报，43（10）:866-872，2010年10月<br>
-										4. Lv Heng, Ge Weimin, Luo Yongmei, Zhao Dongxu，A New Method for TCP Congestion Control Based on AODV Congestion Indication，Proceedings of the 2009 International Conference on Wireless Communications and Signal Processing， Nanjing, China, November 13 - 15, 2009.（ EI： 20101012760534）<br></p>
+									<p>网络信息安全,可信计算,安全软件工程, 大数据安全<br></p>
+									<h3>承担项目</h3>
+									<p>1. 国家自然科学基金面上项目，“稀疏信任理论及应用研究 ”， 项目主持人，2016.1-2019.12。<br>
+
+                                       2. 天津市应用基础与研究计划一般项目，“面向可伸缩云服务的云资源自适应管理与协同调度研究 ”， 项目主持人，2015.4-2018.3。<br></p>.
+									<h3>代表论文</h3>
+									<p>1.Xiaohong Li, Feng Liu, Zhiyong Feng, Guangquan Xu*, Zhangjie Fu, A novel optimized vertical handover framework for seamless networking integration in cyber-enabled systems, Future Generation Computer Systems,Available online 15 April 2017. doi:10.1155/2017/6310827. (SCI)<br>
+									   2.Wen-jun Wang, Xiao-ming Li, Peng-fei Jiao, Guang-quan Xu, Ning Yuan, and Wei Yu, Exploring Intracity Taxi Mobility during the Holidays for Location-Based Marketing, Mobile Information Systems, vol. 2017, Article ID 6310827, 10 pages, 2017. doi:10.1155/2017/6310827. (SCI)<br>
+									   3.Hua He, Guangquan Xu*, Shanchen Pang, Zenghua Zhao, AMTS: Adaptive Multi-objective Task Scheduling Strategy in Cloud Computing, China Communications, 2016, 13(4):162-171. (SCI)<br>
+									   4.Xiaohong Li, Jiayi Xu† and Guangquan Xu*, Fepchecker: An Automatic Model Checker for Verifying Fairness and Non-Repudiation of Security Protocols in Web Service, International Journal of Software Engineering and Knowledge Engineering, Vol. 26, No. 4 (2016), 563–585. (SCI)<br>
+									   5.Guangquan XU*, Yuanyuan REN, Yuanbin Han, Member, Xiaohong Li, and Zhiyong FENG, Privacy Protection Method Based on Two-Factor Authentication Protocol in FRID Systems, IEICE  Trans. on Information and Systems, Vol.E99-D,No.8, pp.2019-2026, Aug. 2016.(SCI)<br>
+									   </p>
 								</div>
 							</div>
 						</div>

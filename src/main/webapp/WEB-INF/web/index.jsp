@@ -1,7 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="t" uri="http://tiles.apache.org/tag-tiles" %>
 <%@ page language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
@@ -66,7 +65,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<t:insertAttribute name="header"></t:insertAttribute>
+		<%@ include file = "header.jsp" %>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -130,7 +129,7 @@
 							<c:forEach items="${noticesList}" var="notices">
 								<div class="item">
 									<div class="tg-description">
-										<p>${notices.title}</p>
+										<p><a style="text-decoration: none;color: #555555;" href="detailNotices?id=${notices.id}">${notices.title}</a></p>
 									</div>
 								</div>
 							</c:forEach>
@@ -310,9 +309,12 @@
 										<ul>
 											<c:forEach items="${announcementList}" var="announcement">
 												<li>
-													<a href="/announcementList?id=${announcement.id}">${announcement.title}</a>
+													<a href="detailAnnouncement?id=${announcement.id}">${announcement.title}</a>
 												</li>
 											</c:forEach>
+											<li>
+												<a href="announcementList?page=1">更多公告</a>
+											</li>
 										</ul>
 									</div>
 								</div>

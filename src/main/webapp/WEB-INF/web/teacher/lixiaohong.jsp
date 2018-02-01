@@ -1,3 +1,4 @@
+<%@ page language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -100,147 +101,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<header id="tg-header" class="tg-header tg-haslayout">
-			<div class="tg-topbar">
-				<div class="tg-leftbox">
-					<span id="tg-datebox" class="tg-datebox"></span>
-					<span class="tg-rtltextbox"><em>天津市先进网络技术与应用重点实验室</em></span>
-				</div>
-				<div class="tg-rightbox">
-					<span class="tg-tollfree">地址: 天津大学计算机科学与技术学院B214</span>
-					<div class="tg-themedropdown tg-languagesdropdown">
-						<a href="javascript:void(0);" id="tg-languages" class="tg-btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-							<span>中文</span>
-						</a>
-						<div class="tg-themedropdownbox" aria-labelledby="tg-languages">
-							<ul class="tg-languageslist">
-								<li>
-									<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-									<span>中文</span>
-								</li>
-								<li>
-									<span><img src="../images/flags/img-02.jpg" alt="image description"></span>
-									<span>English</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="../index.jsp"><img src="../images/logo.png" alt="University of Education and knowledge"></a></strong>
-							<div class="tg-noticeboard hidden-xs">
-								<div id="titleRight" class="tg-textbox">
-									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
-								</div>
-							</div>
-						</div>
-						<div class="tg-navigationarea">
-							<nav id="tg-nav" class="tg-nav">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-								</div>
-								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
-									<ul>
-										<li>
-											<a href="../index.jsp">首页</a>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">实验室</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">实验室简介</a></li>
-												<li><a href="../tanklab.html">主任祝语</a></li>
-												<li><a href="../tanklab.html">学术委员会</a></li>
-												<li><a href="../tanklab.html">仪器设备</a></li>
-												<li><a href="../tanklab.html">科研环境</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">资讯速递</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">通知公告</a></li>
-												<li><a href="../newsList.jsp">新闻动态</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研方向</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">未来网络体系结构</a></li>
-												<li><a href="../tanklab.html">智能网络技术与应用</a></li>
-												<li><a href="../tanklab.html">智慧城市与大数据</a></li>
-												<li><a href="../tanklab.html">网络信息安全</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">研究项目</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">进行项目</a></li>
-												<li><a href="../researchs.html">合作项目</a></li>
-												<li><a href="../researchs.html">结题项目</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../teacherGridView.html">科研团队</a>
-											<ul class="sub-menu">
-												<li><a href="../teacherGridView.html">固定科研人员</a></li>
-												<li><a href="../teacherGridView.html">客座科研人员</a></li>
-												<li><a href="../teacherGridView.html">流动科研人员</a></li>
-												<li><a href="../teacherGridView.html">研究生阵容</a></li>
-												<li><a href="../teacherGridView.html">人才招聘</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">科研成果</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">论文及专著</a></li>
-												<li><a href="../researchs.html">获奖情况</a></li>
-												<li><a href="../researchs.html">专利、软件著作权</a></li>
-												<li><a href="../researchs.html">成果展示</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../404error.html">开放交流</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">学术交流</a></li>
-												<li><a href="../404error.html">开放课题</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">人才培养</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">招生计划</a></li>
-												<li><a href="../tanklab.html">培养计划</a></li>
-												<li><a href="../tanklab.html">课程资源</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../index.jsp">联系我们</a>
-											<ul class="sub-menu">
-												<li><a href="../index.jsp">联系方式</a></li>
-												<li><a href="../index.jsp">交通指南</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="javascript:void(0);">内部网络</a>
-										</li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+		<%@ include file = "../header.jsp" %>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -280,17 +141,27 @@
 						<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure><img src="../images/courses/zhaolaiping.jpg" alt="image description"></figure>
+									<figure><img src="../images/courses/lixiaohong.jpg" alt="image description"></figure>
 									<h3>个人简介</h3>
-									<p>学习经历：	2007年7月 大连理工大学软件学院本科毕业<br>
-													2009年7月 大连理工大学软件学院研究生毕业<br>
-													2012年10月 九州大学系统情报科学院博士学位取得<br><br>
-									    邮箱：laiping@tju.edu.cn <br>
-										通讯地址：天津市津南区海河教育园区天津大学北洋园校区55-A-214<br>
-										个人主页：http://clouduv.cn<br>
+									<p>李晓红，女，1965年9月出生，工学博士学位，天津大学计算机及信息技术系主任、软件与信息安全工程研究所所长、教授，博士生导师。计算机学会高级会员、中国计算机学会女工委委员、ACM会员、软件工程专委会委员、形式化专委会委员、全国高等学校计算机教育研究会常务理事、天津大学女工委员、计算机学院教代会主任。近年来致力于安全软件工程、可信软件及信息安全领域的研究工作。<br><br>
+									最高学位：博士<br>
+									邮箱：xiaohongli@tju.edu.cn<br>
+									通讯地址：北洋园校区55楼B522<br>
+									个人主页：<a href="http://cs.tju.edu.cn/faculty/lxh/">http://cs.tju.edu.cn/faculty/lxh/</a><br>
 									</p>
 									<h3>研究方向</h3>
-									<p>云计算系统优化、分布式系统资源调度算法、分布式系统容错技术<br>
+									<p>安全软件工程、可信软件、信息安全领域</p>
+									<h3>学术兼职</h3>
+									<p>教育部科技评价与评审专家；<br>
+									教育部学位与研究生教育发展中心学位论文评审、学科建设和评估咨询专家 ；<br>
+									国家科技奖励评审专家；<br>
+									全国高等学校计算机教育研究会 常务理事；<br>
+									计算机学会高级会员，ACM会员、软件工程专委会委员；<br>
+									日本北陆科学技术大学院大学(JAIST)客座教授；<br>
+									《计算机学报》、《软件学报》、《计算机研究与发展》等杂志审稿专家；<br>
+									软件工程、信息安全相关领域国际期刊、国际会议审稿专家，例如 ICFEM,ICECCS,TSE,APSEC,PRDC；<br>
+									计算机学院学位委员会委员、学术委员会委员、学科建设委员会成员、教学指导委员会委员兼秘书；学院985专家组成员兼秘书；<br>
+
 									</p>
 								</div>
 							</div>

@@ -1,3 +1,4 @@
+<%@ page language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -100,147 +101,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<header id="tg-header" class="tg-header tg-haslayout">
-			<div class="tg-topbar">
-				<div class="tg-leftbox">
-					<span id="tg-datebox" class="tg-datebox"></span>
-					<span class="tg-rtltextbox"><em>天津市先进网络技术与应用重点实验室</em></span>
-				</div>
-				<div class="tg-rightbox">
-					<span class="tg-tollfree">地址: 天津大学计算机科学与技术学院B214</span>
-					<div class="tg-themedropdown tg-languagesdropdown">
-						<a href="javascript:void(0);" id="tg-languages" class="tg-btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-							<span>中文</span>
-						</a>
-						<div class="tg-themedropdownbox" aria-labelledby="tg-languages">
-							<ul class="tg-languageslist">
-								<li>
-									<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-									<span>中文</span>
-								</li>
-								<li>
-									<span><img src="../images/flags/img-02.jpg" alt="image description"></span>
-									<span>English</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="../index.jsp"><img src="../images/logo.png" alt="University of Education and knowledge"></a></strong>
-							<div class="tg-noticeboard hidden-xs">
-								<div id="titleRight" class="tg-textbox">
-									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
-								</div>
-							</div>
-						</div>
-						<div class="tg-navigationarea">
-							<nav id="tg-nav" class="tg-nav">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-								</div>
-								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
-									<ul>
-										<li>
-											<a href="../index.jsp">首页</a>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">实验室</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">实验室简介</a></li>
-												<li><a href="../tanklab.html">主任祝语</a></li>
-												<li><a href="../tanklab.html">学术委员会</a></li>
-												<li><a href="../tanklab.html">仪器设备</a></li>
-												<li><a href="../tanklab.html">科研环境</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">资讯速递</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">通知公告</a></li>
-												<li><a href="../newsList.jsp">新闻动态</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研方向</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">未来网络体系结构</a></li>
-												<li><a href="../tanklab.html">智能网络技术与应用</a></li>
-												<li><a href="../tanklab.html">智慧城市与大数据</a></li>
-												<li><a href="../tanklab.html">网络信息安全</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">研究项目</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">进行项目</a></li>
-												<li><a href="../researchs.html">合作项目</a></li>
-												<li><a href="../researchs.html">结题项目</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../teacherGridView.html">科研团队</a>
-											<ul class="sub-menu">
-												<li><a href="../teacherGridView.html">固定科研人员</a></li>
-												<li><a href="../teacherGridView.html">客座科研人员</a></li>
-												<li><a href="../teacherGridView.html">流动科研人员</a></li>
-												<li><a href="../teacherGridView.html">研究生阵容</a></li>
-												<li><a href="../teacherGridView.html">人才招聘</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">科研成果</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">论文及专著</a></li>
-												<li><a href="../researchs.html">获奖情况</a></li>
-												<li><a href="../researchs.html">专利、软件著作权</a></li>
-												<li><a href="../researchs.html">成果展示</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../404error.html">开放交流</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">学术交流</a></li>
-												<li><a href="../404error.html">开放课题</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">人才培养</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">招生计划</a></li>
-												<li><a href="../tanklab.html">培养计划</a></li>
-												<li><a href="../tanklab.html">课程资源</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../index.jsp">联系我们</a>
-											<ul class="sub-menu">
-												<li><a href="../index.jsp">联系方式</a></li>
-												<li><a href="../index.jsp">交通指南</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="javascript:void(0);">内部网络</a>
-										</li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+		<%@ include file = "../header.jsp" %>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -280,14 +141,43 @@
 						<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure><img src="../images/courses/liuchunfeng.jpg" alt="image description"></figure>
+									<figure><img src="../images/courses/daiweidi.jpg" alt="image description"></figure>
 									<h3>个人简介</h3>
-									<p> 最高学位：博士<br>
-										邮箱：cfliu@tju.edu.cn<br>
-										通讯地址：北洋园校区55楼B527<br>
-										个人主页：http://cs.tju.edu.cn/faculty/szdw/jsfjs/cfliu/index.htm<br></p>
-									<h3>研究方向</h3>
-									<p>无线网络业务分析与建模，可信无线网络，车辆自组织网络（VANET）容迟/容断路由技术</p>
+									<p> 2006年3月获天津大学计算机应用技术博士学位，从事智能信息技术（模式识别、数据挖掘）方面的研究，主
+
+										持或参加完成国家及天津市等省部级科研项目十余项，担任“Imaging Science Journal”、浙江大学学报、
+										
+										上海交通大学学报、ICI、FSKD等国际期刊或国际学术会议审稿人；2009、2010年去韩国、日本参加双边学术交
+										
+										流研讨；目前在天津大学计算机学院软件工程与信息系统研究所工作，并讲授计算机本科专业相关课程.<br>
+										
+										— 2011年-至今，天津大学计算机科学与技术学院，副教授，院长助理<br>
+										
+										— 2009年-2010年，天津大学计算机科学与技术学院，副教授，系秘书<br>
+										
+										— 2006年-2008年，天津大学计算机科学与技术学院，讲师<br><br>
+										
+										最高学位：博士<br>
+										邮箱：davidy@tju.edu.cn<br>
+										通讯地址：北洋园校区55楼B327<br>
+										个人主页：http://cs.tju.edu.cn/faculty/szdw/jsfjs/dwd/index.htm<br></p>
+										<h3>研究方向</h3>
+									<p> 智能信息技术（模式识别、数据挖掘）<br></p>
+									<h3>科研项目</h3>
+									<p> — “焊接操作过程图像信息采集系统”（中国石油天然气集团大庆油田建设集团，2011.03-2011.12）<br>
+										— “广西气象灾害应急决策平台关键技术研究及示范应用”（广西科委，2009.04-2010.08）<br>
+										— “周视激光****仿真系统”（某军工研究所，2009.02-2010.8）<br>
+										— “地震监测预警台站基础信息管理系统”（天津市科委，2007.10-2009.03）<br>
+										— “基于信息几何方法的维数约减和信息抽象模型研究”（国家自然科学基金，2007.1-2009.12）<br>
+										— “可嵌入/面向分布-集中模式的医疗信息应用系统”（天津市应用基础研究计划，成果登记号：津20060664,国际先进水平，2000.9-2006.5)<br></p>
+									<h3>研究成果</h3>
+									<p>  — Weidi Dai, Wei Mei, Xiaodong Zhao. Detection and Segmentation of Concealed Objectsin X-ray Compton Backscatter Images, ICIG2013, Qingdao, China.<br>
+										 — 赵晓东，戴维迪，梅伟，基于RFID的会议签到系统，软件著作权，2013<br>
+										 — Weidi Dai, Jianlai Cheng etc. A semantic Integration System for Heterogeneous Bioinformatics Data, ICCSNT2012, Changchun, China(EI:20133016524847)<br>
+										 — Weidi Dai, Qiuwen Wang etc. CloudAssoc: A pipeline for imputation based genome wide association study on cloud, ICCSNT2012, Changchun, China(EI:20133016524924)<br>
+										 — 李乐，戴维迪，王文俊，智能化城市运营中心平台 v1.0，软件著作权，2012<br>
+										 — Wang Ruguang, Weidi Dai etc. An Ontology-based Data Mining Framework in Traffic Domain, ICFMD2011, Taichuang, Taiwan(EI:20114714533177)<br></p>
+
 								</div>
 							</div>
 						</div>

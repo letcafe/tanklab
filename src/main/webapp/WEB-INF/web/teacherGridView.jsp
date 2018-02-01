@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿<%@ page language="java" pageEncoding="UTF-8" %>
+<!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>			<html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -90,148 +91,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<header id="tg-header" class="tg-header tg-haslayout">
-			<div class="tg-topbar">
-				<div class="tg-leftbox">
-					<span id="tg-datebox" class="tg-datebox"></span>
-					<span class="tg-rtltextbox"><em>天津市先进网络技术与应用重点实验室</em></span>
-				</div>
-				<div class="tg-rightbox">
-					<span class="tg-tollfree">地址: 天津大学计算机科学与技术学院B214</span>
-					<div class="tg-themedropdown tg-languagesdropdown">
-						<a href="javascript:void(0);" id="tg-languages" class="tg-btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span><img src="images/flags/img-01.jpg" alt="image description"></span>
-							<span>中文</span>
-						</a>
-						<div class="tg-themedropdownbox" aria-labelledby="tg-languages">
-							<ul class="tg-languageslist">
-								<li>
-									<span><img src="images/flags/img-01.jpg" alt="image description"></span>
-									<span>中文</span>
-								</li>
-								<li>
-									<span><img src="images/flags/img-02.jpg" alt="image description"></span>
-									<span>English</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="index.jsp"><img src="images/logo.png" alt="University of Education and knowledge"></a></strong>
-							<div class="tg-noticeboard hidden-xs">
-								<div id="titleRight" class="tg-textbox">
-									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
-								</div>
-							</div>
-						</div>
-						<div class="tg-navigationarea">
-							<nav id="tg-nav" class="tg-nav">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-								</div>
-								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
-									<ul>
-										<li>
-											<a href="index.jsp">首页</a>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="tanklab.html">实验室</a>
-											<ul class="sub-menu">
-												<li><a href="tanklab.html">实验室简介</a></li>
-												<li><a href="tanklab.html">主任祝语</a></li>
-												<li><a href="tanklab.html">学术委员会</a></li>
-												<li><a href="tanklab.html">仪器设备</a></li>
-												<li><a href="tanklab.html">科研环境</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">资讯速递</a>
-											<ul class="sub-menu">
-												<li><a href="404error.html">通知公告</a></li>
-												<li><a href="newsList.jsp">新闻动态</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研方向</a>
-											<ul class="sub-menu">
-												<li><a href="tanklab.html">未来网络体系结构</a></li>
-												<li><a href="tanklab.html">智能网络技术与应用</a></li>
-												<li><a href="tanklab.html">智慧城市与大数据</a></li>
-												<li><a href="tanklab.html">网络信息安全</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">研究项目</a>
-											<ul class="sub-menu">
-												<li><a href="departments.html">进行项目</a></li>
-												<li><a href="departmentdetail.html">合作项目</a></li>
-												<li><a href="departments.html">结题项目</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="teacherGridView.html">科研团队</a>
-											<ul class="sub-menu">
-												<li><a href="teacherGridView.html">固定科研人员</a></li>
-												<li><a href="teacherGridView.html">客座科研人员</a></li>
-												<li><a href="teacherGridView.html">流动科研人员</a></li>
-												<li><a href="teacherGridView.html">研究生阵容</a></li>
-												<li><a href="teacherGridView.html">人才招聘</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研成果</a>
-											<ul class="sub-menu">
-												<li><a href="departments.html">论文及专著</a></li>
-												<li><a href="departmentdetail.html">获奖情况</a></li>
-												<li><a href="departments.html">专利、软件著作权</a></li>
-												<li><a href="departmentdetail.html">成果展示</a></li>
-												<li><a href="departments.html">开源下载</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">开放交流</a>
-											<ul class="sub-menu">
-												<li><a href="departmentdetail.html">学术交流</a></li>
-												<li><a href="departmentdetail.html">开放课题</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="tanklab.html">人才培养</a>
-											<ul class="sub-menu">
-												<li><a href="tanklab.html">招生计划</a></li>
-												<li><a href="tanklab.html">培养计划</a></li>
-												<li><a href="tanklab.html">课程资源</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="index.jsp">联系我们</a>
-											<ul class="sub-menu">
-												<li><a href="index.jsp">联系方式</a></li>
-												<li><a href="index.jsp">交通指南</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="javascript:void(0);">内部网络</a>
-										</li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+		<%@ include file = "header.jsp" %>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -267,7 +127,7 @@
 														<li><a href="javascript:void(0);">李克秋</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/likeqiu.html">教授<br>博士生导师/硕士生导师<br>杰出青年基金（云计算、数据中心）</a></h3>
+														<h3><a href="teacher/likeqiu">教授<br>博士生导师/硕士生导师<br>杰出青年基金（云计算、数据中心）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -286,7 +146,7 @@
 														<li><a href="javascript:void(0);">王文俊</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/wangwenjun.html">教授<br>博士生导师/硕士生导师<br>社科基金重大首席（复杂网络、智慧城市）</a></h3>
+														<h3><a href="teacher/wangwenjunjsp">教授<br>博士生导师/硕士生导师<br>社科基金重大首席（复杂网络、智慧城市）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -303,7 +163,7 @@
 														<li><a href="javascript:void(0);">吴斌</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/wubin.html">教授<br>博士生导师/硕士生导师<br>ACM天津秘书长（计算系统与网络）</a></h3>
+														<h3><a href="teacher/wubin">教授<br>博士生导师/硕士生导师<br>ACM天津秘书长（计算系统与网络）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -320,7 +180,7 @@
 														<li><a href="javascript:void(0);">李晓红</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/lixiaohong.html">教授<br>博士生导师/硕士生导师<br>CCF软件工程专委（可信计算、信息安全）</a></h3>
+														<h3><a href="teacher/lixiaohong">教授<br>博士生导师/硕士生导师<br>CCF软件工程专委（可信计算、信息安全）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -337,7 +197,7 @@
 														<li><a href="javascript:void(0);">郭炜</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/guowei.html">教授<br>硕士生导师<br>计算机工程专委（嵌入式系统安全）</a></h3>
+														<h3><a href="teacher/guowei">教授<br>硕士生导师<br>计算机工程专委（嵌入式系统安全）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -356,7 +216,7 @@
 														<li><a href="javascript:void(0);">喻梅</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/yumei.html">教授<br>硕士生导师<br>（网络工程）</a></h3>
+														<h3><a href="teacher/yumei">教授<br>硕士生导师<br>（网络工程）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -373,7 +233,7 @@
 														<li><a href="javascript:void(0);">王晓飞</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/wangxiaofei.html">教授<br>博士生导师/硕士生导师<br>天津市青千（无线移动网络）</a></h3>
+														<h3><a href="teacher/wangxiaofei">教授<br>博士生导师/硕士生导师<br>天津市青千（无线移动网络）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -390,7 +250,7 @@
 														<li><a href="javascript:void(0);">赵增华</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/zhaozenghua.html">副教授<br>硕士生导师<br>CCF传感器网络专委（无线通信、物联网）</a></h3>
+														<h3><a href="teacher/zhaozenghua">副教授<br>硕士生导师<br>CCF传感器网络专委（无线通信、物联网）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -407,7 +267,7 @@
 														<li><a href="javascript:void(0);">葛卫民</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/geweimin.html">副教授<br>硕士生导师<br>（网络工程）</a></h3>
+														<h3><a href="teacher/geweimin">副教授<br>硕士生导师<br>（网络工程）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -426,7 +286,7 @@
 														<li><a href="javascript:void(0);">张蕾</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/zhanglei.html">副教授<br>硕士生导师<br>（无线通讯、物联网）</a></h3>
+														<h3><a href="teacher/zhanglei">副教授<br>硕士生导师<br>（无线通讯、物联网）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -443,7 +303,7 @@
 														<li><a href="javascript:void(0);">石高涛</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/shigaotao.html">副教授<br>硕士生导师<br>（无线通讯、物联网）</a></h3>
+														<h3><a href="teacher/shigaotao">副教授<br>硕士生导师<br>（无线通讯、物联网）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -460,7 +320,7 @@
 														<li><a href="javascript:void(0);">许光全</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/xuguangquan.html">副教授<br>硕士生导师<br>ITSEX-TJU主任（可信计算）</a></h3>
+														<h3><a href="teacher/xuguangquan">副教授<br>硕士生导师<br>ITSEX-TJU主任（可信计算）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -477,7 +337,7 @@
 														<li><a href="javascript:void(0);">许林英</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/xulinying.html">副教授<br>硕士生导师<br>（网络工程）</a></h3>
+														<h3><a href="teacher/xulinyingjsp">副教授<br>硕士生导师<br>（网络工程）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -496,7 +356,7 @@
 														<li><a href="javascript:void(0);">刘春凤</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/liuchunfeng.html">副教授<br>硕士生导师<br>（无线通讯、物联网）</a></h3>
+														<h3><a href="teacher/liuchunfeng">副教授<br>硕士生导师<br>（无线通讯、物联网）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -513,7 +373,7 @@
 														<li><a href="javascript:void(0);">戴维迪</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/daiweidi.html">副教授<br>硕士生导师<br>（社交网络）</a></h3>
+														<h3><a href="teacher/daiweidi">副教授<br>硕士生导师<br>（社交网络）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -530,7 +390,7 @@
 														<li><a href="javascript:void(0);">周晓波</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/zhouxiaobo.html">副教授<br>硕士生导师<br>（云计算、网络通讯）</a></h3>
+														<h3><a href="teacher/zhouxiaobo">副教授<br>硕士生导师<br>（云计算、网络通讯）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -547,7 +407,7 @@
 														<li><a href="javascript:void(0);">王建荣</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/wangjianrong.html">副教授<br>硕士生导师<br>（网络工程）</a></h3>
+														<h3><a href="teacher/wangjianrong">副教授<br>硕士生导师<br>（网络工程）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -566,7 +426,7 @@
 														<li><a href="javascript:void(0);">魏继增</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/weijizeng.html">副教授<br>硕士生导师<br>（安全处理器）</a></h3>
+														<h3><a href="teacher/weijizeng">副教授<br>硕士生导师<br>（安全处理器）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -583,7 +443,7 @@
 														<li><a href="javascript:void(0);">孙达志</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/sundazhi.html">副教授<br>硕士生导师<br>（密码学）</a></h3>
+														<h3><a href="teacher/sundazhi">副教授<br>硕士生导师<br>（密码学）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -600,7 +460,7 @@
 														<li><a href="javascript:void(0);">李雪威</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/lixuewei.html">副教授<br>硕士生导师<br>（计算机视觉）</a></h3>
+														<h3><a href="teacher/lixuewei">副教授<br>硕士生导师<br>（计算机视觉）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -617,7 +477,7 @@
 														<li><a href="javascript:void(0);">孙越恒</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/sunyueheng.html">讲师<br>（社交网络）</a></h3>
+														<h3><a href="teacher/sunyueheng">讲师<br>（社交网络）</a></h3>
 													</div>
 												</div>
 											</article>
@@ -634,7 +494,7 @@
 														<li><a href="javascript:void(0);">赵来平</a></li>
 													</ul>
 													<div class="tg-themeposttitle">
-														<h3><a href="teacher/zhaolaiping.html">讲师<br>（网络工程）</a></h3>
+														<h3><a href="teacher/zhaolaiping">讲师<br>（网络工程）</a></h3>
 													</div>
 												</div>
 											</article>

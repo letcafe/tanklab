@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>			<html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -80,6 +80,14 @@
 	.tg-themepostcontent {
 		padding:0px 0px 0px 15px !important;
 	}
+	.text{
+		text-align: center;
+		font-size: 30px;
+	}
+
+	.item{
+		font-size: 20px;
+	}
 	</style>
 </head>
 <body class="tg-home tg-homeone">
@@ -93,148 +101,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<header id="tg-header" class="tg-header tg-haslayout">
-			<div class="tg-topbar">
-				<div class="tg-leftbox">
-					<span id="tg-datebox" class="tg-datebox"></span>
-					<span class="tg-rtltextbox"><em>天津市先进网络技术与应用重点实验室</em></span>
-				</div>
-				<div class="tg-rightbox">
-					<span class="tg-tollfree">地址: 天津大学计算机科学与技术学院B214</span>
-					<div class="tg-themedropdown tg-languagesdropdown">
-						<a href="javascript:void(0);" id="tg-languages" class="tg-btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span><img src="images/flags/img-01.jpg" alt="image description"></span>
-							<span>中文</span>
-						</a>
-						<div class="tg-themedropdownbox" aria-labelledby="tg-languages">
-							<ul class="tg-languageslist">
-								<li>
-									<span><img src="images/flags/img-01.jpg" alt="image description"></span>
-									<span>中文</span>
-								</li>
-								<li>
-									<span><img src="images/flags/img-02.jpg" alt="image description"></span>
-									<span>English</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="index.jsp"><img src="images/logo.png" alt="University of Education and knowledge"></a></strong>
-							<div class="tg-noticeboard hidden-xs">
-								<div id="titleRight" class="tg-textbox">
-									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
-								</div>
-							</div>
-						</div>
-						<div class="tg-navigationarea">
-							<nav id="tg-nav" class="tg-nav">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-								</div>
-								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
-									<ul>
-										<li>
-											<a href="javascript:void(0);">首页</a>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">实验室</a>
-											<ul class="sub-menu">
-												<li><a href="departments.html">实验室简介</a></li>
-												<li><a href="departmentdetail.html">主任祝语</a></li>
-												<li><a href="departments.html">学术委员会</a></li>
-												<li><a href="departmentdetail.html">仪器设备</a></li>
-												<li><a href="departmentdetail.html">科研环境</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">资讯速递</a>
-											<ul class="sub-menu">
-												<li><a href="admissions.html">通知公告</a></li>
-												<li><a href="newsList.jsp">新闻动态</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研方向</a>
-											<ul class="sub-menu">
-												<li><a href="departments.html">未来网络体系结构</a></li>
-												<li><a href="departmentdetail.html">智能网络技术与应用</a></li>
-												<li><a href="departments.html">智慧城市与大数据</a></li>
-												<li><a href="departmentdetail.html">网络信息安全</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">研究项目</a>
-											<ul class="sub-menu">
-												<li><a href="departments.html">进行项目</a></li>
-												<li><a href="departmentdetail.html">合作项目</a></li>
-												<li><a href="departments.html">结题项目</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研团队</a>
-											<ul class="sub-menu">
-												<li><a href="departments.html">固定科研人员</a></li>
-												<li><a href="departmentdetail.html">客座科研人员</a></li>
-												<li><a href="departments.html">流动科研人员</a></li>
-												<li><a href="departmentdetail.html">研究生阵容</a></li>
-												<li><a href="departmentdetail.html">人才招聘</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研成果</a>
-											<ul class="sub-menu">
-												<li><a href="departments.html">论文及专著</a></li>
-												<li><a href="departmentdetail.html">获奖情况</a></li>
-												<li><a href="departments.html">专利、软件著作权</a></li>
-												<li><a href="departmentdetail.html">成果展示</a></li>
-												<li><a href="departments.html">开源下载</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">开放交流</a>
-											<ul class="sub-menu">
-												<li><a href="departmentdetail.html">学术交流</a></li>
-												<li><a href="departmentdetail.html">开放课题</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">人才培养</a>
-											<ul class="sub-menu">
-												<li><a href="departments.html">招生计划</a></li>
-												<li><a href="departmentdetail.html">培养计划</a></li>
-												<li><a href="departments.html">课程资源</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">联系我们</a>
-											<ul class="sub-menu">
-												<li><a href="departmentdetail.html">联系方式</a></li>
-												<li><a href="departmentdetail.html">交通指南</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="javascript:void(0);">内部网络</a>
-										</li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+		<%@ include file = "header.jsp" %>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -251,12 +118,103 @@
 			<div class="container">
 				<div class="row">
 					<div id="tg-twocolumns" class="tg-twocolumns">
-						<div class="col-sm-12">
+						<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+							<aside id="tg-sidebar" class="tg-sidebar">
+								<div class="tg-widget tg-widgetaboutusnav">
+									<div class="tg-widgettitle">
+										<h3>About Us</h3>
+									</div>
+									<div class="tg-widgetcontent">
+										<ul>
+											<!--<li><a href="javascript:void(0);">Rector's Message</a></li>-->
+											<li class="tg-active"><a href="javascript:void(0);">TANK 实验室简介</a></li>
+											<li><a href="researchs.html">科研项目及科研成果</a></li>
+											<!--<li><a href="javascript:void(0);">Objectives</a></li>-->
+											<!--<li><a href="javascript:void(0);">Our Identity</a></li>-->
+											<!--<li><a href="javascript:void(0);">Honors &amp; Awards</a></li>-->
+											<!--<li><a href="javascript:void(0);">Campus Life</a></li>-->
+										</ul>
+									</div>
+								</div>
+							</aside>
+						</div>
+						<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure style="text-align:center"><img style="height:200px;display:inline-block;" id="news_detail_img" src="" alt="image description"></figure>
-									<h3 id="news_detail_title"></h1>
-									<div id="news_detail_content"></div>
+									<div style="width: 100%" class="text">
+										<p>先进网络技术与应用实验室(TANK)</p>
+										<h4>善知善行，知行向和</h4>
+									</div>
+									<br>
+									<figure><img src="images/tanklab.png" alt="image description"></figure>
+
+									<br>
+
+									<p class="item">一、导师及团队<p>
+									<p>先进网络技术与应用实验室依托天津市重点建设学科“计算机科学与技术”，实行依托单位领导下的实验室主任负责制。
+实验室主任：李克秋，教授，博士生导师，2012年国家杰出青年基金“数据中心网络”获得者，IEEE高级会员，中国计算机学会理事，现任天津大学计算机科学与技术学院院长，近五年主持各类科研项目近20项，科研经费总额1000余万元，发表顶级科研学术论文200余篇。
+实验室现有固定研究人员34人，其中高级职称27人、博士学位33人，博士后12人，在读博士生20余名，在读硕士生60余名，每年可培养博士5-6名、硕士20余名。
+</p>
+									<p class="item">二、研究方向</p>
+									<p>实验室主要研究方向以及研究内容分别如下：
+									<p style="font-size: 17px;font-weight: bold;"> 未来网络与下一代互联网</p>
+									<ul>
+									<li>未来网络体系架构与计算模型</li>
+									<li>未来网络资源管理与协同管控</li>
+									<li>下一代互联网络的基础理论与关键技术</li>
+									</ul></p>
+
+									<p style="font-size: 17px;font-weight: bold;">数据中心与云计算</p>
+									<ul>
+									<li>数据中心网络架构与网络优化</li>
+									<li>数据中心与云计算关键技术</li>
+									<li>超大规模数据中心与云计算的理论和方法</li>
+									</ul></p>
+
+									<p style="font-size: 17px;font-weight: bold;">智能网络与物联网</p>
+									<ul>
+									<li>网络端设备的数据感知与服务接入</li>
+									<li>骨干网络数据传输、管控与智能化</li>
+									<li>物联网应用的网络基础共性问题</li>
+									</ul></p>
+
+									<p style="font-size: 17px;font-weight: bold;">网络空间安全</p>
+									<ul>
+									<li>网络空间的安全和攻防技术</li>
+									<li>网络空间的安全架构、协议与算法</li>
+									<li>网络的可生存性与物理设施的安全</li>
+									</ul></p>
+
+									<p style="font-size: 17px;font-weight: bold;">网络物理架构与高性能计算</p>
+									<ul>
+									<li>高性能、低功耗的处理器技术</li>
+									<li>高效、大容量的处理器阵列架构</li>
+									<li>芯片级的物理层网络安全技术</li>
+									</ul></p>
+
+									<p class="item">三、文化建设</p>
+									<p>关于实验室文化建设主要包括以下三个方面：</p>
+									<p style="font-size: 17px;font-weight: bold;">◆ 环境文化建设</p>
+									<p>实验室内张贴有宣传展板，主要用于介绍实验室的科研团队、研究方向以及主要的科研成果。此外，实验室还建设了TANKLab网站以及微信公众号等网络平台，进一步针对实验室的基础建设、学术交流以及人才培养等一系列情况进行展示。</p>
+
+									<p style="font-size: 17px;font-weight: bold;">◆ 人文文化建设</p>
+									<p>为了开拓学生的学术视野及其科研能力，实验室定期开展内部科研例会，不定期邀请国内外知名学者进行面对面学术交流，并组织参加各项重大国内外学术会议。于2016年12月，实验室还成功举办了未来网络前沿技术研讨会，并邀请了中国科学院计算所主任谢高岗、清华大学毕军教授等众多专家进行了专题报告。为了促进师生情谊、提高身心素质，实验室还定期组织各种团建活动，如户外出游、节日聚会等，并购置篮球、网球、乒乓球等活动器材，自由组织各项有益的文体活动。</p>
+
+									<p style="font-size: 17px;font-weight: bold;">◆ 管理文化建设</p>
+									<p>为了促使管理规范化、制度化，实验室制定了比较完善的实验室规章制度，并形成了一套管理方法，将实验室各项工作分门别类，并安排专人负责。为了提高工作效率，实验室利用团队协同办公软件对各项工作进行统一管理与分配。</p>
+
+									<p class="item">四、核心科研项目<p>
+									<p>◆ 国家自然科学基金杰青项目-数据中心网络，280万</p>
+									<p>◆ 科技部科技支撑计划-村镇环境预警平台构建与示范，22万</p>
+									<p>◆ 国家自然科学基金重点项目-软件定义网络理论及关键技术，350万</p>
+									<p>◆ 国家社科基金重大项目-突发事件语义案例库建设与临机决策，80万</p>
+									<p>◆ 国家科技支撑计划项目-物联网平安城市应急联动防控体系建设，120万</p>
+
+									<p class="item">五、论文发表<p>
+									<p style="font-weight: bold">发表高档次论文215篇，其中在中国计算机
+									学会(CCF)规定A类顶级会议和期刊如IEEE
+									TPDS，ToC，JSAC，TWC，INFOCOM，
+									ICNP等发表顶级论文近30篇。</p>
 								</div>
 							</div>
 						</div>

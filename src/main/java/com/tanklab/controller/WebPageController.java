@@ -8,6 +8,7 @@ import com.tanklab.service.NoticesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -40,7 +41,7 @@ public class WebPageController {
         model.addAttribute("newsList", newsList_index1To4);
         model.addAttribute("news_index1", newsList_index1To4.get(0));
         model.addAttribute("news_index2To4", newsList_index1To4.subList(1, 4));
-        model.addAttribute("noticesList", newsService.selectMany(0, 4));
+        model.addAttribute("noticesList", noticesService.getNoticesTopList(5));
         model.addAttribute("announcementList", announcementService.getAnnounceList(0, 3));
         return "/web/index";
     }
@@ -49,6 +50,16 @@ public class WebPageController {
     @RequestMapping(value = "/admin/goToLogin", method = GET)
     public String loginJsp() {
         return "/admin/login";
+    }
+
+    @RequestMapping(value = "/{webPage}", method = GET)
+    public String getWebRootJsp(@PathVariable (value="webPage") String  webPage) {
+        return "/web/" + webPage;
+    }
+
+    @RequestMapping(value = "/teacher/{webPage}", method = GET)
+    public String getTeacherJsp(@PathVariable (value="webPage") String  webPage) {
+        return "/web/teacher/" + webPage;
     }
 
 }

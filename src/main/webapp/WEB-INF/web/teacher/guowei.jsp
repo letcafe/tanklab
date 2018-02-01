@@ -1,4 +1,5 @@
-﻿<!doctype html>
+<%@ page language="java" pageEncoding="UTF-8" %>
+<!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>			<html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -100,148 +101,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<header id="tg-header" class="tg-header tg-haslayout">
-			<div class="tg-topbar">
-				<div class="tg-leftbox">
-					<span id="tg-datebox" class="tg-datebox"></span>
-					<span class="tg-rtltextbox"><em>天津市先进网络技术与应用重点实验室</em></span>
-				</div>
-				<div class="tg-rightbox">
-					<span class="tg-tollfree">地址: 天津大学计算机科学与技术学院B214</span>
-					<div class="tg-themedropdown tg-languagesdropdown">
-						<a href="javascript:void(0);" id="tg-languages" class="tg-btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-							<span>中文</span>
-						</a>
-						<div class="tg-themedropdownbox" aria-labelledby="tg-languages">
-							<ul class="tg-languageslist">
-								<li>
-									<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-									<span>中文</span>
-								</li>
-								<li>
-									<span><img src="../images/flags/img-02.jpg" alt="image description"></span>
-									<span>English</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="../index.jsp"><img src="../images/logo.png" alt="University of Education and knowledge"></a></strong>
-							<div class="tg-noticeboard hidden-xs">
-								<div id="titleRight" class="tg-textbox">
-									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
-								</div>
-							</div>
-						</div>
-						<div class="tg-navigationarea">
-							<nav id="tg-nav" class="tg-nav">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-								</div>
-								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
-									<ul>
-										<li>
-											<a href="../index.jsp">首页</a>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">实验室</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">实验室简介</a></li>
-												<li><a href="../tanklab.html">主任祝语</a></li>
-												<li><a href="../tanklab.html">学术委员会</a></li>
-												<li><a href="../tanklab.html">仪器设备</a></li>
-												<li><a href="../tanklab.html">科研环境</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">资讯速递</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">通知公告</a></li>
-												<li><a href="../newsList.jsp">新闻动态</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研方向</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">未来网络体系结构</a></li>
-												<li><a href="../tanklab.html">智能网络技术与应用</a></li>
-												<li><a href="../tanklab.html">智慧城市与大数据</a></li>
-												<li><a href="../tanklab.html">网络信息安全</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">研究项目</a>
-											<ul class="sub-menu">
-												<li><a href="../departments.html">进行项目</a></li>
-												<li><a href="../departmentdetail.html">合作项目</a></li>
-												<li><a href="../departments.html">结题项目</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../teacherGridView.html">科研团队</a>
-											<ul class="sub-menu">
-												<li><a href="../teacherGridView.html">固定科研人员</a></li>
-												<li><a href="../teacherGridView.html">客座科研人员</a></li>
-												<li><a href="../teacherGridView.html">流动科研人员</a></li>
-												<li><a href="../teacherGridView.html">研究生阵容</a></li>
-												<li><a href="../teacherGridView.html">人才招聘</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研成果</a>
-											<ul class="sub-menu">
-												<li><a href="../departments.html">论文及专著</a></li>
-												<li><a href="../departmentdetail.html">获奖情况</a></li>
-												<li><a href="../departments.html">专利、软件著作权</a></li>
-												<li><a href="../departmentdetail.html">成果展示</a></li>
-												<li><a href="../departments.html">开源下载</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">开放交流</a>
-											<ul class="sub-menu">
-												<li><a href="../departmentdetail.html">学术交流</a></li>
-												<li><a href="../departmentdetail.html">开放课题</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">人才培养</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">招生计划</a></li>
-												<li><a href="../tanklab.html">培养计划</a></li>
-												<li><a href="../tanklab.html">课程资源</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../index.jsp">联系我们</a>
-											<ul class="sub-menu">
-												<li><a href="../index.jsp">联系方式</a></li>
-												<li><a href="../index.jsp">交通指南</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="javascript:void(0);">内部网络</a>
-										</li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+		<%@ include file = "../header.jsp" %>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -281,22 +141,27 @@
 						<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure><img src="../images/courses/shigaotao.jpg" alt="image description"></figure>
+									<figure><img src="../images/courses/guowei.jpg" alt="image description"></figure>
 									<h3>个人简介</h3>
-									<p>石高涛，博士，副教授，硕士生导师，ACM/IEEE/CCF会员。2006年10月获得哈尔滨工业大学博士学位，同年进入天津大学计算机科学与技术学院工作。研究方向主要集中无线传感器网络的基础理论与应用。完成了国家自然科学青年基金、教育部新教师基金以及天津市自然科学青年基金等项目；已在IEEE Trans. on Vehicular Technology、Wiley International Journal of Communication Systems、International Journal of Sensor Networks、 MobiHoc、 ICC等国际期刊和会议以及《软件学报》、《计算机研究与发展》国内期刊上共发表学术论文20余篇。<br>
-                                                                           最高学位：博士<br>
-                                                                           邮箱：shgt@tju.edu.cn<br>
-                                                                           通讯地址：北洋园校区55楼B527<br>
-                                                                           
-                                                                           个人主页：http://cs.tju.edu.cn/faculty/gaotao/<br></p>
+									<p>最高学位：硕士<br>
+									邮箱：weiguo@tju.edu.cn<br>
+									通讯地址：北洋园校区55楼B420<br>
+									个人主页：http://cs.tju.edu.cn/faculty/weiguo/index</p>
 									<h3>研究方向</h3>
-									<p>基于无线网络的目标定位和行为感知<br>物联网和无线传感网络理论和应用<br>云计算环境下的移动互联网络<br></p>
-                                    <h3>代表论文</h3>
-									<p>1. Feng Li, Jun Luo, Gaotao Shi, and Ying He,“ART: Adaptive fRequency-Temporal co-existing of ZigBee and WiFi”, IEEE Transactions on Mobile Computing, vol.16,No. 3, March , 2017<br>
-									   2. Gaotao Shi, Ruitao Xu, Yantai Shu, Jun Luo, “Exploiting Temporal and Spatial Variation for WiFi Interference Avoidance in ZigBee Networks”, special issue on: "Internet of Things" of International Journal of Sensor Networks. Vo.15 No. 4, 2015, 204-216.<br>
-									   3.Feng Li, Jun Luo, Gaotao Shi, and Ying He, “FAVOR: Frequency Allocation for Versatile Occupancy of spectRum in Wireless Sensor Networks”, In Proceedings of the 14th ACM International Symposium on Mobile Ad Hoc Networking and Computing (MobiHoc'13), Bangalore, India, July 2013.<br>
-									   4.Gaotao Shi, Jun Zheng, Jinfeng Yang, Zenghua Zhao. “Double-Blind Data Discovery Using Double Cross for Large-Scale Wireless Sensor Networks with Mobile Sinks”. IEEE Transactions on Vehicular Technology, Vol. 61, No. 5, June 2012, 2294~2304.<br>
-									   5.Gaotao Shi and MingHong Liao, “Stochastic Sleeping with Sink-oriented Connectivity and Coverage in Large-scale Sensor Networks”. Wiley International Journal of Communication Systems. 2007, 20(7) pp: 809-828<br></p>
+									<p>计算机系统结构、嵌入式系统、SoC设计、安全处理器、密码电路与密码分析</p>
+									<h3>科研项目</h3>
+									<p><b>在研究项目</b><br> 
+									国家工业和信息化部项目：面向物联网传感器节点的信息安全嵌入式系统芯片及其方案的研发 <br>
+									天津市自然科学基金： 高可信密码片上系统的关键技术研究 <br>
+									中国科学院计算机体系结构国重实验室开放课题基金: 面向云计算服务器的高可信安全处理器新型体系结构的研究<br>
+									苏州国芯半导体有限公司项目：C*Core处理器的ESL建模研究与实现<br>
+									国家自然科学基金项目：基于可配置处理器的Ray-Tracing算法专用硬件体系结构的研究 </p>
+									<h3>代表性论著</h3>
+									<p>【1】《SoC设计与实现》，电子工业出版社，2007年6月。。"十一五"国家级规划教材，2008年教育部普通高等教育精品教材。第二版，电子工业出版社，2011年8月。<br>
+									【2】《SoC嵌入式系統晶片設計 ─ 從理論邁向實務》，（台湾）博硕出版，2008年05月。海外发行。 <br>
+									【3】Guo W, Ri K H, Cui L, et al. An Area-Efficient Unified Architecture for Multi-Functional Double-Precision Floating-Point Computation[J]. Journal of Circuits, Systems and Computers, 2015, 24(10): 1550151.（SCI） <br>
+									【4】Jingwei Hu, Wei Guo, Jizeng Wei, Ray C.C. Cheung， Fast Inversion Architectures over GF(2m) Using Modified Itoh-Tsujii Algorithms，to appear in IEEE Transactions on Circuits and Systems II: Express Briefs. Published online,DOI 10.1109/TCSII.2014.2387612， Jan. 2015. （SCI） <br>
+									【5】Jizeng Wei, Xulong Liu, Hao Liu, Wei Guo, A low-time-complexity and secure dual-field scalar multiplication based on co-Z protected NAF, IEICE Electronics Express, Vol.11, No.11, 1-12， 2014 （SCI） </p>
 								</div>
 							</div>
 						</div>
