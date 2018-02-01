@@ -18,34 +18,14 @@ public class DBConfig {
         return new JdbcTemplate(dataSource);
     }
 
-    @Profile("development")
     @Bean
     public DataSource mysqlDataSource() {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://172.18.16.134:3306/tanklab?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf-8");
-        ds.setUsername("developer");
+        ds.setUrl("jdbc:mysql://tanktju.com/tanklab?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf-8");
+        ds.setUsername("gdy");
         ds.setPassword("123456");
         return ds;
     }
 
-    @Profile("qa")//QA数据源
-    @Bean
-    public DataSource dataSource() {
-        return new EmbeddedDatabaseBuilder()
-                .setType(EmbeddedDatabaseType.H2)
-                .addScript("schema.sql")
-                .addScript("test-data.sql")
-                .build();
-    }
-
-    @Profile("production")
-    @Bean
-    public DataSource dataSource3() {
-        JndiObjectFactoryBean jndiObjectFactoryBean = new JndiObjectFactoryBean();
-        jndiObjectFactoryBean.setJndiName("jdbc/spittrDS");
-        jndiObjectFactoryBean.setResourceRef(true);
-        jndiObjectFactoryBean.setProxyInterface(DataSource.class);
-        return (DataSource) jndiObjectFactoryBean.getObject();
-    }
 }

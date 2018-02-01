@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
@@ -37,7 +39,6 @@ public class AnnouncementController {
             @RequestParam(value="id",required=true) int id) {
         Announcement announceBean= announcementService.getAnnouncement(id);
         model.addAttribute("announceBean",announceBean);
-
         return "getAnnouncement";
     }
 
@@ -57,7 +58,7 @@ public class AnnouncementController {
     }
 
     @RequestMapping(value = "/admin/announcement", method = GET)
-    public String getAdminList(Model model, @RequestParam(value = "page") Integer page) {
+    public String getAdminList(HttpSession session, Model model, @RequestParam(value = "page", required = false, defaultValue = "1") Integer page) {
         int totalCount = announcementService.getAnnounceCount();
         int pageSize = 10;
         int maxPage = (totalCount % pageSize == 0) ? (totalCount / pageSize) : (totalCount / pageSize + 1);

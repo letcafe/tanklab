@@ -1,9 +1,8 @@
-<!doctype html>
+﻿<!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>			<html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!-->	<html class="no-js" lang="zxx"> <!--<![endif]-->
-<%@ page language="java" pageEncoding="UTF-8" %>
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,6 +80,14 @@
 	.tg-themepostcontent {
 		padding:0px 0px 0px 15px !important;
 	}
+	.text{
+		text-align: center;
+		font-size: 30px;
+	}
+
+	.item{
+		font-size: 20px;
+	}
 	</style>
 </head>
 <body class="tg-home tg-homeone">
@@ -94,7 +101,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<%@ include file = "header.jsp" %>
+		<%@ include file ="header.jsp" %>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -111,14 +118,54 @@
 			<div class="container">
 				<div class="row">
 					<div id="tg-twocolumns" class="tg-twocolumns">
-						<div class="col-sm-12">
+						<div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+							<aside id="tg-sidebar" class="tg-sidebar">
+								<div class="tg-widget tg-widgetaboutusnav">
+									<div class="tg-widgettitle">
+										<h3>About Us</h3>
+									</div>
+									<div class="tg-widgetcontent">
+										<ul>
+											<!--<li><a href="javascript:void(0);">Rector's Message</a></li>-->
+											<li class="tg-active"><a href="javascript:void(0);">科研项目简介</a></li>
+											<!--<li><a href="javascript:void(0);">Leadership</a></li>-->
+											<!--<li><a href="javascript:void(0);">Objectives</a></li>-->
+											<!--<li><a href="javascript:void(0);">Our Identity</a></li>-->
+											<!--<li><a href="javascript:void(0);">Honors &amp; Awards</a></li>-->
+											<!--<li><a href="javascript:void(0);">Campus Life</a></li>-->
+										</ul>
+									</div>
+								</div>
+							</aside>
+						</div>
+						<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<div style="text-align:center">
-										<h2 id="announcement_detail_title">${detailAnnouncement.title}</h2>
-										<h3 id="announcement_detail_date">${detailAnnouncement.date}</h3>
+									<div style="width: 100%" class="text">
+										<p>先进网络技术与应用实验室(TANK)</p>
+										<h4>善知善行，知行向和</h4>
 									</div>
-									<h4 id="announcement_detail_content">${detailAnnouncement.content}</h4>
+									<br>
+									<figure><img src="images/tanklab.png" alt="image description"></figure>
+
+									<br>
+									<p class="item">核心科研项目<p>
+									<p>◆ 国家自然科学基金杰青项目-数据中心网络，280万</p>
+									<p>◆ 科技部科技支撑计划-村镇环境预警平台构建与示范，22万</p>
+									<p>◆ 国家自然科学基金重点项目-软件定义网络理论及关键技术，350万</p>
+									<p>◆ 国家社科基金重大项目-突发事件语义案例库建设与临机决策，80万</p>
+									<p>◆ 国家科技支撑计划项目-物联网平安城市应急联动防控体系建设，120万</p>
+
+									<p class="item">论文发表<p>
+									<p style="font-weight: bold">发表高档次论文215篇，其中在中国计算机
+									学会(CCF)规定A类顶级会议和期刊如IEEE
+									TPDS，ToC，JSAC，TWC，INFOCOM，
+									ICNP等发表顶级论文近30篇。</p>
+									
+									<img src="images/xm01.png">
+									<br>
+									<hr>
+									<img src="images/xm02.png">
 								</div>
 							</div>
 						</div>
