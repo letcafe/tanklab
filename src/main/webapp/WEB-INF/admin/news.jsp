@@ -183,8 +183,8 @@
                                 <tbody id="news_form_body">
                                 <c:forEach items="${newsList}" var="list" varStatus="idx">
                                     <tr>
-                                        <td class="col-xs-1" id="index_${idx.index+1}"><c:out
-                                                value="${idx.index+1}"></c:out></td>
+                                        <td class="col-xs-1" id="index_${idx.index + 1 + (page - 1) * 10}"><c:out
+                                                value="${idx.index + 1 + (page - 1) * 10}"></c:out></td>
                                         <td class="col-xs-1" id="news_id_${list.id}"><c:out
                                                 value="${list.id}"></c:out></td>
                                         <td class="col-xs-2" id="news_date_${list.id}"><c:out

@@ -1,4 +1,5 @@
-﻿<!doctype html>
+<%@ page language="java" pageEncoding="UTF-8" %>
+<!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>			<html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -100,147 +101,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<header id="tg-header" class="tg-header tg-haslayout">
-			<div class="tg-topbar">
-				<div class="tg-leftbox">
-					<span id="tg-datebox" class="tg-datebox"></span>
-					<span class="tg-rtltextbox"><em>天津市先进网络技术与应用重点实验室</em></span>
-				</div>
-				<div class="tg-rightbox">
-					<span class="tg-tollfree">地址: 天津大学计算机科学与技术学院B214</span>
-					<div class="tg-themedropdown tg-languagesdropdown">
-						<a href="javascript:void(0);" id="tg-languages" class="tg-btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-							<span>中文</span>
-						</a>
-						<div class="tg-themedropdownbox" aria-labelledby="tg-languages">
-							<ul class="tg-languageslist">
-								<li>
-									<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-									<span>中文</span>
-								</li>
-								<li>
-									<span><img src="../images/flags/img-02.jpg" alt="image description"></span>
-									<span>English</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="../index.jsp"><img src="../images/logo.png" alt="University of Education and knowledge"></a></strong>
-							<div class="tg-noticeboard hidden-xs">
-								<div id="titleRight" class="tg-textbox">
-									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
-								</div>
-							</div>
-						</div>
-						<div class="tg-navigationarea">
-							<nav id="tg-nav" class="tg-nav">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-								</div>
-								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
-									<ul>
-										<li>
-											<a href="../index.jsp">首页</a>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">实验室</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">实验室简介</a></li>
-												<li><a href="../tanklab.html">主任祝语</a></li>
-												<li><a href="../tanklab.html">学术委员会</a></li>
-												<li><a href="../tanklab.html">仪器设备</a></li>
-												<li><a href="../tanklab.html">科研环境</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">资讯速递</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">通知公告</a></li>
-												<li><a href="../newsList.jsp">新闻动态</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研方向</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">未来网络体系结构</a></li>
-												<li><a href="../tanklab.html">智能网络技术与应用</a></li>
-												<li><a href="../tanklab.html">智慧城市与大数据</a></li>
-												<li><a href="../tanklab.html">网络信息安全</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">研究项目</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">进行项目</a></li>
-												<li><a href="../researchs.html">合作项目</a></li>
-												<li><a href="../researchs.html">结题项目</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../teacherGridView.html">科研团队</a>
-											<ul class="sub-menu">
-												<li><a href="../teacherGridView.html">固定科研人员</a></li>
-												<li><a href="../teacherGridView.html">客座科研人员</a></li>
-												<li><a href="../teacherGridView.html">流动科研人员</a></li>
-												<li><a href="../teacherGridView.html">研究生阵容</a></li>
-												<li><a href="../teacherGridView.html">人才招聘</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">科研成果</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">论文及专著</a></li>
-												<li><a href="../researchs.html">获奖情况</a></li>
-												<li><a href="../researchs.html">专利、软件著作权</a></li>
-												<li><a href="../researchs.html">成果展示</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../404error.html">开放交流</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">学术交流</a></li>
-												<li><a href="../404error.html">开放课题</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">人才培养</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">招生计划</a></li>
-												<li><a href="../tanklab.html">培养计划</a></li>
-												<li><a href="../tanklab.html">课程资源</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../index.jsp">联系我们</a>
-											<ul class="sub-menu">
-												<li><a href="../index.jsp">联系方式</a></li>
-												<li><a href="../index.jsp">交通指南</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="javascript:void(0);">内部网络</a>
-										</li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+		<%@ include file = "../header.jsp" %>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -280,41 +141,18 @@
 						<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure><img src="../images/courses/zhanglei.jpg" alt="image description"></figure>
+									<figure><img src="../images/courses/lixuewei.jpg" alt="image description"></figure>
 									<h3>个人简介</h3>
 									<p> 最高学位：博士<br>
-										邮箱：LZHANG@tju.edu.cn<br>
-										通讯地址：北洋园校区55楼B534<br>
-										个人主页：http://cs.tju.edu.cn/faculty/zhanglei/index.htm/<br></p 
-
->
-									<h3>研究方向</h3>
-									<p>数据挖掘在各个领域的应用，物联网、无线感知与移动计算<br></p>
-									<h3>招生方向</h3>
-									<p>招收硕士研究生、本科实习生<br></p>
-									<h3>承担项目</h3>
-									<p> 南京大学计算机软件新技术国家重点实验室开放基金 2.5万<br>
-										国家自然科学基金青年基金 23万<br>
-										教育部博士点新教师基金 4万<br>
-										科技部仪器重大专项子课题 34万<br>
-										天津大学自主创新基金 5万<br></p>
-									<h3>代表性论文（*通讯作者)</h3>
-									<p>1.Lei Zhang, *Gang Zhang, Bin Wu, Ting Zhao, Yang Shao, Distributed State Prediction Based Geographic Routing For Underwater Acoustic Sensor Network, 
-                                                                           accepted by International Journal of Computer Systems Science & Engineering (SCI)<br>
-										2. Cong Wang, Maode Ma, *Lei Zhang, An Efficient EAP-Based Pre-Authentication for Inter-WRAN Handover in TV White Space, 
-                                                                                IEEE Access, 2017. 5: p. 9785-9796.(SCI)<br>
-										3. YanShi Hu, Juncai Xin, Ying Hu, *Lei Zhang, Ju Wang, Analyzing the Genes Related to Alzheimer’s Disease via a Network and Pathway Based Approach, 
-                                                                                Alzheimer's Research & Therapy, 2017, 9(1):29. doi: 10.1186/s13195-017-0252-z.(SCI )<br>
-										4. Yanshi Hu, Zhenhua Pan, Ying Hu, *Lei Zhang, *Ju Wang, Network and Pathway-Based Analyses of Genes Associated with Parkinson’s Disease, 
-                                                                                Molecular Neurobiology, 2016, in press,doi:10.1007/s12035-016-9998-8.(SCI) <br>
-										5.Lei Zhang, Alvin Lim, Yi Pan, *Bin Wu. A distributed middleware for self-configurable wireless sensor networks. International Journal of Sensor Networks, VOL.16, NO. 1, Nov 2014 (SCI)<br></p>
-										<h3>社会兼职</h3>
-									<p>IEEE 会员, CCF 会员，ACM会员<br>
-										ACM天津分会副秘书长 <br>
-										以技术执行主席的身份参与承办国际高水平会议ICECCS 2014，C类会议 <br>
-										ICC，Globecom, WCNC, Wireless Networks和IEEE/ACM Transactions on networking 等会议和期刊的审稿人 <br></p>
+										邮箱：lixuewei@tju.edu.cn<br>
+										通讯地址：北洋园校区55楼B303<br>
+										
+										</p>
+										<h3>研究方向</h3>
+									<p> 
+										人脸检测和跟踪、彩色图像增强和分割<br>
+										</p>
 								</div>
-
 							</div>
 						</div>
 					</div>

@@ -57,9 +57,25 @@ public class AnnouncementController {
     }
 
     @RequestMapping(value = "/admin/announcement", method = GET)
-    public String getAnnounceTopList(Model model) {
-        List<Announcement> announcementList= announcementService.getAnnounceAll();
-        model.addAttribute("announcementList",announcementList);
+    public String getAdminList(Model model, @RequestParam(value = "page") Integer page) {
+        int totalCount = announcementService.getAnnounceCount();
+        int pageSize = 10;
+        int maxPage = (totalCount % pageSize == 0) ? (totalCount / pageSize) : (totalCount / pageSize + 1);
+        page = (page == 0) ? 1 : page;
+        int start = (page - 1) * pageSize;
+        List<Announcement> announcementList = announcementService.getAnnounceList(start, pageSize);
+
+
+        model.addAttribute("announcementList", announcementList);
+        page = (maxPage == 0) ? 0 : page;
+        model.addAttribute("page", page);
+        model.addAttribute("maxPage", maxPage);
+        if (page > 1) {
+            model.addAttribute("prePageIndex", page - 1);
+        }
+        if (page < maxPage) {
+            model.addAttribute("nextPageIndex", page + 1);
+        }
         return "/admin/announcement";
     }
 

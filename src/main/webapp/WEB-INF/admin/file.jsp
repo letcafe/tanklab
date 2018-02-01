@@ -179,7 +179,7 @@
                 <tbody id="file_form_body">
                 <c:forEach items="${fileList}" var="list" varStatus="idx">
                   <tr>
-                    <td class="col-xs-1" id="index_${idx.index+1}"><c:out value="${idx.index+1}"></c:out></td>
+                    <td class="col-xs-1" id="index_${idx.index + 1 + (page - 1) * 10}"><c:out value="${idx.index + 1 + (page - 1)*10}"></c:out></td>
                     <td class="col-xs-1" id="file_id_${list.id}"><c:out value="${list.id}"></c:out></td>
                     <td class="col-xs-2" id="file_fileName_${list.id}"><c:out value="${list.fileName}"></c:out></td>
                     <td class="col-xs-2" id="file_uploadTime_${list.id}"><c:out value="${list.uploadTime}"></c:out></td>
@@ -195,6 +195,37 @@
               </table>
             </div>
             <!-- /.box-body -->
+            <div>
+              <%--page不等于1显示首页--%>
+              <c:if test="${page != 1}">
+                <a class="btn btn-primary" href="/tanklab/admin/file?page=1">首页</a>
+              </c:if>
+              <%--前一页不为空显示上一页--%>
+              <c:if test="${prePageIndex != null}">
+                <a class="btn btn-primary" href="/tanklab/admin/file?page=${prePageIndex}">上页</a>
+              </c:if>
+              <%--遍历列表--%>
+              <c:forEach var="index" begin="1" end="${maxPage}" step="1">
+                <c:choose>
+                  <%--如果page等于当前页，当前页高亮--%>
+                  <c:when test="${page == index}">
+                    <a class="btn btn-info" href="/tanklab/admin/file?page=${index}">${index}</a>
+                  </c:when>
+                  <%--否则正常输出--%>
+                  <c:otherwise>
+                    <a class="btn btn-primary" href="/tanklab/admin/file?page=${index}">${index}</a>
+                  </c:otherwise>
+                </c:choose>
+              </c:forEach>
+              <%--前一页不为空显示上一页--%>
+              <c:if test="${nextPageIndex != null}">
+                <a class="btn btn-primary" href="/tanklab/admin/news?page=${nextPageIndex}">下页</a>
+              </c:if>
+              <%--page不等于maxPage显示尾页--%>
+              <c:if test="${page != maxPage}">
+                <a class="btn btn-primary" href="/tanklab/admin/news?page=${maxPage}">尾页</a>
+              </c:if>
+            </div>
           </div>
           <!-- /.box -->
 
@@ -337,11 +368,6 @@
     //CKEDITOR.replace('add_content');
     //CKEDITOR.replace('change_content');
   });
-  $('#fileTable').DataTable({
-      searching:false,
-      lengthMenu:[10]
-  })
-  $('#fileTable_length').hide();
 </script>
 </body>
 </html>

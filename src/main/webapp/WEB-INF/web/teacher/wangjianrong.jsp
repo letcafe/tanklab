@@ -1,3 +1,4 @@
+<%@ page language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -100,147 +101,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<header id="tg-header" class="tg-header tg-haslayout">
-			<div class="tg-topbar">
-				<div class="tg-leftbox">
-					<span id="tg-datebox" class="tg-datebox"></span>
-					<span class="tg-rtltextbox"><em>天津市先进网络技术与应用重点实验室</em></span>
-				</div>
-				<div class="tg-rightbox">
-					<span class="tg-tollfree">地址: 天津大学计算机科学与技术学院B214</span>
-					<div class="tg-themedropdown tg-languagesdropdown">
-						<a href="javascript:void(0);" id="tg-languages" class="tg-btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-							<span>中文</span>
-						</a>
-						<div class="tg-themedropdownbox" aria-labelledby="tg-languages">
-							<ul class="tg-languageslist">
-								<li>
-									<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-									<span>中文</span>
-								</li>
-								<li>
-									<span><img src="../images/flags/img-02.jpg" alt="image description"></span>
-									<span>English</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="../index.jsp"><img src="../images/logo.png" alt="University of Education and knowledge"></a></strong>
-							<div class="tg-noticeboard hidden-xs">
-								<div id="titleRight" class="tg-textbox">
-									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
-								</div>
-							</div>
-						</div>
-						<div class="tg-navigationarea">
-							<nav id="tg-nav" class="tg-nav">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-								</div>
-								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
-									<ul>
-										<li>
-											<a href="../index.jsp">首页</a>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">实验室</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">实验室简介</a></li>
-												<li><a href="../tanklab.html">主任祝语</a></li>
-												<li><a href="../tanklab.html">学术委员会</a></li>
-												<li><a href="../tanklab.html">仪器设备</a></li>
-												<li><a href="../tanklab.html">科研环境</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">资讯速递</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">通知公告</a></li>
-												<li><a href="../newsList.jsp">新闻动态</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研方向</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">未来网络体系结构</a></li>
-												<li><a href="../tanklab.html">智能网络技术与应用</a></li>
-												<li><a href="../tanklab.html">智慧城市与大数据</a></li>
-												<li><a href="../tanklab.html">网络信息安全</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">研究项目</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">进行项目</a></li>
-												<li><a href="../researchs.html">合作项目</a></li>
-												<li><a href="../researchs.html">结题项目</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../teacherGridView.html">科研团队</a>
-											<ul class="sub-menu">
-												<li><a href="../teacherGridView.html">固定科研人员</a></li>
-												<li><a href="../teacherGridView.html">客座科研人员</a></li>
-												<li><a href="../teacherGridView.html">流动科研人员</a></li>
-												<li><a href="../teacherGridView.html">研究生阵容</a></li>
-												<li><a href="../teacherGridView.html">人才招聘</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">科研成果</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">论文及专著</a></li>
-												<li><a href="../researchs.html">获奖情况</a></li>
-												<li><a href="../researchs.html">专利、软件著作权</a></li>
-												<li><a href="../researchs.html">成果展示</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../404error.html">开放交流</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">学术交流</a></li>
-												<li><a href="../404error.html">开放课题</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">人才培养</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">招生计划</a></li>
-												<li><a href="../tanklab.html">培养计划</a></li>
-												<li><a href="../tanklab.html">课程资源</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../index.jsp">联系我们</a>
-											<ul class="sub-menu">
-												<li><a href="../index.jsp">联系方式</a></li>
-												<li><a href="../index.jsp">交通指南</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="javascript:void(0);">内部网络</a>
-										</li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+		<%@ include file = "../header.jsp" %>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -280,45 +141,26 @@
 						<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure><img src="../images/courses/weijizeng.jpg" alt="image description"></figure>
+									<figure><img src="../images/courses/wangjianrong.jpg" alt="image description"></figure>
 									<h3>个人简介</h3>
-									<p> 最高学位：博士<br>
-										邮箱：weijizeng@tju.edu.cn<br>
-										联系电话: 022-27401091<br>
-										通讯地址：北洋园校区55楼B323<br>
-										个人主页：http://cs.tju.edu.cn/faculty/weijizeng/<br></p>
+									<p>从事语音识别、机器学习、人机交互等方面的研究工作。主要研究内容为：将彩色图像与深度信息应用于语音识别研究，包括二维彩色图像特征提取及降噪降维处理、深度信息特征提取方法研究、音视频多通道特征融合及决策融合；对超声图像的降噪、特征提取、以及多流HMM应用研究；对机器学习算法的研究，包括音乐流派分类、哼唱识别、RoboCup 3D环境的机器人自定位、GPU高性能计算研究等。
+　　									多年来一直担任天津大学RoboCup代表队指导教师、天津大学飞思卡尔智能车参赛队伍指导教师、天津大学Intel杯嵌入式专题邀请赛参赛队伍指导教师，获得多项国家级和地区级奖励。
+　　									担任天津大学IT学科创新创业训练基地副主任。响应李克强总理“大众创业、万众创新”的号召，在2015年筹划并创建了天津大学IT学科创新创业训练基地，负责基地发展建设等相关工作。<br><br>
+										
+										最高学位：博士<br>
+										邮箱：wjr@tju.edu.cn<br>
+										通讯地址：天津大学北洋园校区55-B528<br>
+										个人主页：http://cs.tju.edu.cn/faculty/wjr/<br>
+										</p>
 									<h3>研究方向</h3>
-									<p>高能效计算机体系结构，通用图形处理器，专用处理器，嵌入式系统<br></p>
-									<h3>承担项目</h3>
-									<p> 2015-01～2017-12：国家自然科学基金（青年项目）：体系结构/算法级嵌入式GPU低功耗策略的研究<br>
-										2015-04～2018-03：天津市基础及前沿研究项目：暗硅时代基于三维堆叠和NVM的高能效GPU存储体系研究<br>
-										2012-01～2014-12： 教育部博士点基金（青年项目）：嵌入式GPU的高并行度低功耗统一着色器体系结构的研究<br>
-										2012-03～2014-03： 苏州国芯科技有限公司（横向委托项目）：面向C*CORE处理器的Linux操作系统设计与移植<br>
-										2010-04～2012-04： 苏州国芯科技有限公司（横向委托项目）：基于C*CORE310及CLB的高抽象层次SoC建模与仿真平台设计<br></p>
-									<h3>代表性论文（*通讯作者)</h3>
-									<p>1. Jizeng Wei*, Yisong Chang and et al. "A modified post-TnL vertex cache for the multi-shader 
-										embedded GPUs", IEICE Electronics Express, 12(10), 2015, 1-12. (SCI/EI) <br>
-										2. Jizeng Wei* and et al. "A high performance, area efficient TTA-like vertex shader architecture with
-										optimized floating point arithmetic unit for embedded graphics applications", Elsevier Microprocessors and
-										Microsystems, 37, (6-7), 2013, 725-738. (SCI/EI) <br>
-										3. Jizeng Wei*, Xulong Liu and et al. "A low-time-complexity and secure dual-field scalar multiplication
-										based on co-Z protected NAF", IEICE Electronics Express, 11(11), 2014, 1-12. (SCI/EI) <br>
-										4. Yisong Chang, Jizeng Wei* and et al. "A novel architecture of special arithmetic function unit for area-
-										efficient programmable vertex shader", Chinese Journal of Electronics, 22(3), 2013, 483-488. (SCI/EI) <br>
-										5. Bingchao Li, Jizeng Wei* and et al. "Improving SIMD Utilization with Thread-Lane Shuffled Compaction 
-										in GPU", Chinese Journal of Electronics, 24(4), 2015. (SCI/EI)<br></p>
-									<h3>专利与著作权</h3>
-									<p> 基于TCore可配置处理器的编译器系统（登记号：009100709426） <br>
-										嵌入式GPU中面积有效、功能复用的裁剪模块（登记号：2013204525457） <br>
-										一种基于PowerPC处理器的DMA事务级建模方法（已受理）<br>
-										一种应用于GPU中的幂指数运算硬件单元 （已受理）<br>
-										一种面向嵌入式GPU多着色器结构的后置顶点Cache设计（已受理）<br></p>
-										<h3>社会兼职</h3>
-									<p>中国计算机学会（CCF）会员 <br>
-										电气与电子工程师协会（IEEE）会员 <br>
-										美国计算机协会（ACM）会员 <br>
-										电子学，信息与通信工程师协会（IEICE）会员 <br>
-										审稿人：ACM TACO, ACM TECS, Elsevier Microprocessors and Microsystems， Elsevier JSA<br></p>
+									<p>计算机网络人机交互<br></p>
+									<h3>论文发表</h3>
+									<p> · Jianrong Wang, Ju Zhang, Kiyoshi Honda, Jianguo Wei*, Jianwu Dang. Audio-Visual Speech Recognition Integrating 3D Lip Information Obtained from the Kinect, Multimedia Systems, 2015, 1-9.<br>
+										· Jianrong Wang, Yongchun Gao, Ju Zhang, Jianguo Wei*, Jianwu Dang. Lipreading using Profile Lips Rebuilt by 3D Data from the Kinect, Journal of Computational Information Systems, 2015, 11(7), 2429-2438.<br>
+										· Jianrong Wang, Chunlai Qin, Yalong Yang, Jianguo Wei*, Jianwu Dang. Integrating Dynamic Information with Multi-stream HMM in Ultrasound-based Silent Speech Interface, Journal of Information and Computational Science, 2015, 12(13), 4875–4883. <br>
+										· Wang, J., Wang, C., Wei, J.*, Dang J.: Chinese opera genre classification based on multi-feature fusion and extreme learning machine. In: Proceedings of the International Symposium on Asia-Pacific Signal and Information Processing Association (APSIPA). Hong Kong, P.R. China, 2015.12.16-12.19.<br>
+										· Wang, J., Zhang, J., Wei, J.*, Lu, W., Dang J.: Automatic speech recognition under robot ego noises. In: Proceedings of the International Symposium on Chinese Spoken Language Processing (ISCSLP), Singapore, 2014. 9.12-9.14. pp.377-381. 
+										<br></p>
 								</div>
 							</div>
 						</div>

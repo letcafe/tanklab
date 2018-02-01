@@ -1,3 +1,4 @@
+<%@ page language="java" pageEncoding="UTF-8" %>
 <!doctype html>
 <!--[if lt IE 7]>		<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>			<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -100,147 +101,7 @@
 		<!--************************************
 				Header Start
 		*************************************-->
-		<header id="tg-header" class="tg-header tg-haslayout">
-			<div class="tg-topbar">
-				<div class="tg-leftbox">
-					<span id="tg-datebox" class="tg-datebox"></span>
-					<span class="tg-rtltextbox"><em>天津市先进网络技术与应用重点实验室</em></span>
-				</div>
-				<div class="tg-rightbox">
-					<span class="tg-tollfree">地址: 天津大学计算机科学与技术学院B214</span>
-					<div class="tg-themedropdown tg-languagesdropdown">
-						<a href="javascript:void(0);" id="tg-languages" class="tg-btndropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-							<span>中文</span>
-						</a>
-						<div class="tg-themedropdownbox" aria-labelledby="tg-languages">
-							<ul class="tg-languageslist">
-								<li>
-									<span><img src="../images/flags/img-01.jpg" alt="image description"></span>
-									<span>中文</span>
-								</li>
-								<li>
-									<span><img src="../images/flags/img-02.jpg" alt="image description"></span>
-									<span>English</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-						<div class="tg-logoandnoticeboard">
-							<strong class="tg-logo"><a href="../index.jsp"><img src="../images/logo.png" alt="University of Education and knowledge"></a></strong>
-							<div class="tg-noticeboard hidden-xs">
-								<div id="titleRight" class="tg-textbox">
-									<span>“The people who are crazy enough to think that they can change the world, are the ones who do.”</span>
-								</div>
-							</div>
-						</div>
-						<div class="tg-navigationarea">
-							<nav id="tg-nav" class="tg-nav">
-								<div class="navbar-header">
-									<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tg-navigation" aria-expanded="false">
-										<span class="sr-only">Toggle navigation</span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-										<span class="icon-bar"></span>
-									</button>
-								</div>
-								<div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
-									<ul>
-										<li>
-											<a href="../index.jsp">首页</a>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">实验室</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">实验室简介</a></li>
-												<li><a href="../tanklab.html">主任祝语</a></li>
-												<li><a href="../tanklab.html">学术委员会</a></li>
-												<li><a href="../tanklab.html">仪器设备</a></li>
-												<li><a href="../tanklab.html">科研环境</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">资讯速递</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">通知公告</a></li>
-												<li><a href="../newsList.jsp">新闻动态</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="javascript:void(0);">科研方向</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">未来网络体系结构</a></li>
-												<li><a href="../tanklab.html">智能网络技术与应用</a></li>
-												<li><a href="../tanklab.html">智慧城市与大数据</a></li>
-												<li><a href="../tanklab.html">网络信息安全</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">研究项目</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">进行项目</a></li>
-												<li><a href="../researchs.html">合作项目</a></li>
-												<li><a href="../researchs.html">结题项目</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../teacherGridView.html">科研团队</a>
-											<ul class="sub-menu">
-												<li><a href="../teacherGridView.html">固定科研人员</a></li>
-												<li><a href="../teacherGridView.html">客座科研人员</a></li>
-												<li><a href="../teacherGridView.html">流动科研人员</a></li>
-												<li><a href="../teacherGridView.html">研究生阵容</a></li>
-												<li><a href="../teacherGridView.html">人才招聘</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../researchs.html">科研成果</a>
-											<ul class="sub-menu">
-												<li><a href="../researchs.html">论文及专著</a></li>
-												<li><a href="../researchs.html">获奖情况</a></li>
-												<li><a href="../researchs.html">专利、软件著作权</a></li>
-												<li><a href="../researchs.html">成果展示</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../404error.html">开放交流</a>
-											<ul class="sub-menu">
-												<li><a href="../404error.html">学术交流</a></li>
-												<li><a href="../404error.html">开放课题</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../tanklab.html">人才培养</a>
-											<ul class="sub-menu">
-												<li><a href="../tanklab.html">招生计划</a></li>
-												<li><a href="../tanklab.html">培养计划</a></li>
-												<li><a href="../tanklab.html">课程资源</a></li>
-											</ul>
-										</li>
-										<li class="menu-item-has-children">
-											<a href="../index.jsp">联系我们</a>
-											<ul class="sub-menu">
-												<li><a href="../index.jsp">联系方式</a></li>
-												<li><a href="../index.jsp">交通指南</a></li>
-											</ul>
-										</li>
-										<li>
-											<a href="javascript:void(0);">内部网络</a>
-										</li>
-									</ul>
-								</div>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</div>
-		</header>
+		<%@ include file = "../header.jsp" %>
 		<!--************************************
 				Header End
 		*************************************-->
@@ -280,28 +141,24 @@
 						<div class="col-xs-12 col-sm-8 col-md-9 col-lg-9">
 							<div id="tg-content" class="tg-content">
 								<div class="tg-aboutus tg-visionmission">
-									<figure><img src="../images/courses/wangwenjun.jpg" alt="image description"></figure>
-									<h3>个人简介</h3>
-									<p>王文俊，男，湖南籍，天津大学计算机学院教授、博士生导师、国家社科基金重大项目首席专家。天津大学公共安全研究中心主任、天津大学-中兴通讯智慧城市与大数据联合实验室主任。2004年获北京大学理学博士，中国计算机学会高级会员、大数据专委会成员，工业和信息化部安全生产专家、天津市应急管理专家组成员。先后参与或主持国家、省部及横向科研项目近50项，在国内外学术刊物及学术会议上发表论文30 余篇。<br><br>
-									最高学位：博士<br>
-									邮箱：wjwang@tju.edu.cn<br>
-									通讯地址：北洋园校区55楼B301<br>
-									个人主页：<a href="http://cs.tju.edu.cn/faculty/wjwang/">http://cs.tju.edu.cn/faculty/wjwang/</a></p>
-									<h3>研究方向</h3><p>非常规人类行为动力学、大数据处理及云计算平台、智慧安全.智慧地球.智慧城市</p>
-									<h3>招生方向</h3>
-									<p>1、招收博士研究生：1-2名<br>
-									2、招收硕士研究生：4-6名</p>
+									<figure><img src="../images/courses/zhaozenghua.jpg" alt="image description"></figure>
+									<p>最高学位：博士<br>
+                                       邮箱：zenghua@tju.edu.cn<br>
+                                       通讯地址：北洋园校区55楼B527<br>
+                                      
+                                       个人主页：http://cs.tju.edu.cn/faculty/zenghua/<br></p>
+									<h3>研究方向</h3>
+									<p>移动计算，室内定位，软件定义无线网络，物联网<br></p>
 									<h3>科研项目</h3>
-									<p>1、突发事件语义案例库建设与临机决策模式研究（编号14ZDB153） ,国家社科基金重大项目首席专家<br>
-									2、基于物联网的平安城市应急联动防控体系建设关键技术研究及应用示范（课题编号2013BAK02B06）  ，国家科技支撑计划项目 <br>3、村镇社区治理与事务管理支撑技术研究与示范 （课题编号2015BAL05B02）,国家科技支撑计划项目<br> 4、新时期中国特色应急管理体系的顶层设计和模式重构,国家自然科学基金重大研究计划“非常规突发事件应急管理研究”重点支持项目<br>5、快速城镇化典型衍生灾害防治的规划设计原理与方法,国家自然科学基金重点支持项目</p>
-									<h3>科研成果</h3>
-									<p>SCI期刊论文<br>
-									[1] Wang, Wenjun, Lin PAN, Ning Yuan, Sen Zhang, and Dong Liu. 2015. “A Comparative Analysis of Intra-City Human Mobility by Taxi.” Physica A: Statistical Mechanics and Its Applications, 420 (February): 134-47.<br>
-									[2] Liu, Dong, Xiao Liu, Wenjun Wang, and Hongyu Bai. 2014. “Semi-Supervised Community Detection Based on Discrete Potential Theory.” Physica A: Statistical Mechanics and Its Applications 416 (December): 173–82. <br>
-									[3] Liu, Dong, Hong-Yu Bai, Hui-Jia Li, and Wen-Jun Wang. 2014. “Semi-Supervised Community Detection Using Label Propagation.” International Journal of Modern Physics B, July, 1450208.<br>
-									[4] Jin, Bo, Binbing Liao, Ning Yuan, and Wenjun Wang. 2014. “Exploring Relationship Between Human Mobility and Social Ties: Physical Distance Is Not Dead.” International Journal of Modern Physics C, May, 1550008.<br>
-									[5]Wang, Wenjun, Dong Liu, Xiao Liu, and Lin PAN. 2013. “Fuzzy Overlapping Community Detection Based on Local Random Walk and Multidimensional Scaling.” Physica A: Statistical Mechanics and Its Applications 392 (24): 6578–86. doi:10.1016/j.physa.2013.08.028.
-									</p>
+									<p>1.“Software-Defined Network Architecture and Technologies for Large-Scale Enterprise Wireless LAN”, NSFTJ, 2017.04~2020.03, PI<br>
+									   2.“IEEE 802.11n Long-Distance Wireless Mesh Networks: Theory and Key Technologies ”, NSFC (61172063), 2012.01~2015.12, PI
+									   3.  “Multimedia Transmission in Wireless Mesh Networks: Key Technologies”, NSFC (60702038), 2008.01~2010.12, PI<br></p>
+									 <h3>代表论文</h3> 
+									 <p>1.Zenghua Zhao, Ming He, Jie Zhang, Lianfang Zhang, “QoS Routing and Traffic Scheduling in Long-Distance802.11 Wireless Mesh Networks”, Chinese Journal of Electronics, 2012.03，21(2): 313-317 <br>
+									    2. Zenghua Zhao, Nan Wang, Zhibin Dou, Lianfang Zhao, Yantai Shu, “Survey on IEEE 802.11n Long-Distance Wireless Mesh Networks”, Transactions of Computer (In Chinese), 2012.06, 35(6): 1209-1222<br>
+										3. Zenghua Zhao, Yantai Shu, Lianfang Zhang, and Oliver Yang, Flow-level multipath load balancing in MPLS network. IEICE Transactions (Transactions of the Institute of Electronics, Information and Communication Engineers), May 2005, E88B (5): 2015-2022.<br>
+										4. Gaotao Shi, Jun Zheng, Jinfeng Yang, Zenghua Zhao. “Double-Blind Data Discovery Using Double Cross for Large-Scale Wireless Sensor Networks with Mobile Sinks”. IEEE Transactions on Vehicular Technology, Vol. 61, No. 5, June 2012, 2294~2304. <br>
+										5. Zenghua Zhao, Jiankun Wang, Xiangya Zhao, Chunyi Peng, Qian Guo, Bin Wu, NaviLight: Indoor Localization and Navigation Under Arbitrary Light, IEEE International Conference on Computer Communications (INFOCOM’2017), Atlanta, GA, USA, May 1-4, pp. 2169-2177, 2017. <br></p>
 								</div>
 							</div>
 						</div>
