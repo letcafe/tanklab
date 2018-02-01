@@ -209,6 +209,36 @@
                             </table>
                         </div>
                         <!-- /.box-body -->
+                        <div>
+                                <%--page不等于1显示首页--%>
+                                <c:if test="${page != 1}">
+                                    <a class="btn btn-primary" href="/tanklab/admin/news?page=1">首页</a>
+                                </c:if>
+                                <%--前一页不为空显示上一页--%>
+                                <c:if test="${prePageIndex != null}">
+                                    <a class="btn btn-primary" href="/tanklab/admin/news?page=${prePageIndex}">上页</a>
+                                </c:if>
+                                <%--遍历列表--%>
+                                <c:forEach var="index" begin="1" end="${maxPage}" step="1">
+                                    <c:choose>
+                                        <%--如果page等于当前页，当前页高亮--%>
+                                        <c:when test="${page == index}">
+                                            <a class="btn btn-info" href="/tanklab/admin/news?page=${index}">${index}</a>
+                                        </c:when>
+                                        <%--否则正常输出--%>
+                                        <c:otherwise>
+                                            <a class="btn btn-primary" href="/tanklab/admin/news?page=${index}">${index}</a>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+                                <%--前一页不为空显示上一页--%>
+                                <c:if test="${nextPageIndex != null}">
+                                    <a class="btn btn-primary" href="/tanklab/admin/news?page=${nextPageIndex}">下页</a>
+                                </c:if>
+                                <%--page不等于maxPage显示尾页--%>
+                                <c:if test="${page != maxPage}">
+                                    <a class="btn btn-primary" href="/tanklab/admin/news?page=${maxPage}">尾页</a>
+                                </c:if>
                     </div>
                     <!-- /.box -->
 
@@ -361,11 +391,6 @@
         CKEDITOR.replace('add_content');
         CKEDITOR.replace('change_content');
     })
-    $("#newsTable").DataTable({
-        searching: false,
-        lengthMenu: [10]
-    });
-    $("#newsTable_length").hide();
 </script>
 </body>
 </html>
