@@ -34,6 +34,12 @@ public class WebPageController {
         this.announcementService = announcementService;
     }
 
+    //欢迎页面配置跳转
+    @RequestMapping(value={" ","/"})
+    public String index(){
+        return "redirect:/index";
+    }
+
     //获取路径下的所有JSP文件并正常返回
     @RequestMapping(value = "/index", method = GET)
     public String showIndexJsp(Model model) {

@@ -195,7 +195,7 @@
               </table>
             </div>
             <!-- /.box-body -->
-            <div>
+            <div style="text-align:center;padding-bottom: 20px;">
               <%--page不等于1显示首页--%>
               <c:if test="${page != 1}">
                 <a class="btn btn-primary" href="/tanklab/admin/file?page=1">首页</a>

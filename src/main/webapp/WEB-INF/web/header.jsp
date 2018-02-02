@@ -52,7 +52,7 @@
                         <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0);">首页</a>
+                                    <a href="/tanklab/index">首页</a>
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="javascript:void(0);">实验室</a>
@@ -131,7 +131,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="http://tanktju.com:214/wiki">内部网络</a>
+                                    <a href="http://tanktju.com:214">内部网络</a>
                                 </li>
                             </ul>
                         </div>

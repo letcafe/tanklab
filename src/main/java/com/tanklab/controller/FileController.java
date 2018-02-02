@@ -41,10 +41,10 @@ public class FileController {
         model.addAttribute("page", page);
         model.addAttribute("maxPage", maxPage);
         if(page > 1) {
-            model.addAttribute("prePageHref", "fileList?page=" + (page - 1));
+            model.addAttribute("prePageIndex", page - 1);
         }
         if(page < maxPage) {
-            model.addAttribute("nextPageHref", "fileList?page" + (page + 1));
+            model.addAttribute("nextPageIndex", page + 1);
         }
         return "admin/file";
     }
@@ -75,10 +75,10 @@ public class FileController {
         model.addAttribute("page", page);
         model.addAttribute("maxPage", maxPage);
         if(page > 1) {
-            model.addAttribute("prePageHref", "fileList?page=" + (page - 1));
+            model.addAttribute("prePageIndex", page - 1);
         }
         if (page < maxPage) {
-            model.addAttribute("nextPageHref", "fileList?page" + (page + 1));
+            model.addAttribute("nextPageIndex", page + 1);
         }
         return "/web/fileList";
     }

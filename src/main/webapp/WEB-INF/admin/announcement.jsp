@@ -128,9 +128,9 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">管理</li>
-                <li><a href="./news.jsp"><i class="fa fa-circle-o text-red"></i> <span>近期公告管理</span></a></li>
+                <li><a href="./news"><i class="fa fa-circle-o text-red"></i> <span>近期新闻管理</span></a></li>
                 <li><a href="./notices"><i class="fa fa-circle-o text-yellow"></i> <span>近期提醒管理</span></a></li>
-                <li class="active menu-open"><a href="./announcement?page=1"><i class="fa fa-circle-o text-aqua"></i>
+                <li class="active menu-open"><a href="./announcement"><i class="fa fa-circle-o text-aqua"></i>
                     <span>长期公告管理</span></a></li>
                 <li><a href="./file"><i class="fa fa-circle-o text-aqua"></i> <span>文件下载上传管理</span></a></li>
             </ul>
@@ -205,7 +205,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div>
+                        <div style="text-align:center;padding-bottom: 20px;">
                             <%--page不等于1显示首页--%>
                             <c:if test="${page != 1}">
                                 <a class=" btn btn-primary" href="/tanklab/admin/file?page=1">首页</a>

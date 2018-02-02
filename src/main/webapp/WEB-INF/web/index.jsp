@@ -82,13 +82,15 @@
 								<div class="item">
 									<figure>
 										<!-- 网站分辨率：873*424 -->
-										<img style="width: 873px;height: 424px" src="images/slider/31.jpg" alt="image description">
+										<img style="width: 873px;height: 424px" src="${list.imgUrl}" alt="image description">
 										<figcaption class="tg-slidercontent">
 											<div class="tg-slidercontentbox">
 												<a class="tg-btn" href="/tanklab/detailNews?id=${list.id}">更多</a>
 												<div class="tg-titledescription">
 													<h1>${list.title} ${list.date}</h1>
-													<div class="tg-description">${list.content.substring(0, 200)}</div>
+													<div class="tg-description">
+															${list.content.length() > 200?list.content.substring(0, 200):list.content}
+													</div>
 												</div>
 											</div>
 										</figcaption>
@@ -157,7 +159,7 @@
 									<div class="tg-events">
 										<article class="tg-themepost tg-themepostleftimg">
 											<figure class="tg-featuredimg">
-												<a href="javascript:void(0);">
+												<a href="detailNews?id=${news_index1.id}">
 													<img id="news_img_1" style="width: 270px;height: 185px;" src="${news_index1.imgUrl}" alt="image description">
 												</a>
 											</figure>
@@ -171,10 +173,10 @@
 													</li>
 												</ul>
 												<div class="tg-themeposttitle">
-													<h3 id="news_title_1"><a href="javascript:void(0);">${news_index1.title}</a></h3>
+													<h3 id="news_title_1"><a href="detailNews?id=${news_index1.id}">${news_index1.title}</a></h3>
 												</div>
 												<div class="tg-description" id="news_content_1">
-													<p>${news_index1.content.substring(0, 300)}</p>
+													<p>${news_index1.content.length() > 200?news_index1.content.substring(0, 200):news_index1.content}</p>
 												</div>
 											</div>
 										</article>
@@ -184,7 +186,7 @@
 												<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 													<article class="tg-themepost tg-themepostleftthumb">
 														<figure class="tg-featuredimg">
-															<a href="javascript:void(0);">
+															<a href="detailNews?id=${news.id}">
 																<img id="news_img_2"  src="${news.imgUrl}" alt="image description">
 															</a>
 														</figure>
@@ -198,7 +200,7 @@
 																</li>
 															</ul>
 															<div class="tg-themeposttitle">
-																<h3 id="news_title_2"><a href="javascript:void(0);">${news.title}</a></h3>
+																<h3 id="news_title_2"><a href="detailNews?id=${news.id}">${news.title}</a></h3>
 															</div>
 														</div>
 													</article>
@@ -223,8 +225,8 @@
 													</li>
 													<li>
 														<figure>
-															<a class="tg-btnview" href="images/brands/fc2.jpg" data-rel="prettyPhoto[glance]"><i class="icon-magnifier"></i></a>
-															<img src="images/brands/fc2.jpg" alt="image description">
+															<a class="tg-btnview" href="images/brands/fc2.png" data-rel="prettyPhoto[glance]"><i class="icon-magnifier"></i></a>
+															<img src="images/brands/fc2.png" alt="image description">
 														</figure>
 													</li>
 													<li>
@@ -339,7 +341,7 @@
 											<li>
 												<a href="javascript:void(0);">
 													<i class="fa fa-paperclip"></i>
-													<span><a href="/tanklab/fileList">下载文件</a></span>
+													<span><a href="/tanklab/fileList?page=1">下载文件</a></span>
 												</a>
 											</li>
 											<li>
@@ -458,6 +460,5 @@
 	<script src="js/moment.js"></script>
 	<script src="js/gmap3.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/index.js"></script>
 </body>
 </html>

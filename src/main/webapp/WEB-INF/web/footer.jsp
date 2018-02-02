@@ -10,7 +10,7 @@
                         <div class="tg-widgetcontent">
                             <strong class="tg-logo"><a href="index.jsp"><img src="images/logo2.png" alt="image description"></a></strong>
                             <div class="tg-description">
-                                <p>先进未来网络实验室是一个专注于未来网络前沿技术的研究团队，实验室主要有SDN软件定义网络方向...<a href="javascript:void(0);">更多</a></p>
+                                <p>先进未来网络实验室是一个专注于未来网络前沿技术的研究团队，实验室主要有SDN软件定义网络方向...<a href="/tanklab/research">更多</a></p>
                             </div>
                             <ul class="tg-infolist">
                                 <li>
@@ -28,7 +28,7 @@
                                 <li>
                                     <a href="mailto:query@domain.com">
                                         <i class="icon-envelope"></i>
-                                        <span>dongyuguo@tanktju.com</span>
+                                        <span>dongyuguo@tju.edu.cn</span>
                                     </a>
                                 </li>
                             </ul>

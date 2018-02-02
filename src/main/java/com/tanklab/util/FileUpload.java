@@ -11,7 +11,7 @@ public class FileUpload {
     public static String fileUploadPath;
 
     static {
-        fileUploadPath = System.getProperty("webDeployPath") + "..\\TankUploadFile\\";
+        fileUploadPath = System.getProperty("webDeployPath") + "../TankUploadFile/";
         System.out.println("fileUploadPath:" + fileUploadPath);
     }
 
@@ -19,7 +19,7 @@ public class FileUpload {
         String fileSuffix = multipartFile.getOriginalFilename().substring(multipartFile.getOriginalFilename().lastIndexOf("."));
         String fileName = typeName + "_" + System.currentTimeMillis() + fileSuffix;
         String returnWebUrl = "/TankUploadFile/" + typeName + "/" + fileName;
-        String fileStorePath = fileUploadPath + "\\"+ typeName + "\\" + fileName;
+        String fileStorePath = fileUploadPath + "/"+ typeName + "/" + fileName;
 
         File file = new File(fileStorePath);
         if(!file.getParentFile().exists()) {//如果该文件的上级所有目录未创建，一次创建所有目录

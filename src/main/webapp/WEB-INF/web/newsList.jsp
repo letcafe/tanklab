@@ -142,7 +142,7 @@
 													<h3><a href="javascript:void(0);">${news.title}</a></h3>
 												</div>
 												<div style="text-align:left;" class="tg-description">
-													<p>${news.content.substring(0,300)}...</p>
+													<p>${news.content.length() > 300?news.content.substring(0, 300):news.content}</p>
 												</div>
 												<a class="tg-btn tg-btn-sm" href="/tanklab/detailNews?id=${news.id}">更多详情</a>
 											</div>
