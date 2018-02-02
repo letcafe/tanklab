@@ -82,13 +82,15 @@
 								<div class="item">
 									<figure>
 										<!-- 网站分辨率：873*424 -->
-										<img style="width: 873px;height: 424px" src="images/slider/31.jpg" alt="image description">
+										<img style="width: 873px;height: 424px" src="${list.imgUrl}" alt="image description">
 										<figcaption class="tg-slidercontent">
 											<div class="tg-slidercontentbox">
 												<a class="tg-btn" href="/tanklab/detailNews?id=${list.id}">更多</a>
 												<div class="tg-titledescription">
 													<h1>${list.title} ${list.date}</h1>
-													<div class="tg-description">${list.content.substring(0, 200)}</div>
+													<div class="tg-description">
+															${list.content.length() > 200?list.content.substring(0, 200):list.content}
+													</div>
 												</div>
 											</div>
 										</figcaption>
@@ -157,7 +159,7 @@
 									<div class="tg-events">
 										<article class="tg-themepost tg-themepostleftimg">
 											<figure class="tg-featuredimg">
-												<a href="javascript:void(0);">
+												<a href="detailNews?id=${news_index1.id}">
 													<img id="news_img_1" style="width: 270px;height: 185px;" src="${news_index1.imgUrl}" alt="image description">
 												</a>
 											</figure>
@@ -171,10 +173,10 @@
 													</li>
 												</ul>
 												<div class="tg-themeposttitle">
-													<h3 id="news_title_1"><a href="javascript:void(0);">${news_index1.title}</a></h3>
+													<h3 id="news_title_1"><a href="detailNews?id=${news_index1.id}">${news_index1.title}</a></h3>
 												</div>
 												<div class="tg-description" id="news_content_1">
-													<p>${news_index1.content.substring(0, 300)}</p>
+													<p>${news_index1.content.length() > 200?news_index1.content.substring(0, 200):news_index1.content}</p>
 												</div>
 											</div>
 										</article>
@@ -184,7 +186,7 @@
 												<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 													<article class="tg-themepost tg-themepostleftthumb">
 														<figure class="tg-featuredimg">
-															<a href="javascript:void(0);">
+															<a href="detailNews?id=${news.id}">
 																<img id="news_img_2"  src="${news.imgUrl}" alt="image description">
 															</a>
 														</figure>
@@ -198,7 +200,7 @@
 																</li>
 															</ul>
 															<div class="tg-themeposttitle">
-																<h3 id="news_title_2"><a href="javascript:void(0);">${news.title}</a></h3>
+																<h3 id="news_title_2"><a href="detailNews?id=${news.id}">${news.title}</a></h3>
 															</div>
 														</div>
 													</article>
@@ -223,8 +225,8 @@
 													</li>
 													<li>
 														<figure>
-															<a class="tg-btnview" href="images/brands/fc2.jpg" data-rel="prettyPhoto[glance]"><i class="icon-magnifier"></i></a>
-															<img src="images/brands/fc2.jpg" alt="image description">
+															<a class="tg-btnview" href="images/brands/fc2.png" data-rel="prettyPhoto[glance]"><i class="icon-magnifier"></i></a>
+															<img src="images/brands/fc2.png" alt="image description">
 														</figure>
 													</li>
 													<li>
@@ -339,7 +341,7 @@
 											<li>
 												<a href="javascript:void(0);">
 													<i class="fa fa-paperclip"></i>
-													<span><a href="/tanklab/fileList">下载文件</a></span>
+													<span><a href="/tanklab/fileList?page=1">下载文件</a></span>
 												</a>
 											</li>
 											<li>
@@ -434,113 +436,7 @@
 		<!--************************************
 				Footer Start
 		*************************************-->
-		<footer id="tg-footer" class="tg-footer tg-haslayout">
-			<div class="tg-signupbox">
-<!-- 				<div class="tg-signuptextbox">
-					<h3>Free Signup!</h3>
-					<div class="tg-description"><p>Subscribe Monthly Newsletter &amp; Get Latest New &amp; Updates.</p></div>
-				</div>
-				<form class="tg-formtheme tg-formsignupfree">
-					<fieldset>
-						<div class="form-group"><input type="text" name="emailid" class="form-control" placeholder="Enter Email ID"></div>
-						<div class="form-group"><button type="submit" class="tg-btn">Signup Now</button></div>
-					</fieldset>
-				</form> -->
-			</div>
-			<div class="tg-footermiddlebar">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<div class="tg-widget tg-widgetcompanyinfo">
-								<div class="tg-widgetcontent">
-									<strong class="tg-logo"><a href="index.jsp"><img src="images/logo2.png" alt="image description"></a></strong>
-									<div class="tg-description">
-										<p>先进未来网络实验室是一个专注于未来网络前沿技术的研究团队，实验室主要有SDN软件定义网络方向...<a href="javascript:void(0);">更多</a></p>
-									</div>
-									<ul class="tg-infolist">
-										<li>
-											<i class="icon-location"></i>
-											<address style="max-width:240px;">天津市津南区海河教育园区雅观路135号天津大学北洋园校区55楼教学楼B座214</address>
-										</li>
-										<li>
-											<i class="icon-phone-handset"></i>
-											<span>0800 - 1234 - 562 - 6</span>
-										</li>
-										<li>
-											<i class="icon-printer"></i>
-											<span>+4 1234 567 - 9</span>
-										</li>
-										<li>
-											<a href="mailto:query@domain.com">
-												<i class="icon-envelope"></i>
-												<span>dongyuguo@tanktju.com</span>
-											</a>
-										</li>
-									</ul>
-<!-- 下排图标：facebook,twitter等		<ul class="tg-socialicons">
-										<li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
-										<li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
-										<li class="tg-linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
-										<li class="tg-googleplus"><a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a></li>
-										<li class="tg-rss"><a href="javascript:void(0);"><i class="fa fa-rss"></i></a></li>
-									</ul> -->
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<div class="tg-widget tg-widgettweets">
-								<div class="tg-widgettitle">
-									<h3>微博平台</h3>
-								</div>
-								<div class="tg-widgetcontent">
-									<ul>
-										<li>
-											<p>天气越来越热，毕业季的脚步越来越近@人民日报 的文章超实用！毕业生租房攻略 ​​​​</p>
-											<span><a href="mailto:http://www.domainurl.com">http://cs.tju.edu.cn/csweb/</a></span>
-											<time datetime="2017-01-01">2 小时前</time>
-										</li>
-										<li>
-											<p>天大双甲子 学子忆北洋天大双甲子 校友忆北洋（计算机学院抢先版） ​​​​查看图片</p>
-											<span><a href="mailto:http://www.domainurl.com">http://cs.tju.edu.cn/csweb/</a></span>
-											<time datetime="2017-01-01">3 小时前</time>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-							<div class="tg-widget tg-widgetcoursecategories">
-								<div class="tg-widgettitle">
-									<h3>其他服务</h3>
-								</div>
-								<div class="tg-widgetcontent">
-									<ul>
-										<li><a href="javascript:void(0);">人才招聘</a></li>
-										<li><a href="javascript:void(0);">招生信息</a></li>
-										<li><a href="javascript:void(0);">师资队伍</a></li>
-										<li><a href="javascript:void(0);">科研团队</a></li>
-										<li><a href="javascript:void(0);">成果登记</a></li>
-										<li><a href="javascript:void(0);">会议室预定</a></li>
-										<li><a href="javascript:void(0);">公示</a></li>
-										<li><a href="javascript:void(0);">服务平台</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="tg-footerbar">
-				<div class="container">
-					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="copyright">
-							<span>Copyright &copy; 2017 All Rights Reserved</span>
-							<span><a style="color:grey;" href="http://www.miitbeian.gov.cn">津ICP备17006007号-1</a></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</footer>
+		<%@ include file ="footer.jsp" %>
 		<!--************************************
 				Footer End
 		*************************************-->
@@ -564,6 +460,5 @@
 	<script src="js/moment.js"></script>
 	<script src="js/gmap3.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/index.js"></script>
 </body>
 </html>

@@ -24,14 +24,14 @@ public class LoginSessionController {
     public String login(HttpSession session, Model model,
             String loginName, String password) throws Exception{
         //验证
-
         User user = userService.loginRight(loginName,MD5.GetMD5Code(password));
-        if(user!=null) {
+        if(user!= null) {
+            System.out.println("Login Success");
             //在Session里保存信息
             session.setAttribute("loginName",loginName);
             //Session超时时间，单位秒
-            session.setMaxInactiveInterval(60 * 60);
-            return "/admin/news?page=1";
+            session.setMaxInactiveInterval(3 * 60 * 60);//超时时间三小时
+            return "redirect:/admin/news";
         } else {
             model.addAttribute("message","用户名或密码错误");
             model.addAttribute("loginName",loginName);

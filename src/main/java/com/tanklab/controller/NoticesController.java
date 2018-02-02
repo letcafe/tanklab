@@ -62,7 +62,7 @@ public class NoticesController {
 
     /**封装一个noticesList对象返回到视图jsp中**/
     @RequestMapping(value = "admin/notices", method = GET)
-    public String getAllNotices(Model model, @RequestParam(value = "page") Integer page) {
+    public String getAllNotices(HttpSession session, Model model, @RequestParam(value = "page", required = false, defaultValue = "1") Integer page) {
         int totalCount = noticesService.getNoticesCount();
         int pageSize = 10;
         int maxPage = (totalCount % pageSize == 0) ? (totalCount / pageSize) : (totalCount / pageSize + 1);

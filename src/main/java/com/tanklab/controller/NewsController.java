@@ -25,7 +25,7 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/admin/news")
-    public String getAllNews(HttpSession sesion, Model model, int page) {
+    public String getAllNews(HttpSession session, Model model,@RequestParam(value = "page", required = false, defaultValue = "1") Integer page) {
         int totalCount = newsService.getTableCount();
         int pageSize = 10;
         int maxPage = (totalCount % pageSize == 0) ? (totalCount / pageSize) : (totalCount / pageSize + 1);
@@ -44,19 +44,6 @@ public class NewsController {
             model.addAttribute("nextPageIndex", page + 1);
         }
         return "admin/news";
-    }
-
-    @RequestMapping(value = "/uploadForm")
-    public String uploadForm(Model model) {
-        return "web/uploadForm";
-    }
-
-    @RequestMapping(value = "/news")
-    public String getDetailedNews(
-            Model model,
-            @RequestParam(value = "id") int id) {
-        model.addAttribute("detailedNews", newsService.selectDetailedNews(id));
-        return "detailedNews";
     }
 
     @RequestMapping(value = "/newsList")

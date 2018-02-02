@@ -33,8 +33,8 @@ $(function(){
                             "                  <td class=\"col-xs-2\" id=\"notices_title_" + noticesObj.id + "\">" + noticesObj.title + "</td>\n" +
                             "                  <td class=\"col-xs-3\" id=\"notices_content_" + noticesObj.id + "\">" + noticesObj.content + "</td>\n" +
                             "                  <td class=\"col-xs-1\">\n" +
-                            "                    <button class=\"btn btn-info\" id=\"chg_news_" + noticesObj.id + "\" data-id=\"" + noticesObj.id + "\" btnType=\"chgButton\">修改</button>\n" +
-                            "                    <button class=\"btn btn-danger\" id=\"del_news_" + noticesObj.id + "\" data-id=\"" + noticesObj.id + "\" btnType=\"delButton\">删除</button>\n" +
+                            "                    <button class=\"btn btn-info\" id=\"chg_notices_" + noticesObj.id + "\" data-id=\"" + noticesObj.id + "\" btnType=\"chgButton\">修改</button>\n" +
+                            "                    <button class=\"btn btn-danger\" id=\"del_notices_" + noticesObj.id + "\" data-id=\"" + noticesObj.id + "\" btnType=\"delButton\">删除</button>\n" +
                             "                  </td>\n" +
                             "                  </tr>");
 					}

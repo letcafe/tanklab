@@ -1,5 +1,7 @@
 package com.tanklab.util;
 
+import org.junit.Test;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -30,7 +32,21 @@ public class MD5{
         }
         return sBuffer.toString();
     }
-  
+
+    @Test
+    public void getMD5Password() {
+        String strObj = "pwd";
+        String resultString = "";
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            // md.digest() 该函数返回值为存放哈希值结果的byte数组
+            resultString = byteToString(md.digest(strObj.getBytes()));
+        } catch (NoSuchAlgorithmException ex) {
+            ex.printStackTrace();
+        }
+        System.out.println(resultString);
+    }
+
     public static String GetMD5Code(String strObj) {
     	  String resultString = "";
         try {

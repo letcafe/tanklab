@@ -77,17 +77,17 @@
                                 <img src="./dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                                 <p>
-                                    DongyuGuo
+                                    Administrator
                                     <small>Member since Jan. 2018</small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">Profile</a>
+                                    <a href="#" class="btn btn-default btn-flat">个人信息</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="logout" class="btn btn-default btn-flat">登出</a>
                                 </div>
                             </li>
                         </ul>
@@ -128,7 +128,7 @@
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">管理</li>
-                <li class="active menu-open"><a href="./news.jsp"><i class="fa fa-circle-o text-red"></i>
+                <li class="active menu-open"><a href="./news"><i class="fa fa-circle-o text-red"></i>
                     <span>近期新闻管理</span></a></li>
                 <li><a href="./notices"><i class="fa fa-circle-o text-yellow"></i> <span>近期提醒管理</span></a></li>
                 <li><a href="./announcement"><i class="fa fa-circle-o text-aqua"></i> <span>长期公告管理</span></a></li>
@@ -209,7 +209,7 @@
                             </table>
                         </div>
                         <!-- /.box-body -->
-                        <div>
+                        <div style="text-align:center;padding-bottom: 20px;">
                                 <%--page不等于1显示首页--%>
                                 <c:if test="${page != 1}">
                                     <a class="btn btn-primary" href="/tanklab/admin/news?page=1">首页</a>

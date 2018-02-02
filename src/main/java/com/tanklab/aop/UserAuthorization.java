@@ -22,16 +22,52 @@ public class UserAuthorization {
 
 
     //并不是所有方法都要AOP，只要在我们的管理员后台进入点判断就可以，注意切入的方法前添加HttpSession参数
-//    @Around("execution(* com.tanklab.controller.NewsController.getAllNews(..))")
-//    public String queryDeviceById_before(ProceedingJoinPoint point) throws Throwable {
-//        HttpSession userSession = (HttpSession) point.getArgs()[0];//获取切入的第一个方法
-//        String loginName = (String)userSession.getAttribute("loginName");//获取Session中的参数，是在登录成功后设置的
-//        if(loginName != null) {
-//            String loginToPage = (String)point.proceed();
-//            return loginToPage;
-//        } else {
-//            return "/web/login";
-//        }
-//    }
+    @Around("execution(* com.tanklab.controller.NewsController.getAllNews(..))")
+    public String newsAOP(ProceedingJoinPoint point) throws Throwable {
+        HttpSession userSession = (HttpSession) point.getArgs()[0];//获取切入的第一个方法
+        String loginName = (String)userSession.getAttribute("loginName");//获取Session中的参数，是在登录成功后设置的
+        if(loginName != null) {
+            String loginToPage = (String)point.proceed();
+            return loginToPage;
+        } else {
+            return "/admin/login";
+        }
+    }
+
+    @Around("execution(* com.tanklab.controller.NoticesController.getAllNotices(..))")
+    public String noticesAOP(ProceedingJoinPoint point) throws Throwable {
+        HttpSession userSession = (HttpSession) point.getArgs()[0];//获取切入的第一个方法
+        String loginName = (String)userSession.getAttribute("loginName");//获取Session中的参数，是在登录成功后设置的
+        if(loginName != null) {
+            String loginToPage = (String)point.proceed();
+            return loginToPage;
+        } else {
+            return "/admin/login";
+        }
+    }
+
+    @Around("execution(* com.tanklab.controller.AnnouncementController.getAdminList(..))")
+    public String announcementAOP(ProceedingJoinPoint point) throws Throwable {
+        HttpSession userSession = (HttpSession) point.getArgs()[0];//获取切入的第一个方法
+        String loginName = (String)userSession.getAttribute("loginName");//获取Session中的参数，是在登录成功后设置的
+        if(loginName != null) {
+            String loginToPage = (String)point.proceed();
+            return loginToPage;
+        } else {
+            return "/admin/login";
+        }
+    }
+
+    @Around("execution(* com.tanklab.controller.FileController.getAllFiles(..))")
+    public String fileAOP(ProceedingJoinPoint point) throws Throwable {
+        HttpSession userSession = (HttpSession) point.getArgs()[0];//获取切入的第一个方法
+        String loginName = (String)userSession.getAttribute("loginName");//获取Session中的参数，是在登录成功后设置的
+        if(loginName != null) {
+            String loginToPage = (String)point.proceed();
+            return loginToPage;
+        } else {
+            return "/admin/login";
+        }
+    }
 
 }

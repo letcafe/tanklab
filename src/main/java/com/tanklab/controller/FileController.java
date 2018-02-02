@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,7 +29,7 @@ public class FileController {
     }
 
     @RequestMapping(value = "/admin/file")
-    public String getAllFiles(Model model, @RequestParam(value = "page") Integer page) {
+    public String getAllFiles(HttpSession session, Model model, @RequestParam(value = "page", required = false, defaultValue = "1") Integer page) {
         int totalCount = fileService.getTableCount();
         int pageSize = 10;
         int maxPage = (totalCount % pageSize == 0) ? (totalCount / pageSize) : (totalCount / pageSize + 1);
@@ -40,10 +41,10 @@ public class FileController {
         model.addAttribute("page", page);
         model.addAttribute("maxPage", maxPage);
         if(page > 1) {
-            model.addAttribute("prePageHref", "fileList?page=" + (page - 1));
+            model.addAttribute("prePageIndex", page - 1);
         }
         if(page < maxPage) {
-            model.addAttribute("nextPageHref", "fileList?page" + (page + 1));
+            model.addAttribute("nextPageIndex", page + 1);
         }
         return "admin/file";
     }
@@ -74,10 +75,10 @@ public class FileController {
         model.addAttribute("page", page);
         model.addAttribute("maxPage", maxPage);
         if(page > 1) {
-            model.addAttribute("prePageHref", "fileList?page=" + (page - 1));
+            model.addAttribute("prePageIndex", page - 1);
         }
         if (page < maxPage) {
-            model.addAttribute("nextPageHref", "fileList?page" + (page + 1));
+            model.addAttribute("nextPageIndex", page + 1);
         }
         return "/web/fileList";
     }

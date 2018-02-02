@@ -52,7 +52,7 @@
                         <div id="tg-navigation" class="collapse navbar-collapse tg-navigation">
                             <ul>
                                 <li>
-                                    <a href="javascript:void(0);">首页</a>
+                                    <a href="/tanklab/index">首页</a>
                                 </li>
                                 <li class="menu-item-has-children">
                                     <a href="javascript:void(0);">实验室</a>
@@ -74,10 +74,10 @@
                                 <li class="menu-item-has-children">
                                     <a href="javascript:void(0);">科研方向</a>
                                     <ul class="sub-menu">
-                                        <li><a href="javascript:void(0)">未来网络体系结构</a></li>
-                                        <li><a href="javascript:void(0)">智能网络技术与应用</a></li>
-                                        <li><a href="javascript:void(0)">智慧城市与大数据</a></li>
-                                        <li><a href="javascript:void(0)">网络信息安全</a></li>
+                                        <li><a href="/tanklab/research">未来网络体系结构</a></li>
+                                        <li><a href="/tanklab/research">智能网络技术与应用</a></li>
+                                        <li><a href="/tanklab/research">智慧城市与大数据</a></li>
+                                        <li><a href="/tanklab/research">网络信息安全</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item-has-children">
@@ -131,7 +131,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="javascript:void(0);">内部网络</a>
+                                    <a href="http://tanktju.com:214">内部网络</a>
                                 </li>
                             </ul>
                         </div>
