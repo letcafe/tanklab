@@ -1,7 +1,5 @@
 package com.tanklab.util;
 
-import org.junit.Test;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -33,7 +31,6 @@ public class MD5{
         return sBuffer.toString();
     }
 
-    @Test
     public void getMD5Password() {
         String strObj = "pwd";
         String resultString = "";

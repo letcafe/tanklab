@@ -23,8 +23,8 @@ public class DBConfig {
         DriverManagerDataSource ds = new DriverManagerDataSource();
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
         ds.setUrl("jdbc:mysql://tanktju.com/tanklab?serverTimezone=GMT%2B8&useSSL=false&characterEncoding=utf-8");
-        ds.setUsername("gdy");
-        ds.setPassword("123456");
+        ds.setUsername("dongyuguo");
+        ds.setPassword("tanktju");
         return ds;
     }
 
