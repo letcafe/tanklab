@@ -10,7 +10,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TANK先进未来网络实验室</title>
+	<title><s:message code="title"></s:message></title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -85,7 +85,10 @@
 										<img style="width: 873px;height: 424px" src="${list.imgUrl}" alt="image description">
 										<figcaption class="tg-slidercontent">
 											<div class="tg-slidercontentbox">
-												<a class="tg-btn" href="/tanklab/detailNews?id=${list.id}">更多</a>
+												<s:url value="/detailNews" var="detailNewsUrl">
+                                                    <s:param name="id" value="${list.id}"></s:param>
+                                                </s:url>
+												<a class="tg-btn" href="${detailNewsUrl}">更多</a>
 												<div class="tg-titledescription">
 													<h1>${list.title} ${list.date}</h1>
 													<div class="tg-description">
@@ -173,7 +176,10 @@
 													</li>
 												</ul>
 												<div class="tg-themeposttitle">
-													<h3 id="news_title_1"><a href="detailNews?id=${news_index1.id}">${news_index1.title}</a></h3>
+                                                    <s:url value="/detailNews" var="detailNewsFirstNews">
+                                                        <s:param name="id" value="${news_index1.id}"></s:param>
+                                                    </s:url>
+													<h3 id="news_title_1"><a href="${detailNewsFirstNews}">${news_index1.title}</a></h3>
 												</div>
 												<div class="tg-description" id="news_content_1">
 													<p>${news_index1.content.length() > 200?news_index1.content.substring(0, 200):news_index1.content}</p>
@@ -186,7 +192,10 @@
 												<div class="col-xs-6 col-sm-6 col-md-6 col-lg-4">
 													<article class="tg-themepost tg-themepostleftthumb">
 														<figure class="tg-featuredimg">
-															<a href="detailNews?id=${news.id}">
+                                                            <s:url value="/detailNews" var="detailNewsListUrl2To4">
+                                                                <s:param name="id" value="${news.id}"></s:param>
+                                                            </s:url>
+															<a href="${detailNewsListUrl2To4}">
 																<img id="news_img_2"  src="${news.imgUrl}" alt="image description">
 															</a>
 														</figure>
@@ -200,7 +209,7 @@
 																</li>
 															</ul>
 															<div class="tg-themeposttitle">
-																<h3 id="news_title_2"><a href="detailNews?id=${news.id}">${news.title}</a></h3>
+																<h3 id="news_title_2"><a href="${detailNewsListUrl2To4}">${news.title}</a></h3>
 															</div>
 														</div>
 													</article>
@@ -341,7 +350,10 @@
 											<li>
 												<a href="javascript:void(0);">
 													<i class="fa fa-paperclip"></i>
-													<span><a href="/tanklab/fileList?page=1">下载文件</a></span>
+                                                    <s:url value="/fileList" var="fileListUrl">
+                                                        <s:param name="page" value="1"></s:param>
+                                                    </s:url>
+													<span><a href="${fileListUrl}">下载文件</a></span>
 												</a>
 											</li>
 											<li>

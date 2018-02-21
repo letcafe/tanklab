@@ -1,9 +1,11 @@
 package com.tanklab.conf;
 
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -35,5 +37,14 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         //前者为web映射路径，后者为webapp项目物理路径
         registry.addResourceHandler("/admin/**").addResourceLocations("/WEB-INF/admin/");
         registry.addResourceHandler("/**").addResourceLocations("/WEB-INF/web/");
+    }
+
+    @Bean
+    MessageSource messageSource() {
+        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+        messageSource.setBasename("classpath://messages");
+        messageSource.setDefaultEncoding("utf-8");
+        messageSource.setCacheSeconds(10);
+        return messageSource;
     }
 }
